@@ -10,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.utils.toArray("section h2").forEach((el) => {
-        gsap.from(el, {
+        gsap.from(el as gsap.TweenTarget, {
           scrollTrigger: { trigger: el, start: "top 80%" },
           opacity: 0,
           y: 40,
@@ -153,6 +153,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* 25 AÑOS DE TRADICIÓN */}
       <section className="w-full bg-[#E30613] py-16 text-center text-white relative">
         <img
@@ -161,17 +162,15 @@ export default function Home() {
           className="mx-auto w-28 mb-4"
         />
         <h2 className="text-2xl md:text-3xl font-bold max-w-2xl mx-auto">
-          Más de 25 años ofreciendo calidad y tradición en panadería y
-          pastelería.
+          Más de 25 años ofreciendo calidad y tradición en panadería y pastelería.
         </h2>
-        <button className="mt-6 bg-[#002E6D] px-6 py-2 rounded-lg font-semibold hover:bg-blue-900">
-          <Link
-            to="/industrial"
-            className="mt-6  bg-[#002E6D] text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-900 transition"
-          >
-            Más Información
-          </Link>
-        </button>
+        {/* Enlace corregido para ser un Link en lugar de un button anidado */}
+        <Link
+          to="/nosotros"
+          className="mt-6 inline-block bg-[#002E6D] text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-900 transition"
+        >
+          Más Información
+        </Link>
       </section>
 
       {/* CONTACTO */}
