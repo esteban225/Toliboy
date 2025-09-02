@@ -32,11 +32,11 @@ export default function Home() {
         ease: "power3.out",
       });
 
-      // Animación de títulos al hacer scroll
+      // ✅ Animación de títulos al hacer scroll
       gsap.utils.toArray("section h2").forEach((el) => {
-        gsap.from(el, {
+        gsap.from(el as HTMLElement, {
           scrollTrigger: {
-            trigger: el,
+            trigger: el as HTMLElement,
             start: "top 80%",
             toggleActions: "play none none reverse",
           },
@@ -47,11 +47,11 @@ export default function Home() {
         });
       });
 
-      // Animación de párrafos
+      // ✅ Animación de párrafos
       gsap.utils.toArray("section p").forEach((el) => {
-        gsap.from(el, {
+        gsap.from(el as HTMLElement, {
           scrollTrigger: {
-            trigger: el,
+            trigger: el as HTMLElement,
             start: "top 85%",
             toggleActions: "play none none reverse",
           },
@@ -62,11 +62,11 @@ export default function Home() {
         });
       });
 
-      // Animación de tarjetas
+      // ✅ Animación de tarjetas
       gsap.utils.toArray(".card-producto").forEach((card, i) => {
-        gsap.from(card, {
+        gsap.from(card as HTMLElement, {
           scrollTrigger: {
-            trigger: card,
+            trigger: card as HTMLElement,
             start: "top 90%",
             toggleActions: "play none none reverse",
           },
@@ -78,7 +78,7 @@ export default function Home() {
         });
       });
 
-      // Animación carrusel (entrada desde la derecha)
+      // ✅ Animación carrusel (entrada desde la derecha)
       gsap.from(".animate-scroll-x", {
         scrollTrigger: {
           trigger: ".animate-scroll-x",
