@@ -5,117 +5,104 @@ import { Facebook, Instagram, Twitter, Menu, X } from "lucide-react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navLinks = [
+    { name: "Inicio", path: "/" },
+    { name: "Productos", path: "/panaderia" },
+    { name: "Nosotros", path: "/nosotros" },
+  ];
+
+  const contactLink = { name: "Contáctanos", path: "/contacto" };
+
+  const socialLinks = [
+    { icon: <Facebook />, url: "https://facebook.com" },
+    { icon: <Instagram />, url: "https://instagram.com" },
+    { icon: <Twitter />, url: "https://twitter.com" },
+  ];
+
   return (
-    <nav className="w-full bg-red-800 shadow-md sticky top-0 z-50">
+    <nav
+      className="w-full sticky top-0 z-50"
+      style={{ backgroundColor: "#FEF9F2" }}
+    >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <img
-            src="/toli-logo.svg"
-            alt="toliboy logo"
-            className="h-10 w-auto custom:h-14 transition-transform duration-300 hover:scale-105"
-          />
-        </div>
 
         {/* Botón menú hamburguesa (solo <768px) */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-gray-800"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* Menú principal (desde 768px) */}
-        <ul className="hidden md:flex gap-6 text-red-100 font-medium">
-          <li>
-            <Link to="/" className="hover:text-red-400">
-              Inicio
-            </Link>
-          </li>
-          <li>
-            <Link to="/panaderia" className="hover:text-red-400">
-              Panadería y Pastelería
-            </Link>
-          </li>
-          <li>
-            <Link to="/industrial" className="hover:text-red-400">
-              Línea industrial
-            </Link>
-          </li>
-          <li>
-            <Link to="/nosotros" className="hover:text-red-400">
-              Nosotros
-            </Link>
-          </li>
-          <li>
-            <Link to="/contacto" className="hover:text-red-400">
-              Contacto
-            </Link>
-          </li>
+        {/* Menú principal (desde 768px) - Queda a la izquierda en md */}
+        <ul className="hidden md:flex items-center gap-6 font-medium md:order-1">
+          {navLinks.map((link) => (
+            <li key={link.path}>
+              <Link
+                to={link.path}
+                className="text-red-700 hover:text-[#134289] transition"
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
         </ul>
 
-        {/* Redes sociales (siempre visibles) */}
-        <div className="hidden md:flex gap-4 text-red-200">
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
-            <Facebook className="w-5 h-5 hover:text-red-400" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer">
-            <Instagram className="w-5 h-5 hover:text-red-400" />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer">
-            <Twitter className="w-5 h-5 hover:text-red-400" />
-          </a>
+        {/* Logo - Queda en el centro en md y primero en sm */}
+        <div className="flex items-center gap-3 order-first md:order-2">
+          <img
+            src="/Logo-secundario.svg"
+            alt="toliboy logo"
+            className="h-18 w-auto transition-transform duration-300 hover:scale-105"
+          />
         </div>
+        
+        {/* Botón de Contacto - Queda a la derecha en md y último en sm */}
+        <Link
+          to={contactLink.path}
+          className="relative hidden md:block md:order-3 bg-red-600 text-white font-semibold py-3 px-6 rounded-4xl transition-transform hover:translate-x-1 hover:translate-y-1 shadow-[4px_4px_0_0_#1e40af] active:shadow-none active:translate-x-0 active:translate-y-0"
+        >
+          {contactLink.name}
+        </Link>
       </div>
 
       {/* Menú móvil (solo <768px) */}
       {isOpen && (
-        <div className="md:hidden bg-red-700 text-white px-6 py-6 space-y-4 rounded-b-2xl shadow-lg">
-          {[
-            { name: "Inicio", path: "/" },
-            { name: "Panadería y Pastelería", path: "/panaderia" },
-            { name: "Línea industrial", path: "/industrial" },
-            { name: "Nosotros", path: "/nosotros" },
-            { name: "Contacto", path: "/contacto" },
-          ].map((item) => (
+        <div
+          className="md:hidden px-6 py-6 space-y-4 rounded-b-2xl shadow-lg"
+          style={{ backgroundColor: "#fcf7e8" }}
+        >
+          {[...navLinks, contactLink].map((link) => (
             <Link
-              key={item.path}
-              to={item.path}
+              key={link.path}
+              to={link.path}
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-3 bg-red-600 rounded-xl text-center 
-                 font-medium shadow-md transition hover:bg-red-500 
-                 hover:shadow-lg active:scale-95"
+              className="block px-4 py-3 rounded-xl text-center font-medium shadow-md transition"
+              style={{
+                backgroundColor: "#e80029",
+                color: "#fcf7e8",
+              }}
             >
-              {item.name}
+              {link.name}
             </Link>
           ))}
 
-          {/* Redes sociales */}
-          <div className="flex justify-center gap-6 pt-5 border-t border-red-500">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 bg-red-600 rounded-full hover:bg-red-500 transition"
-            >
-              <Facebook className="w-6 h-6" />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 bg-red-600 rounded-full hover:bg-red-500 transition"
-            >
-              <Instagram className="w-6 h-6" />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 bg-red-600 rounded-full hover:bg-red-500 transition"
-            >
-              <Twitter className="w-6 h-6" />
-            </a>
+          <div
+            className="flex justify-center gap-6 pt-5 border-t"
+            style={{ borderColor: "#4e2c1d" }}
+          >
+            {socialLinks.map((social, idx) => (
+              <a
+                key={idx}
+                href={social.url}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 rounded-full transition"
+                style={{ backgroundColor: "#e80029", color: "#fcf7e8" }}
+              >
+                {social.icon}
+              </a>
+            ))}
           </div>
         </div>
       )}

@@ -4,19 +4,23 @@ export default function Footer() {
   return (
     <footer className="w-full bg-red-800 text-white py-10">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-        <div  className="flex items-center flex-col">
+        <div className="flex items-center flex-col">
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img
-              src="/toli-logo.svg"
+              src="/Mascota.svg"
+              alt="toliboy logo"
+              className="h-25 w-auto custom:h-41 transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+
+          <div className="flex items-center gap-3">
+            <img
+              src="/toli-calidad.svg"
               alt="toliboy logo"
               className="h-36 w-auto custom:h-41 transition-transform duration-300 hover:scale-105"
             />
           </div>
-
-          <p className="mt-2 text-sm text-red-200">
-            Tradición artesanal.
-          </p>
         </div>
 
         {/* Links de navegación */}
