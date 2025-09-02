@@ -36,7 +36,7 @@ export default function Contacto() {
                 Mensaje
               </label>
               <textarea
-                rows="4"
+                rows={4}
                 placeholder="Escribe tu mensaje aquí..."
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800"
               ></textarea>
@@ -57,8 +57,9 @@ export default function Contacto() {
             width="100%"
             height="100%"
             style={{ border: 0 }}
-            allowFullScreen=""
+            allowFullScreen={true}
             loading="lazy"
+            title="Ubicación Bogotá Colombia"
             className="w-full h-[400px]"
           ></iframe>
         </div>
