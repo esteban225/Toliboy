@@ -12,7 +12,7 @@ export default function Nosotros() {
       <section
         className="relative h-[220px] md:h-[300px] bg-cover bg-center flex items-center justify-center px-6"
         style={{
-          backgroundImage: "url('/panaderia&pasteleria.jpg')",
+          backgroundImage: "url('/panaderia&pasteleria.avif')",
           backgroundPosition: "59% 47%",
         }}
       >
@@ -35,7 +35,7 @@ export default function Nosotros() {
       {/* Descripción */}
       <section className="bg-red-50 py-16 px-6 md:px-12 container mx-auto grid md:grid-cols-2 gap-12 items-center">
         <motion.img
-          src="/nosotros1.jpg"
+          src="/nosotros1.avif"
           alt="Productos Toliboy"
           className="rounded-2xl shadow-lg object-cover aspect-[16/9] w-full"
           whileHover={{ scale: 1.05 }}
@@ -87,7 +87,7 @@ export default function Nosotros() {
           </p>
         </motion.div>
         <motion.img
-          src="/nosotros2.jpg"
+          src="/nosotros2.avif"
           alt="Historia Toliboy"
           className="rounded-2xl shadow-lg object-cover aspect-[16/9] w-full"
           whileHover={{ scale: 1.05 }}

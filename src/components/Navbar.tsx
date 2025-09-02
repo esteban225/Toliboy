@@ -70,32 +70,51 @@ export default function Navbar() {
 
       {/* Menú móvil (solo <768px) */}
       {isOpen && (
-        <div className="md:hidden bg-red-700 text-white px-6 py-4 space-y-4">
-          <Link to="/" onClick={() => setIsOpen(false)}>
-            Inicio
-          </Link>
-          <Link to="/panaderia" onClick={() => setIsOpen(false)}>
-            Panadería y Pastelería
-          </Link>
-          <Link to="/industrial" onClick={() => setIsOpen(false)}>
-            Línea industrial
-          </Link>
-          <Link to="/nosotros" onClick={() => setIsOpen(false)}>
-            Nosotros
-          </Link>
-          <Link to="/contacto" onClick={() => setIsOpen(false)}>
-            Contacto
-          </Link>
+        <div className="md:hidden bg-red-700 text-white px-6 py-6 space-y-4 rounded-b-2xl shadow-lg">
+          {[
+            { name: "Inicio", path: "/" },
+            { name: "Panadería y Pastelería", path: "/panaderia" },
+            { name: "Línea industrial", path: "/industrial" },
+            { name: "Nosotros", path: "/nosotros" },
+            { name: "Contacto", path: "/contacto" },
+          ].map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={() => setIsOpen(false)}
+              className="block px-4 py-3 bg-red-600 rounded-xl text-center 
+                 font-medium shadow-md transition hover:bg-red-500 
+                 hover:shadow-lg active:scale-95"
+            >
+              {item.name}
+            </Link>
+          ))}
 
-          <div className="flex gap-4 pt-4 border-t border-red-600">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
-              <Facebook className="w-5 h-5" />
+          {/* Redes sociales */}
+          <div className="flex justify-center gap-6 pt-5 border-t border-red-500">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 bg-red-600 rounded-full hover:bg-red-500 transition"
+            >
+              <Facebook className="w-6 h-6" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
-              <Instagram className="w-5 h-5" />
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 bg-red-600 rounded-full hover:bg-red-500 transition"
+            >
+              <Instagram className="w-6 h-6" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer">
-              <Twitter className="w-5 h-5" />
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 bg-red-600 rounded-full hover:bg-red-500 transition"
+            >
+              <Twitter className="w-6 h-6" />
             </a>
           </div>
         </div>
