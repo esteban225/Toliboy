@@ -11,7 +11,7 @@ export default function Home() {
     const ctx = gsap.context(() => {
       gsap.utils.toArray("section h2").forEach((el) => {
         gsap.from(el as gsap.TweenTarget, {
-          scrollTrigger: { trigger: el, start: "top 80%" },
+          scrollTrigger: { trigger: el as gsap.DOMTarget, start: "top 80%" },
           opacity: 0,
           y: 40,
           duration: 1,
@@ -164,7 +164,6 @@ export default function Home() {
         <h2 className="text-2xl md:text-3xl font-bold max-w-2xl mx-auto">
           Más de 25 años ofreciendo calidad y tradición en panadería y pastelería.
         </h2>
-        {/* Enlace corregido para ser un Link en lugar de un button anidado */}
         <Link
           to="/nosotros"
           className="mt-6 inline-block bg-[#002E6D] text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-900 transition"
