@@ -1,24 +1,32 @@
 import "../App.css";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
+import Banner from "../components/BannerScroll";
+
+// import Banner from "/banner.svg"; // 👈 importa tu SVG
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.utils.toArray("section h2").forEach((el) => {
-        gsap.from(el as gsap.TweenTarget, {
-          scrollTrigger: { trigger: el as gsap.DOMTarget, start: "top 80%" },
+      // Animación de cards y secciones
+      gsap.utils.toArray(".anim-card").forEach((card) => {
+        gsap.from(card as gsap.TweenTarget, {
+          scrollTrigger: {
+            trigger: card as gsap.DOMTarget,
+            start: "top 85%",
+          },
           opacity: 0,
-          y: 40,
+          y: 60,
           duration: 1,
           ease: "power2.out",
         });
       });
     });
+
     return () => ctx.revert();
   }, []);
 
@@ -35,17 +43,9 @@ export default function Home() {
 
   return (
     <div className="w-full bg-[#FEF9F2]">
-      {/* HERO */}
-      <section className="w-full flex flex-col items-center text-center py-2">
-        <img
-          src="/banner.avif"
-          alt="Hero Toliboy"
-          className="rounded-2xl shadow-xl w-full md:max-w-7xl px-4 md:px-0"
-        />
-      </section>
-
+      <Banner />
       {/* PRODUCTOS */}
-      <div className="max-w-7xl mx-auto overflow-auto mt-10 py-2 scrollbar-hide">
+      <div className="max-w-7xl mx-auto overflow-auto mt-10 py-2 scroll-auto overflow-hidden">
         <div className="flex gap-4 animate-scroll-x">
           {productos.map((prod) => (
             <div
@@ -80,8 +80,8 @@ export default function Home() {
           Conoce nuestras líneas
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-10">
-          {/* Card Línea de Panadería y Pastelería */}
-          <div className="card-producto relative group overflow-hidden rounded-xl shadow-lg w-full max-w-sm mx-auto">
+          {/* Cada card con animación */}
+          <div className="anim-card card-producto relative group overflow-hidden rounded-xl shadow-lg w-full max-w-sm mx-auto">
             <img
               src="/panaderia&pasteleria.avif"
               alt="Línea de Panadería y Pastelería"
@@ -104,8 +104,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Card: Línea de Congelados */}
-          <div className="card-producto relative group overflow-hidden rounded-xl shadow-lg w-full max-w-sm mx-auto">
+          <div className="anim-card card-producto relative group overflow-hidden rounded-xl shadow-lg w-full max-w-sm mx-auto">
             <img
               src="/panaderia&pasteleria.avif"
               alt="Línea de Congelados"
@@ -128,8 +127,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Card Línea Industrial */}
-          <div className="card-producto relative group overflow-hidden rounded-xl shadow-lg w-full max-w-sm mx-auto">
+          <div className="anim-card card-producto relative group overflow-hidden rounded-xl shadow-lg w-full max-w-sm mx-auto">
             <img
               src="/lineaindustrial.avif"
               alt="Línea Industrial"
@@ -154,15 +152,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 25 AÑOS DE TRADICIÓN */}
-      <section className="w-full bg-[#E30613] py-16 text-center text-white relative">
+      {/* 25 AÑOS */}
+      <section className="anim-card w-full bg-[#E30613] py-16 text-center text-white relative">
         <img
           src="/mascota-toliboy.svg"
           alt="Mascota"
           className="mx-auto w-28 mb-4"
         />
         <h2 className="text-2xl md:text-3xl font-bold max-w-2xl mx-auto">
-          Más de 25 años ofreciendo calidad y tradición en panadería y pastelería.
+          Más de 25 años ofreciendo calidad y tradición en panadería y
+          pastelería.
         </h2>
         <Link
           to="/nosotros"
@@ -173,7 +172,7 @@ export default function Home() {
       </section>
 
       {/* CONTACTO */}
-      <section className="w-full bg-[#FEC601] py-16 text-center">
+      <section className="anim-card w-full bg-[#FEC601] py-16 text-center">
         <img
           src="/contacto-toliboy.svg"
           alt="Contáctanos"

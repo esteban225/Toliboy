@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Home from "./pages/Home";
+// import Banner from "./components/BannerScroll";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
     <>
       <Router>
         <Navbar /> {/* Navbar siempre visible */}
+        {/* <Banner/> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/nosotros" element={<Nosotros />} />

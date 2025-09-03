@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Menu, X } from "lucide-react";
+import { Facebook, Instagram, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,9 +14,8 @@ export default function Navbar() {
   const contactLink = { name: "Contáctanos", path: "/contacto" };
 
   const socialLinks = [
-    { icon: <Facebook />, url: "https://facebook.com" },
-    { icon: <Instagram />, url: "https://instagram.com" },
-    { icon: <Twitter />, url: "https://twitter.com" },
+    { icon: <Facebook />, url: "https://www.facebook.com/toliboy.co" },
+    { icon: <Instagram />, url: "https://www.instagram.com/toliboy.co/" },
   ];
 
   return (
