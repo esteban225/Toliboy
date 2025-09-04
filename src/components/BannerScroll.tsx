@@ -19,7 +19,7 @@ export default function BannerScroll() {
           if (svgEl) {
             const shapesAndImages = gsap.utils.toArray<SVGElement>(
               svgEl.querySelectorAll(
-                "path, rect, circle, ellipse, polygon, polyline, line, image"
+                "path, rect, circle, ellipse, polygon, polyline, line"
               )
             );
 
