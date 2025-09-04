@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Define la interfaz para el tipo de datos de las tarjetas
 interface Card {
   img: string;
   title: string;
@@ -13,23 +12,22 @@ interface Card {
 }
 
 export default function ProductsLine() {
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  // 👇 Aquí corregimos el tipo: son <a>, por lo tanto HTMLAnchorElement
+  const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
-    // Si no hay tarjetas, sal de la función.
     if (!cardsRef.current.length) return;
 
     cardsRef.current.forEach((card) => {
-      // Asegura que el elemento exista antes de animarlo.
       if (card) {
         gsap.fromTo(
           card,
-          { opacity: 0, x: -100 }, // Estado inicial de la animación (movimiento horizontal)
+          { opacity: 0, x: -100 },
           {
             opacity: 1,
             x: 0,
             duration: 1,
-            delay: 0.2, // Aplica un pequeño retraso a cada tarjeta para un efecto escalonado
+            delay: 0.2,
             scrollTrigger: {
               trigger: card,
               start: "top 80%",
@@ -40,7 +38,6 @@ export default function ProductsLine() {
       }
     });
 
-    // Limpia las referencias al desmontar el componente.
     return () => {
       cardsRef.current = [];
     };
@@ -73,7 +70,10 @@ export default function ProductsLine() {
         <a
           key={i}
           href={card.link}
-          ref={(el) => (cardsRef.current[i] = el)}
+          // 👇 ahora ref no devuelve nada, solo asigna
+          ref={(el) => {
+            cardsRef.current[i] = el;
+          }}
           className="anim-card flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm w-full max-w-sm sm:max-w-xl md:flex-row md:max-w-4xl hover:bg-gray-100 transition duration-300"
         >
           <img
