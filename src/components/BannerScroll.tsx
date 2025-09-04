@@ -17,51 +17,48 @@ export default function BannerScroll() {
         "(min-width: 769px)": () => {
           const svgEl = scope.current?.querySelector("svg");
           if (svgEl) {
-            const shapesAndImages = gsap.utils.toArray<SVGElement>(
+            // 🔹 Solo shapes, excluimos <image>
+            const shapesOnly = gsap.utils.toArray<SVGElement>(
               svgEl.querySelectorAll(
                 "path, rect, circle, ellipse, polygon, polyline, line"
               )
             );
 
             // Pre-optimización de render
-            gsap.set(shapesAndImages, { willChange: "transform, opacity" });
+            gsap.set(shapesOnly, { willChange: "transform, opacity" });
 
             const entryTl = gsap.timeline({
-              delay: 0.3, // 🔹 reducimos delay
+              delay: 0.3,
               defaults: { duration: 1.1, ease: "power2.out" },
             });
 
-            shapesAndImages.forEach((element) => {
-              if (element.tagName === "image") {
-                gsap.set(element, { opacity: 0 });
-                entryTl.to(element, { opacity: 1 }, "<+=0.04");
-              } else {
-                let length = 100;
-                if (
-                  "getTotalLength" in element &&
-                  typeof (element as SVGGeometryElement).getTotalLength ===
-                    "function"
-                ) {
-                  length = (element as SVGGeometryElement).getTotalLength();
-                }
-
-                gsap.set(element, {
-                  strokeDasharray: length,
-                  strokeDashoffset: length,
-                  opacity: 0,
-                  scale: 0.9,
-                  transformOrigin: "center center",
-                });
-
-                entryTl.to(
-                  element,
-                  { strokeDashoffset: 0, opacity: 1, scale: 1 },
-                  "<+=0.04"
-                );
+            // 🎨 Animación de entrada solo para shapes
+            shapesOnly.forEach((element) => {
+              let length = 100;
+              if (
+                "getTotalLength" in element &&
+                typeof (element as SVGGeometryElement).getTotalLength ===
+                  "function"
+              ) {
+                length = (element as SVGGeometryElement).getTotalLength();
               }
+
+              gsap.set(element, {
+                strokeDasharray: length,
+                strokeDashoffset: length,
+                opacity: 0,
+                scale: 0.9,
+                transformOrigin: "center center",
+              });
+
+              entryTl.to(
+                element,
+                { strokeDashoffset: 0, opacity: 1, scale: 1 },
+                "<+=0.04"
+              );
             });
 
-            // 🔹 flotante
+            // ✨ Flotante
             entryTl.to(svgEl, {
               y: -5,
               duration: 2.5,
@@ -70,13 +67,7 @@ export default function BannerScroll() {
               ease: "sine.inOut",
             });
 
-            // 🔹 scroll
-            const otherElements = gsap.utils.toArray<SVGElement>(
-              svgEl.querySelectorAll(
-                "path, rect, circle, ellipse, polygon, polyline, line, image"
-              )
-            );
-
+            // 📌 Scroll solo shapes
             gsap
               .timeline({
                 scrollTrigger: {
@@ -89,38 +80,14 @@ export default function BannerScroll() {
                   invalidateOnRefresh: true,
                 },
               })
-              .to(otherElements, {
+              .to(shapesOnly, {
                 x: (i) => (i % 2 === 0 ? 1 : -1) * (150 + i * 50),
                 y: (i) => -250 - i * 50,
                 scale: 0.5,
                 opacity: 0,
                 ease: "power1.inOut",
-                stagger: { each: 0, from: "random" }, // 🔹 ejecución más fluida
+                stagger: { each: 0, from: "random" },
               });
-          }
-
-          // 🔹 imágenes escritorio
-          if (imgContainerRef.current) {
-            const imgElements = gsap.utils.toArray<HTMLImageElement>(
-              imgContainerRef.current.querySelectorAll("img")
-            );
-            gsap.fromTo(
-              imgElements,
-              { y: 80, opacity: 0, willChange: "transform, opacity" },
-              {
-                y: 0,
-                opacity: 1,
-                stagger: 0.4,
-                ease: "power1.out",
-                scrollTrigger: {
-                  trigger: imgContainerRef.current,
-                  start: "top bottom",
-                  end: "top center",
-                  scrub: true,
-                  invalidateOnRefresh: true,
-                },
-              }
-            );
           }
         },
 
