@@ -1,10 +1,22 @@
-import React from "react";
 import { motion } from "framer-motion";
 import "../css/Navbar.css"; // Asegúrate de que esta ruta sea correcta
-import '../css/ProductCard.css';
+import "../css/ProductCard.css";
 
-// Componente ProductoCard (incorporado aquí para tener todo en un solo archivo)
-const ProductoCard = ({ nombreProducto, descripcion, precio, imagen }) => {
+// Definimos el tipo para las props del componente
+interface ProductoCardProps {
+  nombreProducto: string;
+  descripcion: string;
+  precio?: string;
+  imagen: string;
+}
+
+// Componente ProductoCard
+const ProductoCard: React.FC<ProductoCardProps> = ({
+  nombreProducto,
+  descripcion,
+  precio,
+  imagen,
+}) => {
   return (
     <div className="card">
       <div className="card-inner">
@@ -14,59 +26,45 @@ const ProductoCard = ({ nombreProducto, descripcion, precio, imagen }) => {
         </div>
         <div className="card-back">
           <div className="descripcion">{descripcion}</div>
-          <div className="precio">
-            <strong>Precio:</strong> {precio}
-          </div>
+          {precio && (
+            <div className="precio">
+              <strong>Precio:</strong> {precio}
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 };
 
+// Definimos el tipo de producto en el catálogo
+interface Product {
+  name: string;
+  weight: string;
+  image: string;
+}
+
 // Array de productos
-const products = [
-  {
-    name: "Brazo de Reina",
-    weight: "Peso unitario 85g",
-    image: "/p6.avif",
-  },
-  {
-    name: "Tajadas de sabores",
-    weight: "Peso unitario 65g",
-    image: "/p5.avif",
-  },
-  {
-    name: "Yoyos",
-    weight: "Presentaciones de 300g y 500g",
-    image: "/p8.avif",
-  },
+const products: Product[] = [
+  { name: "Brazo de Reina", weight: "Peso unitario 85g", image: "/p6.avif" },
+  { name: "Tajadas de sabores", weight: "Peso unitario 65g", image: "/p5.avif" },
+  { name: "Yoyos", weight: "Presentaciones de 300g y 500g", image: "/p8.avif" },
   { name: "Ponqué Junior", weight: "Peso 230g", image: "/p3.avif" },
   { name: "Repolla", weight: "Peso unitario 65g", image: "/p4.avif" },
-  {
-    name: "Ponqué Lonchero",
-    weight: "Peso unitario 80g",
-    image: "/p2.avif",
-  },
+  { name: "Ponqué Lonchero", weight: "Peso unitario 80g", image: "/p2.avif" },
   { name: "Chocorico", weight: "Peso unitario 85g", image: "/p7.avif" },
   { name: "Brownie", weight: "Peso unitario 85g", image: "/p1.avif" },
-  {
-    name: "Pan tajado integral",
-    weight: "Peso unitario 450g",
-    image: "/p9.avif",
-  },
+  { name: "Pan tajado integral", weight: "Peso unitario 450g", image: "/p9.avif" },
 ];
 
 // Componente principal del catálogo
 export default function Catalogo() {
-  // Variantes para la animación de las tarjetas
   const cardVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
       scale: 1,
-      transition: {
-        duration: 0.5,
-      },
+      transition: { duration: 0.5 },
     },
   };
 
@@ -74,17 +72,12 @@ export default function Catalogo() {
     <section className="relative bg-red-50 text-red-900 py-20 px-6">
       {/* Encabezado */}
       <div className="relative w-full h-64 mb-12">
-        {/* Imagen de fondo */}
         <img
           src="/panaderia&pasteleria.avif"
           alt="Panadería"
           className="absolute inset-0 w-full h-full object-cover"
         />
-
-        {/* Overlay para oscurecer la imagen */}
         <div className="absolute inset-0 bg-black/40"></div>
-
-        {/* Texto centrado */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
             Panadería y Pastelería
@@ -95,7 +88,7 @@ export default function Catalogo() {
         </div>
       </div>
 
-      {/* Render each product using ProductoCard */}
+      {/* Render de productos */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((product, idx) => (
           <motion.div
