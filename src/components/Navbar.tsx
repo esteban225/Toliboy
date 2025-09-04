@@ -50,7 +50,7 @@ export default function Navbar() {
           <img
             src="/Logo-secundario.svg"
             alt="toliboy logo"
-            className="h-18 w-auto transition-transform duration-300 hover:scale-105"
+            className="h-13 w-auto"
           />
         </div>
         {/* Botón de Contacto - Queda a la derecha en md y último en sm */}{" "}

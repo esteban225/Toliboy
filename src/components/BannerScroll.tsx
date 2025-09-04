@@ -12,41 +12,37 @@ export default function BannerScroll() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // --- Animaciones según pantalla ---
       ScrollTrigger.matchMedia({
         // 📌 Escritorio
         "(min-width: 769px)": () => {
           const svgEl = scope.current?.querySelector("svg");
           if (svgEl) {
-            // 🔹 Animación de entrada
-            const shapesAndImages = svgEl.querySelectorAll<SVGElement>(
-              "path, rect, circle, ellipse, polygon, polyline, line, image"
+            const shapesAndImages = gsap.utils.toArray<SVGElement>(
+              svgEl.querySelectorAll(
+                "path, rect, circle, ellipse, polygon, polyline, line, image"
+              )
             );
 
+            // Pre-optimización de render
+            gsap.set(shapesAndImages, { willChange: "transform, opacity" });
+
             const entryTl = gsap.timeline({
-              delay: 0.5,
-              defaults: { duration: 1.2, ease: "power2.out" },
+              delay: 0.3, // 🔹 reducimos delay
+              defaults: { duration: 1.1, ease: "power2.out" },
             });
 
             shapesAndImages.forEach((element) => {
               if (element.tagName === "image") {
                 gsap.set(element, { opacity: 0 });
-                entryTl.to(element, { opacity: 1 }, "<+=0.05");
+                entryTl.to(element, { opacity: 1 }, "<+=0.04");
               } else {
                 let length = 100;
-                try {
-                  if (
-                    "getTotalLength" in element &&
-                    typeof (element as SVGGeometryElement).getTotalLength ===
-                      "function"
-                  ) {
-                    length = (element as SVGGeometryElement).getTotalLength();
-                  }
-                } catch (e) {
-                  console.warn(
-                    "Elemento no soporta getTotalLength:",
-                    element.tagName
-                  );
+                if (
+                  "getTotalLength" in element &&
+                  typeof (element as SVGGeometryElement).getTotalLength ===
+                    "function"
+                ) {
+                  length = (element as SVGGeometryElement).getTotalLength();
                 }
 
                 gsap.set(element, {
@@ -56,15 +52,16 @@ export default function BannerScroll() {
                   scale: 0.9,
                   transformOrigin: "center center",
                 });
+
                 entryTl.to(
                   element,
                   { strokeDashoffset: 0, opacity: 1, scale: 1 },
-                  "<+=0.05"
+                  "<+=0.04"
                 );
               }
             });
 
-            // 🔹 Animación flotante
+            // 🔹 flotante
             entryTl.to(svgEl, {
               y: -5,
               duration: 2.5,
@@ -73,55 +70,48 @@ export default function BannerScroll() {
               ease: "sine.inOut",
             });
 
-            // 🔹 Animación de scroll
-            const scrollTl = gsap.timeline({
-              scrollTrigger: {
-                trigger: scope.current,
-                start: "top top",
-                end: "bottom top",
-                scrub: true,
-                pin: true,
-                pinSpacing: false,
-                invalidateOnRefresh: true,
-              },
-            });
-
+            // 🔹 scroll
             const otherElements = gsap.utils.toArray<SVGElement>(
               svgEl.querySelectorAll(
                 "path, rect, circle, ellipse, polygon, polyline, line, image"
               )
             );
 
-            otherElements.forEach((element, index) => {
-              const xOffset = (index % 2 === 0 ? 1 : -1) * (150 + index * 50);
-              const yOffset = -250 - index * 50;
-              scrollTl.to(
-                element,
-                {
-                  x: xOffset,
-                  y: yOffset,
-                  scale: 0.5,
-                  opacity: 0,
-                  ease: "power1.inOut",
+            gsap
+              .timeline({
+                scrollTrigger: {
+                  trigger: scope.current,
+                  start: "top top",
+                  end: "bottom top",
+                  scrub: true,
+                  pin: true,
+                  pinSpacing: false,
+                  invalidateOnRefresh: true,
                 },
-                0
-              );
-            });
+              })
+              .to(otherElements, {
+                x: (i) => (i % 2 === 0 ? 1 : -1) * (150 + i * 50),
+                y: (i) => -250 - i * 50,
+                scale: 0.5,
+                opacity: 0,
+                ease: "power1.inOut",
+                stagger: { each: 0, from: "random" }, // 🔹 ejecución más fluida
+              });
           }
 
-          // 🔹 Animación imágenes en escritorio
+          // 🔹 imágenes escritorio
           if (imgContainerRef.current) {
             const imgElements = gsap.utils.toArray<HTMLImageElement>(
               imgContainerRef.current.querySelectorAll("img")
             );
             gsap.fromTo(
               imgElements,
-              { y: 100, opacity: 0 },
+              { y: 80, opacity: 0, willChange: "transform, opacity" },
               {
                 y: 0,
                 opacity: 1,
-                stagger: 0.5,
-                ease: "power1.inOut",
+                stagger: 0.4,
+                ease: "power1.out",
                 scrollTrigger: {
                   trigger: imgContainerRef.current,
                   start: "top bottom",
@@ -137,16 +127,17 @@ export default function BannerScroll() {
         // 📌 Móvil
         "(max-width: 768px)": () => {
           if (mobileContainerRef.current) {
-            const elementsToAnimate = gsap.utils.toArray(
+            const elementsToAnimate = gsap.utils.toArray<HTMLElement>(
               mobileContainerRef.current.querySelectorAll("img, h2, p, a")
             );
 
             gsap.from(elementsToAnimate, {
               opacity: 0,
-              y: 50,
-              stagger: 0.2,
+              y: 40,
               duration: 0.5,
+              stagger: 0.15,
               ease: "power2.out",
+              willChange: "transform, opacity",
               scrollTrigger: {
                 trigger: mobileContainerRef.current,
                 start: "top bottom",
@@ -165,13 +156,15 @@ export default function BannerScroll() {
   return (
     <>
       <section className="h-screen flex items-center justify-center bg-transparent overflow-hidden">
+        {/* 👇 Solo escritorio */}
         <div
           ref={scope}
-          className="w-full h-full flex items-center justify-center"
+          className="hidden md:flex w-full h-full items-center justify-center"
         >
           <BannerSvg className="w-full h-full object-cover" />
         </div>
 
+        {/* 👇 Solo móvil */}
         <div
           ref={mobileContainerRef}
           className="md:hidden flex flex-col items-center justify-center h-screen w-full text-center px-6 bg-gradient-to-b from-[#FEF9F2] to-white"
@@ -186,6 +179,7 @@ export default function BannerScroll() {
             src="/toli-calidad.svg"
             alt="ilustración calidad"
             className="max-w-full h-auto max-h-[180px] object-contain mt-8"
+            loading="lazy"
           />
         </div>
       </section>
@@ -199,6 +193,7 @@ export default function BannerScroll() {
             src="/Mascota.svg"
             alt="toliboy logo"
             className="h-96 w-auto custom:h-41"
+            loading="lazy"
           />
         </div>
         <div className="flex items-center gap-4">
@@ -206,6 +201,7 @@ export default function BannerScroll() {
             src="/toli-calidad.svg"
             alt="toliboy calidad"
             className="h-36 w-auto custom:h-41"
+            loading="lazy"
           />
         </div>
       </div>

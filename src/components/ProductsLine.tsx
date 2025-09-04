@@ -1,9 +1,3 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 interface Card {
   img: string;
   title: string;
@@ -12,37 +6,6 @@ interface Card {
 }
 
 export default function ProductsLine() {
-  // 👇 Aquí corregimos el tipo: son <a>, por lo tanto HTMLAnchorElement
-  const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
-
-  useEffect(() => {
-    if (!cardsRef.current.length) return;
-
-    cardsRef.current.forEach((card) => {
-      if (card) {
-        gsap.fromTo(
-          card,
-          { opacity: 0, x: -100 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 1,
-            delay: 0.2,
-            scrollTrigger: {
-              trigger: card,
-              start: "top 80%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      }
-    });
-
-    return () => {
-      cardsRef.current = [];
-    };
-  }, []);
-
   const cards: Card[] = [
     {
       img: "/panaderia&pasteleria.avif",
@@ -70,11 +33,9 @@ export default function ProductsLine() {
         <a
           key={i}
           href={card.link}
-          // 👇 ahora ref no devuelve nada, solo asigna
-          ref={(el) => {
-            cardsRef.current[i] = el;
-          }}
-          className="anim-card flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm w-full max-w-sm sm:max-w-xl md:flex-row md:max-w-4xl hover:bg-gray-100 transition duration-300"
+          className="anim-card flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm w-full max-w-sm sm:max-w-xl md:flex-row md:max-w-4xl 
+          transform transition-all duration-700 ease-out hover:scale-105 hover:shadow-xl
+          opacity-0 animate-fadeInUp"
         >
           <img
             className="object-cover w-full h-64 rounded-t-lg md:h-64 md:w-80 md:rounded-none md:rounded-l-lg"
