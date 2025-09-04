@@ -1,5 +1,29 @@
+import React from "react";
 import { motion } from "framer-motion";
+import "../css/Navbar.css"; // Asegúrate de que esta ruta sea correcta
+import '../css/ProductCard.css';
 
+// Componente ProductoCard (incorporado aquí para tener todo en un solo archivo)
+const ProductoCard = ({ nombreProducto, descripcion, precio, imagen }) => {
+  return (
+    <div className="card">
+      <div className="card-inner">
+        <div className="card-front">
+          <img src={imagen} alt={`Imagen de ${nombreProducto}`} />
+          <div className="nombre-producto">{nombreProducto}</div>
+        </div>
+        <div className="card-back">
+          <div className="descripcion">{descripcion}</div>
+          <div className="precio">
+            <strong>Precio:</strong> {precio}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Array de productos
 const products = [
   {
     name: "Brazo de Reina",
@@ -32,7 +56,20 @@ const products = [
   },
 ];
 
+// Componente principal del catálogo
 export default function Catalogo() {
+  // Variantes para la animación de las tarjetas
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <section className="relative bg-red-50 text-red-900 py-20 px-6">
       {/* Encabezado */}
@@ -58,34 +95,22 @@ export default function Catalogo() {
         </div>
       </div>
 
-      {/* Grid de productos */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {products.map((product, index) => (
+      {/* Render each product using ProductoCard */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {products.map((product, idx) => (
           <motion.div
-            key={index}
-            className="relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition group"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
+            key={idx}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
           >
-            {/* Imagen */}
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+            <ProductoCard
+              nombreProducto={product.name}
+              descripcion={product.weight}
+              precio={""}
+              imagen={product.image}
             />
-
-            {/* Info */}
-            <div className="p-6 text-center">
-              <h3 className="text-xl font-semibold text-red-800">
-                {product.name}
-              </h3>
-              <p className="mt-2 text-sm text-red-700">{product.weight}</p>
-              <button className="mt-4 px-5 py-2 bg-red-500 text-white text-sm rounded-full font-medium hover:bg-red-600 transition">
-                Ver más
-              </button>
-            </div>
           </motion.div>
         ))}
       </div>

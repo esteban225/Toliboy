@@ -24,26 +24,15 @@ gsap.registerPlugin(ScrollTrigger);
 function MainApp() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
 
-      // 👇 Mostrar SweetAlert solo en Home
-      if (location.pathname === "/nosotros") {
+      if (location.pathname === "/contacto") {
         Swal.fire({
-          title: "¿Quieres ser parte de nuestro equipo?",
-          text: "Únete a nosotros y crezcamos juntos 💼✨",
-          icon: "question",
-          showCancelButton: true,
-          confirmButtonText: "¡Sí quiero!",
-          cancelButtonText: "No, gracias",
-          confirmButtonColor: "#16a34a", // verde
-          cancelButtonColor: "#6b7280", // gris
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = "/contacto"; // Redirige a contacto
-          }
+          title: "¿Quieres unirte a nuestro equipo?",
+          text: "Crece con nosotros. ¡Tu talento es lo que buscamos!, envianos un correo con tu informacion de contacto y tu CV a contacto@toliboy.com" ,
+          cancelButtonText: "OK",
         });
       }
     }, 1500);
