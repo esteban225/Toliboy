@@ -1,15 +1,76 @@
 @import "tailwindcss";
+
 @keyframes scroll-x {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
 
+
+/* Ocultar scrollbar horizontal */
 .animate-scroll-x {
+  overflow-x: hidden;
+  /* evita que se muestre */
   display: flex;
-  width: max-content;
-  animation: scroll-x 20s linear infinite;
+  gap: 1.5rem;
+  animation: scroll-x 30s linear infinite;
+  /* animación automática */
+}
+
+
+/* Ocultar barra de scroll en navegadores */
+.animate-scroll-x::-webkit-scrollbar {
+  display: none;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 85px;
+  height: 85px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px rgba(37, 211, 102, 0.7);
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 1.5s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.2) rotate(10deg);
+  box-shadow: 0px 0px 25px rgba(37, 211, 102, 0.9),
+    0px 0px 50px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+  filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.4));
+}
+
+/* ✨ Animación de pulso */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.6);
+  }
+
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.9);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.6);
+  }
 }
