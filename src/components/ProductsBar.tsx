@@ -2,18 +2,8 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import Atropos from "atropos/react";
 import "atropos/atropos.css";
-import { Link } from "react-router-dom";
 
 export default function ProductsBar() {
-  // Paleta de colores extraída de la imagen
-  const colorPalette = {
-    red: "#e80029",
-    blue: "#134289",
-    brown: "#4e2c1d",
-    yellow: "#ffc62d",
-    cream: "#fcf7e8",
-  };
-
   const productos = [
     {
       img: "pasteleria/ps1.avif",
