@@ -5,7 +5,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import Banner from "../components/BannerScroll";
 import ProductsBar from "../components/ProductsBar";
-import ProductsLine from "../components/ProductsLine";
+import RichTextSection from "../components/RichTextSection";
+import Testimonials from "../components/Testimonials ";
+import { ArrowRight } from "lucide-react";
 
 // import Banner from "/banner.svg"; // 👈 importa tu SVG
 
@@ -37,18 +39,30 @@ export default function Home() {
       <Banner />
       {/* PRODUCTOS */}
       <div className="w-full py-16 text-center">
-        <div className="bg-[#002E6D] text-white text-4xl font-bold py-15">
-          Conoce nuestros productos
-        </div>
+        <RichTextSection />
+        <br />
         <ProductsBar />
+        <br />
+        <br />
+        <Link
+          to="/catalogo"
+          className="group inline-flex items-center gap-2 mt-3 px-6 py-3 rounded-xl 
+                 bg-red-600 text-white font-semibold 
+                 transition-all duration-300 ease-out 
+                 hover:bg-blue-600 hover:shadow-lg hover:-translate-y-1 active:translate-y-0 shadow-[4px_4px_0_0_#1e40af]"
+        >
+          Ver más
+          <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+        </Link>
       </div>
 
       {/* CONOCE NUESTRAS LÍNEAS */}
-      <section className="w-full py-16 text-center">
-        <div className="bg-[#002E6D] text-white text-4xl font-bold py-15">
+      <section className="w-full py-16 text-center ">
+        <div className="bg-[#002E6D] text-white text-2xl md:text-3xl  font-bold py-15 rounded-full">
           Nuestras Líneas de Productos
         </div>
-        <ProductsLine/>
+        <Testimonials />
+        {/* <ProductsLine/> */}
       </section>
 
       {/* 25 AÑOS */}

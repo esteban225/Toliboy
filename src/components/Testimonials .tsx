@@ -9,8 +9,8 @@ const productLines = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1542838334-a3f2955f2b84?q=80&w=1974&auto=format&fit=crop",
-    icon: "https://cdn-icons-png.flaticon.com/512/3233/3233887.png",
+      "/panaderia&pasteleria.webp",
+    icon: "https://img.icons8.com/?size=100&id=118867&format=png&color=000000",
     title: "Panadería",
     description: "Ingredientes de alta calidad para panes artesanales y especialidades.",
     link: "/panaderia",
@@ -18,8 +18,8 @@ const productLines = [
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1579766904128-d897f1f44053?q=80&w=1974&auto=format&fit=crop",
-    icon: "https://cdn-icons-png.flaticon.com/512/5753/5753068.png",
+      "/panaderia&pasteleria.webp",
+    icon: "https://img.icons8.com/?size=100&id=kL10iTg3RGya&format=png&color=000000",
     title: "Pastelería",
     description: "Soluciones innovadoras para crear postres y repostería de ensueño.",
     link: "/pasteleria",
@@ -27,8 +27,8 @@ const productLines = [
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1563273183-f2229509204c?q=80&w=2070&auto=format&fit=crop",
-    icon: "https://cdn-icons-png.flaticon.com/512/3233/3233830.png",
+      "/panaderia&pasteleria.webp",
+    icon: "https://img.icons8.com/?size=100&id=htNEv6WH8tvr&format=png&color=000000",
     title: "Industrial",
     description: "Productos a gran escala para la optimización de procesos de producción.",
     link: "/industrial",
@@ -64,10 +64,6 @@ export default function ProductLines() {
   return (
     <section className="w-full py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 text-gray-900 tracking-tight">
-          Nuestras Líneas de Productos
-        </h2>
-
         <div className="grid md:grid-cols-3 gap-10">
           {productLines.map((product, i) => (
             <Link

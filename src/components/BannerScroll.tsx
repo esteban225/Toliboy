@@ -20,7 +20,7 @@ export default function BannerScroll() {
             // 🔹 Solo shapes, excluimos <image>
             const shapesOnly = gsap.utils.toArray<SVGElement>(
               svgEl.querySelectorAll(
-                "path, rect, circle, ellipse, polygon, polyline, line"
+                "path, rect, circle, ellipse, polygon, polyline, line, img"
               )
             );
 
@@ -32,7 +32,7 @@ export default function BannerScroll() {
               defaults: { duration: 1.1, ease: "power2.out" },
             });
 
-            // 🎨 Animación de entrada solo para shapes
+            // 🎨 Animación de entrada shapes
             shapesOnly.forEach((element) => {
               let length = 100;
               if (
@@ -46,19 +46,19 @@ export default function BannerScroll() {
               gsap.set(element, {
                 strokeDasharray: length,
                 strokeDashoffset: length,
-                opacity: 0,
+                opacity: 0, // 👈 inicia invisible
                 scale: 0.9,
                 transformOrigin: "center center",
               });
 
               entryTl.to(
                 element,
-                { strokeDashoffset: 0, opacity: 1, scale: 1 },
+                { strokeDashoffset: 0, opacity: 1, scale: 1 }, // 👈 fade in
                 "<+=0.04"
               );
             });
 
-            // ✨ Flotante
+            // ✨ Flotante infinito
             entryTl.to(svgEl, {
               y: -5,
               duration: 2.5,
@@ -67,27 +67,37 @@ export default function BannerScroll() {
               ease: "sine.inOut",
             });
 
-            // 📌 Scroll solo shapes
-            gsap
-              .timeline({
-                scrollTrigger: {
-                  trigger: scope.current,
-                  start: "top top",
-                  end: "bottom top",
-                  scrub: true,
-                  pin: true,
-                  pinSpacing: false,
-                  invalidateOnRefresh: true,
-                },
-              })
-              .to(shapesOnly, {
-                x: (i) => (i % 2 === 0 ? 1 : -1) * (150 + i * 50),
-                y: (i) => -250 - i * 50,
-                scale: 0.5,
+            // 📌 Scroll shapes → movimiento + fade out
+            const scrollTl = gsap.timeline({
+              scrollTrigger: {
+                trigger: scope.current,
+                start: "top top",
+                end: "bottom top",
+                scrub: true,
+                pin: true,
+                pinSpacing: false,
+                invalidateOnRefresh: true,
+              },
+            });
+
+            // 🚀 Movimiento + scale
+            scrollTl.to(shapesOnly, {
+              x: (i) => (i % 2 === 0 ? 1 : -1) * (150 + i * 50),
+              y: (i) => -250 - i * 50,
+              scale: 0.5,
+              ease: "power1.inOut",
+              stagger: { each: 0, from: "random" },
+            });
+
+            // 🚀 Fade out progresivo
+            scrollTl.to(
+              shapesOnly,
+              {
                 opacity: 0,
-                ease: "power1.inOut",
-                stagger: { each: 0, from: "random" },
-              });
+                ease: "power1.out",
+              },
+              "<" // 👈 ocurre en paralelo con el movimiento
+            );
           }
         },
 
@@ -101,7 +111,7 @@ export default function BannerScroll() {
             gsap.from(elementsToAnimate, {
               opacity: 0,
               y: 40,
-              duration: 0.5,
+              duration: 0.7,
               stagger: 0.15,
               ease: "power2.out",
               willChange: "transform, opacity",
@@ -153,21 +163,13 @@ export default function BannerScroll() {
 
       <div
         ref={imgContainerRef}
-        className="hidden md:flex h-screen bg-[#FEF9F2] text-white items-center justify-center"
+        className="hidden md:flex h-full bg-[#FEF9F2] text-white items-center justify-center"
       >
         <div className="flex items-center gap-4">
           <img
             src="/Mascota.svg"
             alt="toliboy logo"
             className="h-96 w-auto custom:h-41"
-            loading="lazy"
-          />
-        </div>
-        <div className="flex items-center gap-4">
-          <img
-            src="/toli-calidad.svg"
-            alt="toliboy calidad"
-            className="h-36 w-auto custom:h-41"
             loading="lazy"
           />
         </div>

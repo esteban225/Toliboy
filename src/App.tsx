@@ -8,8 +8,6 @@ import {
 } from "react-router-dom";
 import Swal from "sweetalert2";
 import Nosotros from "./pages/Nosotros";
-import Panaderia from "./pages/Panaderia";
-import Industrial from "./pages/Industrial";
 import Contacto from "./pages/Contacto";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -18,6 +16,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Home from "./pages/Home";
 import WhatsAppButton from "./components/WhatsAppButton";
 import ScrollToTop from "./components/ScrollToTop";
+import Catalogo from "./pages/Catalogo";
+import ProductsIndustrial from "./components/Industrial";
+import ProductPanaderia from "./components/Panaderia";
+import ProductPasteleria from "./components/Pasteleria";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +33,7 @@ function MainApp() {
       if (location.pathname === "/contacto") {
         Swal.fire({
           title: "¿Quieres unirte a nuestro equipo?",
-          text: "Crece con nosotros. ¡Tu talento es lo que buscamos!, envianos un correo con tu informacion de contacto y tu CV a contacto@toliboy.com" ,
+          text: "Crece con nosotros. ¡Tu talento es lo que buscamos!, envianos un correo con tu informacion de contacto y tu CV a contacto@toliboy.com",
           cancelButtonText: "OK",
         });
       }
@@ -56,8 +58,13 @@ function MainApp() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/nosotros" element={<Nosotros />} />
-        <Route path="/panaderia" element={<Panaderia />} />
-        <Route path="/industrial" element={<Industrial />} />
+        {/* Rutas anidadas del catálogo */}
+        <Route path="/catalogo" element={<Catalogo />}>
+          <Route index element={<ProductPasteleria />} />
+          <Route path="pasteleria" element={<ProductPasteleria />} />
+          <Route path="panaderia" element={<ProductPanaderia />} />
+          <Route path="industrial" element={<ProductsIndustrial />} />
+        </Route>
         <Route path="/contacto" element={<Contacto />} />
       </Routes>
       <Footer />
