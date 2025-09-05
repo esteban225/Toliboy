@@ -37,7 +37,7 @@ export default function Home() {
       <Banner />
       {/* PRODUCTOS */}
       <div className="w-full py-16 text-center">
-        <div className="bg-[#002E6D] text-white text-3xl font-bold py-15">
+        <div className="bg-[#002E6D] text-white text-4xl font-bold py-15">
           Conoce nuestros productos
         </div>
         <ProductsBar />
@@ -45,8 +45,8 @@ export default function Home() {
 
       {/* CONOCE NUESTRAS LÍNEAS */}
       <section className="w-full py-16 text-center">
-        <div className="bg-[#002E6D] text-white text-3xl font-bold py-15">
-          Conoce nuestras líneas
+        <div className="bg-[#002E6D] text-white text-4xl font-bold py-15">
+          Nuestras Líneas de Productos
         </div>
         <ProductsLine/>
       </section>

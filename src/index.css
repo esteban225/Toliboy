@@ -1,7 +1,12 @@
 @import "tailwindcss";
 
-body {
-  font-family: 'Bricolage Grotesque', sans-serif;
+* {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "wdth"87.9;
 }
 
 @keyframes fadeInUp {

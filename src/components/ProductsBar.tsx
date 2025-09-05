@@ -3,14 +3,14 @@ import gsap from "gsap";
 
 export default function ProductsBar() {
   const productos = [
-    { img: "ps1.avif", alt: "Brazo de  reina" },
-    { img: "ps2.avif", alt: "Choco Rico" },
-    { img: "ps4.avif", alt: "Ponqué junior" },
-    { img: "ps7.avif", alt: "Mantecada" },
-    { img: "ps8.avif", alt: "Choco Rico" },
-    { img: "ps9.avif", alt: "Repolla" },
-    { img: "ps10.avif", alt: "Tajadas de sabores" },
-    { img: "ps12.avif", alt: "Yoyos" },
+    { img: "pasteleria/ps1.avif", alt: "Brazo de  reina" },
+    { img: "pasteleria/ps2.avif", alt: "Choco Rico" },
+    { img: "pasteleria/ps4.avif", alt: "Ponqué junior" },
+    { img: "pasteleria/ps7.avif", alt: "Mantecada" },
+    { img: "pasteleria/ps8.avif", alt: "Choco Rico" },
+    { img: "pasteleria/ps9.avif", alt: "Repolla" },
+    { img: "pasteleria/ps10.avif", alt: "Tajadas de sabores" },
+    { img: "pasteleria/ps12.avif", alt: "Yoyos" },
   ];
 
   useEffect(() => {
