@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface Card {
   img: string;
   title: string;
@@ -35,9 +37,9 @@ export default function ProductsLine() {
       
       <div className="flex flex-col gap-16 w-full">
         {cards.map((card, i) => (
-          <a
+          <Link
             key={i}
-            href={card.link}
+            to={card.link}
             className={`group flex flex-col md:flex-row items-center bg-white rounded-2xl w-full 
             transform transition-all duration-500 ease-out hover:shadow-2xl opacity-0 animate-fadeInUp
             ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
@@ -66,7 +68,7 @@ export default function ProductsLine() {
                 </svg>
               </span>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </div>
