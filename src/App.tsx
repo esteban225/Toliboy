@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -24,7 +24,6 @@ import ProductPasteleria from "./components/Pasteleria";
 gsap.registerPlugin(ScrollTrigger);
 
 function MainApp() {
-  const [loading, setLoading] = useState(true);
   const location = useLocation();
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -33,7 +32,7 @@ function MainApp() {
       if (location.pathname === "/contacto") {
         Swal.fire({
           title: "¿Quieres unirte a nuestro equipo?",
-          text: "Crece con nosotros. ¡Tu talento es lo que buscamos!, envianos un correo con tu informacion de contacto y tu CV a contacto@toliboy.com",
+          text: "Crece con nosotros. ¡Tu talento es lo que buscamos!, envianos un correo con tu informacion de contacto y tu CV a contacto@toliboy.com" ,
           cancelButtonText: "OK",
         });
       }
@@ -41,14 +40,6 @@ function MainApp() {
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen bg-gray-900">
-        <div className="w-12 h-12 border-4 border-white border-dashed rounded-full animate-spin"></div>
-      </div>
-    );
-  }
 
   return (
     <>

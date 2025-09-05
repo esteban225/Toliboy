@@ -1,111 +1,74 @@
-import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom"; // Importamos el componente Link de React Router
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+interface Card {
+  img: string;
+  title: string;
+  subtitle: string;
+  link: string;
+}
 
-gsap.registerPlugin(ScrollTrigger);
-
-const productLines = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1542838334-a3f2955f2b84?q=80&w=1974&auto=format&fit=crop",
-    icon: "https://cdn-icons-png.flaticon.com/512/3233/3233887.png",
-    title: "Panadería",
-    description: "Ingredientes de alta calidad para panes artesanales y especialidades.",
-    link: "/panaderia",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1579766904128-d897f1f44053?q=80&w=1974&auto=format&fit=crop",
-    icon: "https://cdn-icons-png.flaticon.com/512/5753/5753068.png",
-    title: "Pastelería",
-    description: "Soluciones innovadoras para crear postres y repostería de ensueño.",
-    link: "/pasteleria",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1563273183-f2229509204c?q=80&w=2070&auto=format&fit=crop",
-    icon: "https://cdn-icons-png.flaticon.com/512/3233/3233830.png",
-    title: "Industrial",
-    description: "Productos a gran escala para la optimización de procesos de producción.",
-    link: "/industrial",
-  },
-];
-
-export default function ProductLines() {
-  const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
-
-  useEffect(() => {
-    if (cardsRef.current.length > 0) {
-      gsap.fromTo(
-        cardsRef.current,
-        { y: 80, opacity: 0, scale: 0.95, filter: "blur(6px)" },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          filter: "blur(0px)",
-          duration: 1.2,
-          ease: "power3.out",
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: cardsRef.current[0]?.parentElement,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    }
-  }, []);
+export default function ProductsLine() {
+  const cards: Card[] = [
+    {
+      img: "/panaderia&pasteleria.webp",
+      title: "Panadería y Pastelería",
+      subtitle: "Ingredientes de calidad para resultados excepcionales",
+      link: "/panaderia",
+    },
+    {
+      img: "/panaderia&pasteleria.webp",
+      title: "Línea Pastelería",
+      subtitle: "Preparados listos para usar y ahorrar tiempo",
+      link: "/pasteleria",
+    },
+    {
+      img: "/panaderia&pasteleria.webp",
+      title: "Línea Industrial",
+      subtitle: "Soluciones profesionales para grandes producciones",
+      link: "/industrial",
+    },
+  ];
 
   return (
-    <section className="w-full py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-14 text-gray-900 tracking-tight">
-          Nuestras Líneas de Productos
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-10">
-          {productLines.map((product, i) => (
-            <Link
-              key={product.id}
-              to={product.link}
-              ref={(el) => (cardsRef.current[i] = el)}
-              className="group block bg-white rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:ring-2 hover:ring-red-400"
-              aria-label={`Explorar línea de productos de ${product.title}`}
-            >
-              {/* Imagen principal */}
-              <div className="relative w-full h-60">
-                <img
-                  src={product.image}
-                  alt={`Imagen de la categoría ${product.title}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <img
-                  src={product.icon}
-                  alt={`Icono de ${product.title}`}
-                  className="absolute bottom-4 right-4 w-14 h-14 drop-shadow-xl"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Texto */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                  {product.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed text-base">
-                  {product.description}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
+    <div className="flex flex-col items-center justify-center mt-12 p-6 w-full max-w-6xl mx-auto">
+      <p className="text-gray-600 text-lg mb-12 text-center max-w-2xl">
+        Descubre nuestra variedad de soluciones para cada necesidad
+      </p>
+      
+      <div className="flex flex-col gap-16 w-full">
+        {cards.map((card, i) => (
+          <a
+            key={i}
+            href={card.link}
+            className={`group flex flex-col md:flex-row items-center bg-white rounded-2xl w-full 
+            transform transition-all duration-500 ease-out hover:shadow-2xl opacity-0 animate-fadeInUp
+            ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+            style={{ animationDelay: `${i * 0.2}s` }}
+          >
+            <div className="relative overflow-hidden h-72 w-full md:w-1/2">
+              <img
+                className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                src={card.img}
+                alt={card.title}
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+            
+            <div className="flex flex-col justify-center p-8 md:p-12 w-full md:w-1/2">
+              <div className="mb-2 text-sm font-semibold text-blue-600 uppercase tracking-wider">Línea de Productos</div>
+              <h3 className="mb-4 text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                {card.title}
+              </h3>
+              <p className="mb-6 text-gray-600 leading-relaxed">{card.subtitle}</p>
+              <span className="inline-flex items-center text-blue-600 font-medium group-hover:translate-x-2 transition-transform">
+                Descubrir productos
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
