@@ -27,8 +27,6 @@ function MainApp() {
   const location = useLocation();
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLoading(false);
-
       if (location.pathname === "/contacto") {
         Swal.fire({
           title: "¿Quieres unirte a nuestro equipo?",

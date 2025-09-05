@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Banner from "../components/BannerScroll";
 import ProductsBar from "../components/ProductsBar";
 import RichTextSection from "../components/RichTextSection";
-import Testimonials from "../components/Testimonials ";
+import Testimonials from "../components/Testimonials";
 import { ArrowRight } from "lucide-react";
 
 // import Banner from "/banner.svg"; // 👈 importa tu SVG
