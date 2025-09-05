@@ -13,14 +13,14 @@ const productLines = [
     icon: "https://img.icons8.com/?size=100&id=118867&format=png&color=000000",
     title: "Panadería",
     description: "Ingredientes de alta calidad para panes artesanales y especialidades.",
-    link: "/panaderia",
+    link: "/catalogo/panaderia",
   },
   {
     id: 2,
     image:
       "/panaderia&pasteleria.webp",
     icon: "https://img.icons8.com/?size=100&id=kL10iTg3RGya&format=png&color=000000",
-    title: "Pastelería",
+    title: "/catalogo/Pastelería",
     description: "Soluciones innovadoras para crear postres y repostería de ensueño.",
     link: "/pasteleria",
   },
@@ -29,7 +29,7 @@ const productLines = [
     image:
       "/panaderia&pasteleria.webp",
     icon: "https://img.icons8.com/?size=100&id=htNEv6WH8tvr&format=png&color=000000",
-    title: "Industrial",
+    title: "/catalogo/Industrial",
     description: "Productos a gran escala para la optimización de procesos de producción.",
     link: "/industrial",
   },
