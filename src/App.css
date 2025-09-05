@@ -4,73 +4,75 @@
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(-50%);
   }
 }
 
-
-/* Ocultar scrollbar horizontal */
+/* Contenedor de la animación */
 .animate-scroll-x {
-  overflow-x: hidden;
-  /* evita que se muestre */
+  overflow: hidden; /* Oculta el scrollbar */
   display: flex;
   gap: 1.5rem;
   animation: scroll-x 30s linear infinite;
-  /* animación automática */
+  will-change: transform; /* Sugerencia para optimización */
 }
 
-
-/* Ocultar barra de scroll en navegadores */
+/* Ocultar barra de desplazamiento en navegadores */
 .animate-scroll-x::-webkit-scrollbar {
   display: none;
+}
+
+/* Pausar animación al pasar el cursor */
+.animate-scroll-x:hover {
+  animation-play-state: paused;
+}
+
+/* Variables para personalización */
+:root {
+  --whatsapp-green: #25d366;
+  --whatsapp-dark-green: #128c7e;
+  --pulse-shadow: rgba(37, 211, 102, 0.7);
+  --pulse-duration: 1.5s;
+  --button-size: 85px;
 }
 
 .whatsapp-float {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  width: 85px;
-  height: 85px;
-  background: linear-gradient(135deg, #25d366, #128c7e);
+  width: var(--button-size);
+  height: var(--button-size);
+  background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-dark-green));
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 0px 20px rgba(37, 211, 102, 0.7);
+  display: grid; /* Usar grid para centrar */
+  place-items: center; /* Centrar contenido con una línea */
+  box-shadow: 0px 0px 20px var(--pulse-shadow);
   z-index: 1000;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: pulse 1.5s infinite;
+  animation: pulse var(--pulse-duration) infinite cubic-bezier(0.4, 0, 0.6, 1); /* Curva de animación más suave */
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.2) rotate(10deg);
-  box-shadow: 0px 0px 25px rgba(37, 211, 102, 0.9),
-    0px 0px 50px rgba(37, 211, 102, 0.5);
+  transform: scale(1.1) rotate(5deg); /* Transformación más suave */
+  box-shadow: 0px 0px 30px var(--pulse-shadow), 0px 0px 60px rgba(37, 211, 102, 0.5); /* Efecto de sombra mejorado */
 }
 
 .whatsapp-float img {
-  width: 35px;
-  height: 35px;
+  width: 65px;
+  height: 65px;
   filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.4));
 }
 
-/* ✨ Animación de pulso */
+/* Animación de pulso con variables */
 @keyframes pulse {
-  0% {
+  0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 10px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 0 10px var(--pulse-shadow);
   }
-
   50% {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 0 25px rgba(37, 211, 102, 0.9);
-  }
-
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 10px rgba(37, 211, 102, 0.6);
   }
 }

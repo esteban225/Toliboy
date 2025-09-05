@@ -8,8 +8,8 @@ const WhatsAppButton: React.FC = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+      <img 
+        src="https://img.icons8.com/?size=100&id=d5ntEsf0JRhM&format=png&color=000000"
         alt="WhatsApp"
       />
     </a>
