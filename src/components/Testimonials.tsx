@@ -62,7 +62,7 @@ export default function ProductLines() {
   }, []);
 
   return (
-    <section className="w-full py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="w-full py-20 bg-[#FEF9F2]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-10">
           {productLines.map((product, i) => (

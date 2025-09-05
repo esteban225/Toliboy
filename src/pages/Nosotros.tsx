@@ -10,9 +10,9 @@ export default function Nosotros() {
     <div className="w-full">
       {/* Banner Principal */}
       <section
-        className="relative h-[220px] md:h-[300px] bg-cover bg-center flex items-center justify-center px-6"
+        className="relative h-[220px] md:h-[300px] bg-cover bg-center flex items-center justify-center px-6 bg-[#FEF9F2]"
         style={{
-          backgroundImage: "url('/panaderia&pasteleria.avif')",
+          backgroundImage: "url('/panaderia&pasteleria.webp')",
           backgroundPosition: "59% 47%",
         }}
       >
@@ -111,12 +111,12 @@ export default function Nosotros() {
             {
               titulo: "Misión",
               texto:
-                "Somos una empresa familiar que procesa y comercializa productos alimenticios saludables de la mejor calidad, implementando alternativas de producción rentables para los accionistas, apoyados con personas competentes, capacitadas, motivadas e interesadas en la satisfacción de las necesidades y expectativas de nuestros clientes y demás partes interesadas, favoreciendo el desarrollo del entorno social y la conservación del medio ambiente.",
+                "Nutrimos la vida con sabor, tradición y confianza, con productos fabricados por un talento humano componente y comprometido, dejando huella para brindar bienestar a nuestro grupos de interés y lograr un crecimiento empresarial sostenible.",
             },
             {
               titulo: "Visión",
               texto:
-                "Para el año 2025, Productos comestibles TOLIBOY S.A.S., mantendrá su posicionamiento, calidad y credibilidad de nuestras marcas de productos, ampliando su participación en el mercado nacional, convirtiéndonos en un modelo empresarial, fortaleciendo continuamente nuestro portafolio de productos y servicios e infraestructura, manteniéndonos a la vanguardia del gremio agroindustrial, y respondiendo de forma eficiente a las exigencias del entorno comercial con responsabilidad social para nuestros clientes y demás partes interesadas.",
+                "En el 2030 seremos modelo empresarial en la fabricación de alimentos y materias primas nutritivas, que transmitan felicidad a nuestros clientes, desarrollando estrategias rentables y sostenibles, evolucionando con incoación, tradición y sentido humano.",
             },
             {
               titulo: "Política de calidad",

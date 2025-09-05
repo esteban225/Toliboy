@@ -70,7 +70,6 @@ export default function ProductsBar() {
             rotateXMax={15}
             rotateYMax={15}
             duration={400}
-            easing="ease-out"
           >
             <div className="relative w-full h-full flex flex-col">
               <img

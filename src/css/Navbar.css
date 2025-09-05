@@ -10,8 +10,8 @@ nav ul li {
 /* Navbar ocupa todo el ancho */
 .navbar {
   width: 100%;
-  background: #f9fafb; /* usa el mismo fondo global */
-  border-bottom: 2px solid #e5e7eb;
+  background: #FEF9F2; /* usa el mismo fondo global */
+  border-bottom: 2px solid #FEF9F2;
   padding: 1rem 0;
   display: flex;
   justify-content: center;
@@ -69,6 +69,7 @@ nav ul li {
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem;
+    background: #FEF9F2;
   }
 
   .navbar ul {

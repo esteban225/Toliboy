@@ -93,7 +93,7 @@ export default function ProductPasteleria() {
   return (
     <>
       {/* Pasteleria*/}
-      <section className="relative bg-red-50 text-red-900 py-20 px-6">
+      <section className="relative bg-[#FEF9F2] text-red-900 py-20 px-6">
         {/* Encabezado */}
         <div className="relative w-full h-64 mb-12">
           <img

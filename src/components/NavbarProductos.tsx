@@ -3,7 +3,7 @@ import "../css/Navbar.css";
 
 export default function NavbarProductos() {
   return (
-    <nav className="navbar">
+    <nav className="navbar bg-[#FEF9F2] text-red-900">
       <ul>
         <li>
           <NavLink

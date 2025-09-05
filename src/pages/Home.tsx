@@ -57,7 +57,7 @@ export default function Home() {
       </div>
 
       {/* CONOCE NUESTRAS LÍNEAS */}
-      <section className="w-full py-16 text-center ">
+      <section className="w-full py-16 text-center bg-[#FEF9F2]">
         <div className="bg-[#002E6D] text-white text-2xl md:text-3xl  font-bold py-15 rounded-full">
           Nuestras Líneas de Productos
         </div>

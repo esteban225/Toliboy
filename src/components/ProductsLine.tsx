@@ -28,17 +28,17 @@ export default function ProductsLine() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center mt-12 p-6 w-full max-w-6xl mx-auto">
+    <div className="flex flex-col items-center justify-center mt-12 p-6 w-full max-w-6xl mx-auto bg-[#FEF9F2]">
       <p className="text-gray-600 text-lg mb-12 text-center max-w-2xl">
         Descubre nuestra variedad de soluciones para cada necesidad
       </p>
       
-      <div className="flex flex-col gap-16 w-full">
+      <div className="flex flex-col gap-16 w-full bg-[#FEF9F2]">
         {cards.map((card, i) => (
           <a
             key={i}
             href={card.link}
-            className={`group flex flex-col md:flex-row items-center bg-white rounded-2xl w-full 
+            className={`group flex flex-col md:flex-row items-center bg-[#FEF9F2] rounded-2xl w-full 
             transform transition-all duration-500 ease-out hover:shadow-2xl opacity-0 animate-fadeInUp
             ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
             style={{ animationDelay: `${i * 0.2}s` }}
