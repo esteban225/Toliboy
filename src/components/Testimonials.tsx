@@ -20,18 +20,18 @@ const productLines = [
     image:
       "/panaderia&pasteleria.webp",
     icon: "https://img.icons8.com/?size=100&id=kL10iTg3RGya&format=png&color=000000",
-    title: "/catalogo/Pastelería",
+    title: "Pastelería",
     description: "Soluciones innovadoras para crear postres y repostería de ensueño.",
-    link: "/pasteleria",
+    link: "/catalogo/pasteleria",
   },
   {
     id: 3,
     image:
       "/panaderia&pasteleria.webp",
     icon: "https://img.icons8.com/?size=100&id=htNEv6WH8tvr&format=png&color=000000",
-    title: "/catalogo/Industrial",
+    title: "Industrial",
     description: "Productos a gran escala para la optimización de procesos de producción.",
-    link: "/industrial",
+    link: "/catalogo/industrial",
   },
 ];
 
