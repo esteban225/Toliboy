@@ -6,7 +6,7 @@ export default function Industrial() {
         <div className="relative w-full h-64 mb-12">
           {/* Imagen de fondo */}
           <img
-            src="/header-industrial.avif"
+            src="/header-industrial.webp"
             alt="Línea Industrial"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -32,7 +32,7 @@ export default function Industrial() {
           {/* Card 1 */}
           <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
             <img
-              src="/img-industrial1.avif"
+              src="/img-industrial1.webp"
               alt="Piña fresca en trocitos"
               className="w-full h-40 object-cover rounded-lg"
             />
@@ -53,7 +53,7 @@ export default function Industrial() {
           {/* Card 2 */}
           <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
             <img
-              src="/img-industrial2.avif"
+              src="/img-industrial2.webp"
               alt="Desmoldante"
               className="w-full h-40 object-cover rounded-lg"
             />
@@ -74,7 +74,7 @@ export default function Industrial() {
           {/* Card 3 */}
           <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
             <img
-              src="/img-industrial3.avif"
+              src="/img-industrial3.webp"
               alt="Brebas en Almibar"
               className="w-full h-40 object-cover rounded-lg"
             />
@@ -95,7 +95,7 @@ export default function Industrial() {
           {/* Card 4 */}
           <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
             <img
-              src="/img-industrial4.avif"
+              src="/img-industrial4.webp"
               alt="Glasse"
               className="w-full h-40 object-cover rounded-lg"
             />

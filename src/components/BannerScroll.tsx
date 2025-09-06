@@ -149,7 +149,7 @@ export default function BannerScroll() {
           <img
             alt="logo mobile"
             className="max-w-full h-auto max-h-[250px] object-contain"
-            src="/banner.avif"
+            src="/banner.webp"
             loading="lazy"
           />
           <img
