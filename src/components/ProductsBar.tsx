@@ -22,7 +22,7 @@ export default function ProductsBar() {
   // Scroll infinito lateral
   useEffect(() => {
     gsap.to(".scroll-track", {
-      xPercent: -50,
+      xPercent: -25, // antes estaba en -50, así se ven más productos
       duration: 20,
       ease: "linear",
       repeat: -1,
@@ -47,10 +47,10 @@ export default function ProductsBar() {
   return (
     <div className="max-w-7xl mx-auto overflow-hidden mt-10 py-4 relative">
       <div className="flex gap-6 scroll-track">
-        {[...productos, ...productos].map((prod, i) => (
+        {[...productos, ...productos, ...productos].map((prod, i) => (
           <Atropos
             key={i}
-            className="flex-shrink-0 w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] aspect-[4/3] rounded-xl bg-white shadow-xl overflow-hidden border border-gray-200"
+            className="flex-shrink-0 w-[220px] sm:w-[260px] md:w-[300px] lg:w-[320px] aspect-[4/3]  bg-[#FEF9F2]  overflow-hidden"
             activeOffset={40}
             shadow={false}
             highlight={false}
