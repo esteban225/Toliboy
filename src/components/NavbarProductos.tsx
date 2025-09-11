@@ -93,7 +93,7 @@ export default function NavbarProductos() {
                 : `text-white ${routeColors["/catalogo/industrial"].hover} hover:bg-white px-4 py-2 rounded-4xl transition-all duration-300`
             }
           >
-            Industrial
+            Richard Maestro &copy;
           </NavLink>
         </li>
       </ul>

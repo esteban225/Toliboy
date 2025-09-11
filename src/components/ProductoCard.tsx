@@ -26,9 +26,9 @@ const ProductoCard: React.FC<ProductoCardProps> = ({
           <img src={imagen} alt={`Imagen de ${nombreProducto}`} />
           <h3 className="titulo text-white text-3xl">{nombreProducto}</h3>
           <button
-            className="relative hidden md:block md:order-3 bg-white text-[#4e2c1d] font-semibold py-1 px-3 rounded-4xl transition-transform hover:translate-x-1 hover:translate-y-1 shadow-[4px_4px_0_0_#4e2c1d] active:shadow-none active:translate-x-0 active:translate-y-0"
+            className="relative block md:order-3 bg-white text-[#4e2c1d] font-semibold py-1 px-3 rounded-4xl transition-transform hover:translate-x-1 hover:translate-y-1 shadow-[4px_4px_0_0_#4e2c1d] active:shadow-none active:translate-x-0 active:translate-y-0"
             onClick={() => setIsFlipped(true)}
-            style={{ marginTop: "10px" }}
+            style={{ marginTop: "30px" }}
           >
             Más info
           </button>
@@ -43,7 +43,7 @@ const ProductoCard: React.FC<ProductoCardProps> = ({
             </div>
           )}
           <button
-            className="relative hidden md:block md:order-3 bg-white text-[#4e2c1d] font-semibold py-1 px-3 rounded-4xl transition-transform hover:translate-x-1 hover:translate-y-1 shadow-[4px_4px_0_0_#4e2c1d] active:shadow-none active:translate-x-0 active:translate-y-0"
+            className="relative block md:order-3 bg-white text-[#4e2c1d] font-semibold py-1 px-3 rounded-4xl transition-transform hover:translate-x-1 hover:translate-y-1 shadow-[4px_4px_0_0_#4e2c1d] active:shadow-none active:translate-x-0 active:translate-y-0"
             onClick={() => setIsFlipped(false)}
             style={{ marginTop: "10px" }}
           >

@@ -20,14 +20,14 @@ export default function Contacto() {
 
     emailjs
       .send(
-        "service_xxx", // Reemplaza con tu Service ID de EmailJS
-        "template_xxx", // Reemplaza con tu Template ID de EmailJS
+        "service_9udlmie", // Reemplaza con tu Service ID de EmailJS
+        "template_clro2ci", // Reemplaza con tu Template ID de EmailJS
         {
           nombre: form.nombre,
           email: form.email,
           mensaje: form.mensaje,
         },
-        "publicKey_xxx" // Reemplaza con tu Public Key de EmailJS
+        "b3JDArhfVtBKEb9Sh" // Reemplaza con tu Public Key de EmailJS
       )
       .then(() => {
         setEstado("enviado");

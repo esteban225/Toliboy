@@ -46,7 +46,7 @@ export default function ProductGrid({ products, title, background }: Props) {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
-            className="relative rounded-2xl overflow-hidden shadow-lg min-h-[380px] md:min-h-[550px] flex"
+            className="relative rounded-2xl overflow-hidden shadow-lg min-h-[620px] sm:min-h-[380px] md:min-h-[550px] flex"
             style={{ backgroundColor: product.color }}
           >
             {product.weight && (

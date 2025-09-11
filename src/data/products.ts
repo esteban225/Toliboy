@@ -124,21 +124,21 @@ export const products: Product[] = [
   {
     name: "Pan aliñado 100",
     weight: "280g",
-    image: "/panaderia/Pan_aliñado_100_resultado.webp",
+    image: "/panaderia/Pan_alinado_100_resultado.webp",
     category: "panaderia",
     color: "#3C8DFF",
   },
   {
     name: "Pan Aliñado",
     weight: "450g",
-    image: "/panaderia/Pan_Aliñado_resultado.webp",
+    image: "/panaderia/Pan_Alinado_resultado.webp",
     category: "panaderia",
     color: "#8B5E3C",
   },
   {
     name: "Pan de Anís",
     weight: "280g",
-    image: "/panaderia/Pan_Anís_resultado.webp",
+    image: "/panaderia/Pan_Anis_resultado.webp",
     category: "panaderia",
     color: "#3C8DFF",
   },{
@@ -197,7 +197,7 @@ export const products: Product[] = [
   {
     name: "Aceite vegetal",
     weight: "1Ltr",
-    image: "/industrial/aceite.webp",
+    image: "/industrial/p1.webp",
     category: "industrial",
     color: "#E6C200",
   },

@@ -35,7 +35,7 @@ function MainApp() {
       if (location.pathname === "/contacto") {
         Swal.fire({
           title: "¿Quieres unirte a nuestro equipo?",
-          text: "Crece con nosotros. ¡Tu talento es lo que buscamos!, envíanos un correo con tu información de contacto y tu CV a contacto@toliboy.com",
+          text: "Crece con nosotros. ¡Tu talento es lo que buscamos!, envíanos un correo con tu información de contacto y tu CV a 'contacto@toliboy.com'",
           cancelButtonText: "OK",
         });
       }
