@@ -4,6 +4,7 @@
   aspect-ratio: 3 / 2;      /* mantiene proporción (3 ancho x 2 alto) */
   perspective: 1000px;
   margin: 20px auto;
+  cursor: pointer;
 }
 
 .card-inner {
@@ -14,7 +15,8 @@
   transition: transform 0.8s ease;
 }
 
-.card:hover .card-inner {
+/* ahora el giro es con clase is-flipped, no con hover */
+.card-inner.is-flipped {
   transform: rotateY(180deg);
 }
 
@@ -44,10 +46,25 @@
   max-height: 90%;   /* no sobrepasa la tarjeta */
   object-fit: contain;
   margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+/* zoom + rotación al pasar el mouse SOLO en la imagen */
+.card-front img:hover {
+  animation: vibrar-xy 0.6s ease-in-out 1;
+}
+
+@keyframes vibrar-xy {
+  0%   { transform: scale(1)    rotateX(0deg)   rotateY(0deg); }
+  20%  { transform: scale(1.1)  rotateX(-12deg) rotateY(12deg); }
+  40%  { transform: scale(1.15) rotateX(12deg)  rotateY(-12deg); }
+  60%  { transform: scale(1.12) rotateX(-8deg)  rotateY(8deg); }
+  80%  { transform: scale(1.08) rotateX(8deg)   rotateY(-8deg); }
+  100% { transform: scale(1)    rotateX(0deg)   rotateY(0deg); }
 }
 
 .nombre-producto {
-  font-size: clamp(18px, 2vw, 22px); /* escala con la pantalla */
+  font-size: clamp(18px, 2vw, 22px);
   font-weight: bold;
   text-align: center;
   color: #134289;

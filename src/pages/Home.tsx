@@ -3,11 +3,11 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
-import Banner from "../components/BannerScroll";
 import ProductsBar from "../components/ProductsBar";
 import RichTextSection from "../components/RichTextSection";
-import Testimonials from "../components/Testimonials";
 import { ArrowRight } from "lucide-react";
+import BannerScroll from "../components/BannerScroll";
+import ProductLines from "../components/ProductLines";
 
 // import Banner from "/banner.svg"; // 👈 importa tu SVG
 
@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <div className="w-full bg-[#FEF9F2]">
-      <Banner />
+      <BannerScroll />
       {/* PRODUCTOS */}
       <div className="w-full py-16 text-center">
         <RichTextSection />
@@ -61,8 +61,7 @@ export default function Home() {
         <div className="bg-[#002E6D] text-white text-2xl md:text-3xl  font-bold py-15 rounded-full">
           Nuestras Líneas de Productos
         </div>
-        <Testimonials />
-        {/* <ProductsLine/> */}
+        <ProductLines/>
       </section>
 
       {/* 25 AÑOS */}

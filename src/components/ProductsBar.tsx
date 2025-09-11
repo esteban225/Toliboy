@@ -5,18 +5,12 @@ import "atropos/atropos.css";
 
 export default function ProductsBar() {
   const productos = [
-    { img: "pasteleria/ps1.webp", alt: "Brazo de reina" },
-    { img: "pasteleria/ps2.webp", alt: "Choco Rico" },
-    { img: "pasteleria/ps3.webp", alt: "Choco Rico" },
-    { img: "pasteleria/ps4.webp", alt: "Ponqué junior" },
-    { img: "pasteleria/ps5.webp", alt: "Ponqué junior" },
-    { img: "pasteleria/ps6.webp", alt: "Ponqué junior" },
-    { img: "pasteleria/ps7.webp", alt: "Mantecada" },
-    { img: "pasteleria/ps8.webp", alt: "Choco Rico 2" },
-    { img: "pasteleria/ps9.webp", alt: "Repolla" },
-    { img: "pasteleria/ps10.webp", alt: "Tajadas de sabores" },
-    { img: "pasteleria/ps11.webp", alt: "Tajadas de sabores" },
-    { img: "pasteleria/ps12.webp", alt: "Yoyos" },
+    { img: "pasteleria/Brazo_de_Reina_resultado.webp", alt: "Brazo de reina" },
+    { img: "pasteleria/ChocoRicoN_resultado.webp", alt: "Choco Rico" },
+    { img: "panaderia/mogolla_resultado.webp", alt: "Mogolla" },
+    { img: "panaderia/Pantajadov3_resultado.webp", alt: "Pan tajado blanco" },
+    { img: "industrial/p1.webp", alt: "Ponqué junior" },
+    { img: "industrial/p1.webp", alt: "Mantecada" },
   ];
 
   // Scroll infinito lateral

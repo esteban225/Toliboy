@@ -10,12 +10,13 @@ nav ul li {
 /* Navbar ocupa todo el ancho */
 .navbar {
   width: 100%;
-  background: #FEF9F2; /* usa el mismo fondo global */
+  background: #FEF9F2; /* fondo por defecto */
   border-bottom: 2px solid #FEF9F2;
   padding: 1rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* Lista horizontal centrada */
@@ -28,18 +29,17 @@ nav ul li {
   padding: 0;
   list-style: none;
   width: 100%;
-  max-width: 1200px; /* límite para que no se vea demasiado estirado */
+  max-width: 1200px;
 }
 
-/* Links base */
+/* Links base - Texto blanco por defecto */
 .navbar a {
-  color: #374151; /* gris elegante */
+  color: #ffffff; /* Texto blanco por defecto */
   text-decoration: none;
   font-size: 1rem;
   padding: 10px 16px;
   border-radius: 8px;
   transition: all 0.3s ease;
-  position: relative;
 }
 
 /* Hover efecto elegante */
@@ -48,28 +48,16 @@ nav ul li {
   background: rgba(37, 99, 235, 0.08);
 }
 
-/* Active con subrayado dinámico */
+/* Activo con fondo blanco y color de texto según categoría */
 .navbar a.active {
-  color: #2563eb;
+  background-color: white;
   font-weight: 700;
 }
 
-.navbar a.active::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: #2563eb;
-  border-radius: 4px;
-}
-
-/* Responsive: ocupa ancho completo en móvil */
+/* Responsive */
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem;
-    background: #FEF9F2;
   }
 
   .navbar ul {

@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Inicio", path: "/" },
-    { name: "Productos", path: "/catalogo" },
+    { name: "Nuestros Productos", path: "/catalogo" },
     { name: "Nosotros", path: "/nosotros" },
   ];
 
@@ -24,7 +24,7 @@ export default function Navbar() {
       className="w-full sticky top-0 z-50"
       style={{ backgroundColor: "#FEF9F2" }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto  py-6 flex items-center-safe justify-between">
         {/* Botón menú hamburguesa (solo <768px) */}
         <button
           className="md:hidden text-gray-800"
@@ -50,7 +50,7 @@ export default function Navbar() {
           <img
             src="/Logo-secundario.svg"
             alt="toliboy logo"
-            className="h-13 w-auto"
+            className="h-16 w-auto"
           />
         </div>
         {/* Botón de Contacto - Queda a la derecha en md y último en sm */}{" "}
