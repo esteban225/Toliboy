@@ -1,12 +1,14 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Facebook, Instagram, Mail, Phone } from "lucide-react";
+import ReCAPTCHA from "react-google-recaptcha";
 
-export default function Contacto() {
+function ContactForm() {
   const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" });
   const [estado, setEstado] = useState<
     "idle" | "enviando" | "enviado" | "error"
   >("idle");
+  const [captchaValido, setCaptchaValido] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -14,28 +16,118 @@ export default function Contacto() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setEstado("enviando");
+  const handleCaptcha = (value: string | null) => {
+    if (value) {
+      setCaptchaValido(true);
+    } else {
+      setCaptchaValido(false);
+    }
+  };
 
-    emailjs
-      .send(
-        "service_9udlmie", // Reemplaza con tu Service ID de EmailJS
-        "template_clro2ci", // Reemplaza con tu Template ID de EmailJS
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!captchaValido) {
+      alert("⚠️ Por favor completa el reCAPTCHA antes de enviar.");
+      return;
+    }
+
+    try {
+      setEstado("enviando");
+
+      await emailjs.send(
+        "service_9udlmie", // Tu Service ID
+        "template_clro2ci", // Tu Template ID
         {
           nombre: form.nombre,
           email: form.email,
           mensaje: form.mensaje,
         },
-        "b3JDArhfVtBKEb9Sh" // Reemplaza con tu Public Key de EmailJS
-      )
-      .then(() => {
-        setEstado("enviado");
-        setForm({ nombre: "", email: "", mensaje: "" });
-      })
-      .catch(() => setEstado("error"));
+        "b3JDArhfVtBKEb9Sh" // Tu Public Key
+      );
+
+      setEstado("enviado");
+      setForm({ nombre: "", email: "", mensaje: "" });
+    } catch (error) {
+      console.error(error);
+      setEstado("error");
+    }
   };
 
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <label className="block text-sm font-medium text-amber-800 mb-1">
+          Nombre
+        </label>
+        <input
+          type="text"
+          name="nombre"
+          value={form.nombre}
+          onChange={handleChange}
+          placeholder="Tu nombre"
+          required
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-amber-800 mb-1">
+          Correo electrónico
+        </label>
+        <input
+          type="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="tu@email.com"
+          required
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-amber-800 mb-1">
+          Mensaje
+        </label>
+        <textarea
+          name="mensaje"
+          value={form.mensaje}
+          onChange={handleChange}
+          rows={4}
+          placeholder="Escribe tu mensaje aquí..."
+          required
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800"
+        ></textarea>
+      </div>
+
+      {/* reCAPTCHA v2 */}
+      <ReCAPTCHA
+        sitekey="6Lf84MYrAAAAAP5MyL29Kx0tsZHAMDNxrTTqDF_u" // 👈 reemplaza con tu clave pública de reCAPTCHA v2
+        onChange={handleCaptcha}
+      />
+
+      <button
+        type="submit"
+        disabled={estado === "enviando"}
+        className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition disabled:opacity-50"
+      >
+        {estado === "enviando" ? "Enviando..." : "Enviar mensaje"}
+      </button>
+
+      {estado === "enviado" && (
+        <p className="text-green-600 font-medium mt-2">
+          ✅ ¡Mensaje enviado con éxito!
+        </p>
+      )}
+      {estado === "error" && (
+        <p className="text-red-600 font-medium mt-2">
+          ❌ Ocurrió un error. Inténtalo de nuevo.
+        </p>
+      )}
+    </form>
+  );
+}
+
+export default function Contacto() {
   return (
     <section className="w-full bg-amber-50 py-16">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
@@ -48,71 +140,11 @@ export default function Contacto() {
             Si tienes alguna duda o quieres más información, completa el
             siguiente formulario y nos pondremos en contacto contigo.
           </p>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-amber-800 mb-1">
-                Nombre
-              </label>
-              <input
-                type="text"
-                name="nombre"
-                value={form.nombre}
-                onChange={handleChange}
-                placeholder="Tu nombre"
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-amber-800 mb-1">
-                Correo electrónico
-              </label>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="tu@email.com"
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-amber-800 mb-1">
-                Mensaje
-              </label>
-              <textarea
-                name="mensaje"
-                value={form.mensaje}
-                onChange={handleChange}
-                rows={4}
-                placeholder="Escribe tu mensaje aquí..."
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              disabled={estado === "enviando"}
-              className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition disabled:opacity-50"
-            >
-              {estado === "enviando" ? "Enviando..." : "Enviar mensaje"}
-            </button>
-
-            {estado === "enviado" && (
-              <p className="text-green-600 font-medium mt-2">
-                ✅ ¡Mensaje enviado con éxito!
-              </p>
-            )}
-            {estado === "error" && (
-              <p className="text-red-600 font-medium mt-2">
-                ❌ Ocurrió un error. Inténtalo de nuevo.
-              </p>
-            )}
-          </form>
+          <ContactForm />
         </div>
 
-        {/* Mapa */}
+        {/* Mapa + info de contacto */}
+        {/* Mapa + info de contacto (igual que tu código actual) */}
         <div className="rounded-2xl overflow-hidden shadow-xl bg-white">
           {/* Mapa */}
           <div className="h-[300px] md:h-[400px] w-full">
@@ -134,7 +166,6 @@ export default function Contacto() {
               Información de contacto
             </h3>
 
-            {/* Teléfonos */}
             <div className="flex items-center gap-3 text-gray-700">
               <Phone className="w-5 h-5 text-red-600" />
               <p>
@@ -146,7 +177,6 @@ export default function Contacto() {
               </p>
             </div>
 
-            {/* Emails */}
             <div className="flex items-center gap-3 text-gray-700">
               <Mail className="w-5 h-5 text-red-600" />
               <p>
@@ -155,7 +185,6 @@ export default function Contacto() {
               </p>
             </div>
 
-            {/* Redes sociales */}
             <div className="flex items-center gap-4 pt-3">
               <a
                 href="https://www.facebook.com/toliboy.co"
