@@ -12,7 +12,7 @@ export default function Nosotros() {
       <section
         className="relative h-[220px] md:h-[300px] bg-cover bg-center flex items-center justify-center px-6 bg-[#FEF9F2]"
         style={{
-          backgroundImage: "url('/panaderia&pasteleria.webp')",
+          backgroundImage: "url('/nosotros1.webp')",
           backgroundPosition: "59% 47%",
         }}
       >

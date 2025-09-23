@@ -88,3 +88,27 @@
   font-weight: bold;
   color: #e80029;
 }
+
+/* Lado trasero */
+.card-back {
+  transform: rotateY(180deg);
+  text-align: center;
+  padding: 20px;
+  color: #fff; /* color de texto blanco por defecto */
+}
+
+.descripcion {
+  font-size: clamp(14px, 1.8vw, 16px);
+  margin-bottom: 15px;
+  color: #fff; /* texto blanco */
+}
+
+.caracteristicas {
+  font-size: clamp(13px, 1.6vw, 15px);
+  margin-bottom: 10px;
+  color: #fff; /* texto blanco */
+  list-style: disc;
+  padding-left: 20px;
+  text-align: left; /* mejor legibilidad */
+}
+

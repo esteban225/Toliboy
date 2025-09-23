@@ -5,11 +5,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const titleParts = [
-  ["N", "u", "e", "s", "t", "r", "o", "s"],
-  ["p", "r", "o", "d", "u", "c", "t", "o", "s"],
-  ["s", "o", "n"],
+  ["N", "u", "e", "s", "t", "r", "o", ""],
+  ["p", "r", "o", "d", "u", "c", "t", "o", ""],
+  ["e", "s",  ],
+  [" ", "d", "e", ""],
+  [ "c", "a", "l", "i", "d", "a", "d", ""],
   ["1", "0", "0", "%"],
-  ["n", "a", "t", "u", "r", "a", "l", "e", "s"],
+  ["B", "o", "y", "a", "c", "e", "n", "s", "e"],
 ];
 
 export default function RichTextSection() {
@@ -87,8 +89,8 @@ export default function RichTextSection() {
           ref={paragraphRef}
           className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto"
         >
-          Tanto si eres un experto en alimentación a base de plantas como si no
-          te gustan las verduras, sabemos que nunca has probado nada igual. ¿No
+          Tanto si eres un experto en la tierrita  
+          sabremos que nunca has probado nada igual. ¿No
           nos crees? ¡Anímate a probarlo!
         </p>
 

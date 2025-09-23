@@ -24,13 +24,13 @@ export default function Navbar() {
       className="w-full sticky top-0 z-50"
       style={{ backgroundColor: "#FEF9F2" }}
     >
-      <div className="max-w-7xl mx-auto  py-6 flex items-center-safe justify-between">
+      <div className="max-w-7xl mx-auto  py-3 flex items-center-safe justify-between">
         {/* Botón menú hamburguesa (solo <768px) */}
         <button
           className="md:hidden text-gray-800"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={28} /> : <Menu size={38} />}
         </button>
         {/* Menú principal (desde 768px) - Queda a la izquierda en md */}
         <ul className="hidden md:flex items-center gap-6 font-medium md:order-1">
@@ -50,7 +50,7 @@ export default function Navbar() {
           <img
             src="/Logo-secundario.svg"
             alt="toliboy logo"
-            className="h-16 w-auto"
+            className="h-20 w-auto"
           />
         </div>
         {/* Botón de Contacto - Queda a la derecha en md y último en sm */}{" "}

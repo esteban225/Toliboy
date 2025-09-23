@@ -9,7 +9,7 @@ const productLines = [
   {
     id: 1,
     image:
-      "/panaderia&pasteleria.webp",
+      "/Banner-Panaderia.webp",
     icon: "https://img.icons8.com/?size=100&id=118867&format=png&color=000000",
     title: "Panadería",
     description: "Ingredientes de alta calidad para panes artesanales y especialidades.",
@@ -18,7 +18,7 @@ const productLines = [
   {
     id: 2,
     image:
-      "/panaderia&pasteleria.webp",
+      "/Banner-Pasteleria.webp",
     icon: "https://img.icons8.com/?size=100&id=kL10iTg3RGya&format=png&color=000000",
     title: "Pastelería",
     description: "Soluciones innovadoras para crear postres y repostería de ensueño.",
@@ -27,9 +27,9 @@ const productLines = [
   {
     id: 3,
     image:
-      "/panaderia&pasteleria.webp",
+      "/Banner-Richard.webp",
     icon: "https://img.icons8.com/?size=100&id=htNEv6WH8tvr&format=png&color=000000",
-    title: "Industrial",
+    title: "Richard Maestro ©",
     description: "Productos a gran escala para la optimización de procesos de producción.",
     link: "/catalogo/industrial",
   },

@@ -5,15 +5,24 @@ import type { Product } from "../data/products";
 interface Props {
   products: Product[];
   title: string;
+  p: string;
   background: string;
-  weight: string;
 }
 
-export default function ProductGrid({ products, title, background }: Props) {
+export default function ProductGrid({ products, title, background, p }: Props) {
   const cardVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
   };
+
+  // Imagen de fondo por categoría
+  const categoryImages: Record<string, string> = {
+    pasteleria: "/Banner-Pasteleria.webp",
+    panaderia: "/Banner-Panaderia.webp",
+    industrial: "/Banner-Richard.webp",
+  };
+  const category = products[0]?.category || "pasteleria";
+  const headerImg = categoryImages[category] || p;
 
   return (
     <section
@@ -22,7 +31,7 @@ export default function ProductGrid({ products, title, background }: Props) {
       {/* Encabezado */}
       <div className="relative w-full h-94 mb-12">
         <img
-          src="/panaderia&pasteleria.webp"
+          src={headerImg}
           alt={title}
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -57,9 +66,10 @@ export default function ProductGrid({ products, title, background }: Props) {
 
             <ProductoCard
               nombreProducto={product.name}
-              descripcion={product.weight}
+              descripcion={product.shortDescription}
               precio=""
               imagen={product.image}
+              caracteristicas={product.features}
             />
           </motion.div>
         ))}
