@@ -33,7 +33,7 @@ const ProductoCard: React.FC<ProductoCardProps> = ({
             onClick={() => setIsFlipped(true)}
             style={{ marginTop: "30px" }}
           >
-            Más info
+            Conóceme
           </button>
         </div>
 

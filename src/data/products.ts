@@ -18,12 +18,11 @@ export const products: Product[] = [
     image: "/pasteleria/Brazo_de_Reina_resultado.webp",
     category: "pasteleria",
     color: "#e55464",
-    shortDescription: "Bizcocho suave relleno de dulce de leche, ideal para acompañar el café.",
+    shortDescription: "Soy un bizcocho suave con relleno de crema y un toque de azúcar que alegra cualquier momento del día.",
     features: [
-      "Relleno de arequipe",
-      "Textura esponjosa",
-      "Presentación individual",
-      "Sin conservantes artificiales"
+      "Sabor dulce y equilibrado",
+      "Textura suave y esponjosa",
+      "Puro sabor artesanal"
     ]
   },
   {
@@ -32,26 +31,24 @@ export const products: Product[] = [
     image: "/pasteleria/ChocoRicoN_resultado.webp",
     category: "pasteleria",
     color: "#fd3e34",
-    shortDescription: "Delicioso bizcocho de chocolate, perfecto para los amantes del cacao.",
+    shortDescription: "Soy un ponqué suave cubierto con una capa de chocolate que conquista a grandes y chicos. Estoy hecho para esos momentos en los que un dulce detalle lo cambia todo.",
     features: [
-      "Sabor intenso a chocolate",
-      "Presentación individual",
-      "Ideal para meriendas",
-      "Sin conservantes artificiales"
+      "Sabor intenso y auténtico a chocolate",
+      "Textura suave y esponjosa",
+      "Ideal para tus meriendas o antojos"
     ]
   },
   {
-    name: "Domo Galletas",
+    name: "Galletas",
     weight: "600g",
     image: "/pasteleria/Domo_Galletas_resultado.webp",
     category: "pasteleria",
     color: "#3577b1",
-    shortDescription: "Suave bizcocho cubierto con galletas trituradas para un toque crujiente y único.",
+    shortDescription: "Soy una galleta crujiente y doradita, con ese sabor casero que te hace querer otra (y otra más). Acompaño tus antojos y ese cafecito de la tarde con el toque perfecto de dulzura.",
     features: [
-      "Decorado con galleta crocante",
-      "Textura esponjosa",
-      "Ideal para postres rápidos",
-      "Presentación atractiva"
+      "Textura crocante y sabor irresistible",
+      "Horneadas con dedicación artesanal",
+      "Tan ricas que siempre se acaban rápido"
     ]
   },
   {
@@ -60,12 +57,10 @@ export const products: Product[] = [
     image: "/pasteleria/hojaldre_resultado.webp",
     category: "pasteleria",
     color: "#bf4f00",
-    shortDescription: "Delicado hojaldre con capas ligeras y doradas, perfecto para acompañar con café o té.",
+    shortDescription: "Soy un hojaldre de capas doradas, con un toque de arequipe cremoso que conquista sin empalagar. Perfecto para acompañar un café, una charla o simplemente darte un gusto en cualquier momento del día.",
     features: [
-      "Capas crujientes",
-      "Mantequilla natural",
-      "Ideal para la tarde",
-      "Sabor artesanal"
+      "Con sabor y tradición",
+      "Un equilibrio perfecto entre crujiente y lo cremoso",
     ]
   },
   {
@@ -74,12 +69,11 @@ export const products: Product[] = [
     image: "/pasteleria/junior_resultado.webp",
     category: "pasteleria",
     color: "#79ace4",
-    shortDescription: "Pequeño ponqué de vainilla con textura suave y sabor casero.",
+    shortDescription: "Soy un ponqué suave y esponjoso, con ese sabor casero que nunca pasa de moda. Estoy aquí para alegrar tus momentos favoritos y acompañarte donde vayas.",
     features: [
-      "Sabor a vainilla",
-      "Textura húmeda",
-      "Porción individual",
-      "Perfecto para loncheras"
+      "Textura húmeda y ligera que se disfruta hasta el final.",
+      "Dulzura equilibrada, sin empalagar.",
+      "Hecho con amor para disfrutar a cualquier hora."
     ]
   },
   {
@@ -88,12 +82,11 @@ export const products: Product[] = [
     image: "/pasteleria/Lonchero_de_Queso_resultado.webp",
     category: "pasteleria",
     color: "#ffb243",
-    shortDescription: "Bizcocho de queso con un sabor balanceado entre lo dulce y salado.",
+    shortDescription: "Soy un ponqué suave , con el verdadero sabor a queso que conquista cualquier paladar. Listopara acompañarte a cualquier hora del día.",
     features: [
-      "Sabor auténtico a queso",
-      "Textura suave",
-      "Ideal para la merienda",
-      "Porción lista para llevar"
+      "Sabor auténtico a queso.",
+      "Textura suave y ligera que se disfruta hasta el final.",
+      "Porción lista para llevar y disfrutar donde quieras."
     ]
   },
   {
@@ -102,12 +95,11 @@ export const products: Product[] = [
     image: "/pasteleria/lonchero_resultado.webp",
     category: "pasteleria",
     color: "#fd4338",
-    shortDescription: "Ponqué de tamaño práctico, perfecto para acompañar con bebidas calientes.",
+    shortDescription: "Soy un ponqué de vainilla, suave y delicioso, listo para acompañarte en cualquier aventura del día. Mi tamaño práctico me hace perfecto para disfrutar con tu bebida favorita o llevarme a donde quieras.",
     features: [
-      "Sabor tradicional",
-      "Empaque individual",
-      "Ideal para el colegio o trabajo",
-      "Textura húmeda"
+      "Sabor tradicional que nunca falla",
+      "Textura húmeda y suave que se disfruta con cada mordida.",
+      "Cada bocado que te deja con ganas de más."
     ]
   },
   {
@@ -116,12 +108,11 @@ export const products: Product[] = [
     image: "/pasteleria/Mantecada_tradicional_resultado.webp",
     category: "pasteleria",
     color: "#742c1c",
-    shortDescription: "Clásica mantecada con un sabor dulce y suave.",
+    shortDescription: "Soy una mantecada con sabor casero y suave, hecha para alegrar tus momentos y compartir con quienes más quieres.",
     features: [
-      "Sabor mantecoso",
-      "Textura esponjosa",
-      "Receta tradicional",
-      "Porción perfecta"
+      "Textura esponjosa que se siente ligera y delicada.",
+      "Sabor dulce que invita a compartir.",
+      "Receta tradicional que mantiene el encanto de siempre."
     ]
   },
   {
@@ -130,12 +121,11 @@ export const products: Product[] = [
     image: "/pasteleria/mantecadanueva_resultado.webp",
     category: "pasteleria",
     color: "#f4323f",
-    shortDescription: "Versión renovada de la mantecada tradicional con mayor suavidad.",
+    shortDescription: "Soy una mantecada dulce y suave, hecha con cariño para endulzar tus momentos y compartir sonrisas. Ideal para disfrutar con amigos, familia o simplemente para darte un gustito en cualquier momento del día.",
     features: [
-      "Receta mejorada",
-      "Textura más esponjosa",
-      "Empaque moderno",
-      "Porción generosa"
+      "Textura esponjosa que se disfruta en cada mordida.",
+      "Porción generosa que alcanza para compartir .",
+      "Lista para disfrutar con quien quieras."
     ]
   },
   {
@@ -144,12 +134,11 @@ export const products: Product[] = [
     image: "/pasteleria/Mini_ChocoRico_resultado.webp",
     category: "pasteleria",
     color: "#7fc1d3",
-    shortDescription: "Versión pequeña del clásico ChocoRico, ideal para los niños.",
+    shortDescription: "Soy un mini ponqué suave y cubierto de chocolate, listo para darle un toque dulce a la merienda. Pequeño en tamaño, grande en sabor.",
     features: [
-      "Sabor intenso a chocolate",
-      "Presentación mini",
-      "Perfecto para loncheras",
-      "Sin colorantes artificiales"
+      "Chocolate intenso que alegra en cada mordida.",
+      "Ideal para loncheras o un antojo rápido.",
+      "Fácil de disfrutar."
     ]
   },
   {
@@ -158,12 +147,11 @@ export const products: Product[] = [
     image: "/pasteleria/Repolla_resultado.webp",
     category: "pasteleria",
     color: "#f99d39",
-    shortDescription: "Postre de masa suave relleno de crema pastelera.",
+    shortDescription: "Soy una mezcla entre sal y dulce, por fuera blandita y por dentro tengo arequipe. Hecha para alegrar tus meriendas y esos momentos que merecen un gustito especial.",
     features: [
-      "Relleno cremoso",
-      "Textura ligera",
-      "Ideal para postres",
-      "Presentación atractiva"
+      "El gustico que alegra tu día sin pedir permiso.",
+      "Perfecta para postres, meriendas o un antojo en cualquier momento.",
+      "Una presentación que grita: ¡pruébame ya!."
     ]
   },
   {
@@ -172,12 +160,11 @@ export const products: Product[] = [
     image: "/pasteleria/Tajadas_de_sabores_resultado.webp",
     category: "pasteleria",
     color: "#fe6b0b",
-    shortDescription: "Rebanadas surtidas de ponqué con diferentes sabores.",
+    shortDescription: "Soy una tajada de ponqué suave y esponjosa que se roba un pedacito de tu día. Con mis diferentes sabores, siempre tengo algo para antojarte… sin importar la hora.",
     features: [
-      "Variedad de sabores",
-      "Porciones individuales",
-      "Textura suave",
-      "Perfecto para compartir"
+      "Un aroma suave que despierta antojo.",
+      "Sabores que encantan tu día a día.",
+      "Hechas con amor, para disfrutar sin culpa."
     ]
   },
   {
@@ -186,12 +173,11 @@ export const products: Product[] = [
     image: "/pasteleria/Torta_de_queso_resultado.webp",
     category: "pasteleria",
     color: "#323330",
-    shortDescription: "Torta cremosa con sabor a queso, ideal como postre.",
+    shortDescription: "Soy la torta que no puede faltar en casa. Suavecita, con ese sabor a queso que todos aman y el toque justo para acompañar cualquier momento solo/a o con tu familia.",
     features: [
-      "Sabor auténtico a queso",
-      "Textura cremosa",
-      "Presentación familiar o individual",
-      "Ideal para celebraciones"
+      "El sabor clásico que nunca pasa de moda.",
+      "Un solo pedacito nunca es suficiente.",
+      "Porciones que conservan el equilibrio perfecto."
     ]
   },
   {
@@ -200,12 +186,11 @@ export const products: Product[] = [
     image: "/pasteleria/torta_decorada_resultado.webp",
     category: "pasteleria",
     color: "#d18bca",
-    shortDescription: "Torta personalizada con decoraciones coloridas.",
+    shortDescription: "Soy la torta que llega para celebrar contigo. Esponjosa, colorida y con ese toque dulce que convierte cualquier día en un momento especial.",
     features: [
-      "Decoración personalizada",
-      "Sabor esponjoso",
-      "Ideal para cumpleaños",
-      "Variedad de diseños"
+      "Me adapto a cada celebración con mi variedad de diseños.",
+      "Decoraciones personalizadas hechas con amor y llenas de vida.",
+      "Sabor suave y esponjoso que conquista en cada bocado."
     ]
   },
   {
@@ -214,12 +199,11 @@ export const products: Product[] = [
     image: "/pasteleria/tortafamiliar123_resultado.webp",
     category: "pasteleria",
     color: "#2297d3",
-    shortDescription: "Torta grande para compartir en familia.",
+    shortDescription: "Soy esa torta que reúne a todos en la mesa. Suave, húmeda y con sabor casero, nací para acompañar risas, historias y momentos que se disfrutan en familia.",
     features: [
-      "Tamaño familiar",
-      "Sabor casero",
-      "Textura húmeda",
-      "Ideal para celebraciones"
+      "Sabor auténtico que se siente como hecho en casa.",
+      "Textura suave y húmeda que encanta a todos.",
+      "Perfecta para compartir en reuniones y celebraciones."
     ]
   },
   {
@@ -228,12 +212,11 @@ export const products: Product[] = [
     image: "/pasteleria/Yoyos_resultado.webp",
     category: "pasteleria",
     color: "#543c82",
-    shortDescription: "Galletas rellenas de crema con cobertura azucarada.",
+    shortDescription: "Somos dos esponjosos discos cubiertos de azúcar que guardan un relleno cremoso irresistible. Cada mordisco te devuelve al sabor de tu infancia.",
     features: [
-      "Sabor dulce y cremoso",
-      "Ideal para niños",
-      "Presentación divertida",
-      "Empaque práctico"
+      "El favorito de siempre.",
+      "Ideal para niños (y para los que nunca dejaron de serlo).",
+      "Presentación divertida y práctica para llevar a todas partes."
     ]
   },
   {
@@ -242,12 +225,11 @@ export const products: Product[] = [
     image: "/panaderia/mogolla_resultado.webp",
     category: "panaderia",
     color: "#ffb500",
-    shortDescription: "Pan redondo y suave con sabor tradicional.",
+    shortDescription: "Soy esa mogolla que te da energía sin perder sabor. Mi toque de miel y mi textura ligera me hacen perfecta para arrancar el día con buena cara.",
     features: [
-      "Receta artesanal",
-      "Textura esponjosa",
-      "Ideal para desayunos",
-      "Sabor clásico colombiano"
+      "Dulce natural, sin exagerar.",
+      "Suave y liviana, como recién salida del horno.",
+      "Tu compañera fiel de cada mañana."
     ]
   },
   {
@@ -256,26 +238,24 @@ export const products: Product[] = [
     image: "/panaderia/Pan_alinado_100_resultado.webp",
     category: "panaderia",
     color: "#ffb500",
-    shortDescription: "Pan pequeño aliñado, ideal para acompañar comidas.",
+    shortDescription: "No soy un pan cualquiera. Soy el pan aliñado de siempre, ese que se parte y reparte con gusto.",
     features: [
-      "Textura suave",
-      "Sabor ligeramente salado",
-      "Tamaño práctico",
-      "Listo para sándwiches"
+      "Sabor que une sin necesidad de ocasión.",
+      "Textura ligera que se disfruta sin prisa.",
+      "Pensado para compartir sin complicaciones."
     ]
   },
   {
-    name: "Pan Aliñado",
+    name: "Pan aliñado 2",
     weight: "200g",
     image: "/panaderia/Pan_Alinado_resultado.webp",
     category: "panaderia",
     color: "#0055b8",
-    shortDescription: "Clásico pan aliñado de mayor tamaño.",
+    shortDescription: "Soy ese pan que nunca falla, el de toda la vida, el que huele a casa apenas lo partes. Sigo teniendo el mismo sabor de siempre… ese que no se olvida.",
     features: [
-      "Receta tradicional",
-      "Textura suave y esponjosa",
-      "Ideal para acompañar sopas",
-      "Formato familiar"
+      "Hecho con receta que pasa de generación en generación.",
+      "Suave y esponjoso, justo como debe ser.",
+      "Ideal para compartir, acompañar o simplemente disfrutar."
     ]
   },
   {
@@ -284,12 +264,11 @@ export const products: Product[] = [
     image: "/panaderia/Pan_Anis_resultado.webp",
     category: "panaderia",
     color: "#ec7700",
-    shortDescription: "Pan aromatizado con semillas de anís.",
+    shortDescription: "Soy ese panecito que perfuma la cocina con su toque de anís. Suave, dorado y con ese sabor que te transporta a los más bonitos momentos.",
     features: [
-      "Sabor y aroma característico",
-      "Textura ligera",
-      "Ideal para café o chocolate",
-      "Receta tradicional"
+      "Aroma que despierta recuerdos.",
+      "Textura ligera y sabor auténtico.",
+      "Ideal para acompañar un café o calmar un antojo."
     ]
   },
   {
@@ -298,12 +277,11 @@ export const products: Product[] = [
     image: "/panaderia/Pan_Burger_resultado.webp",
     category: "panaderia",
     color: "#213d2d",
-    shortDescription: "Pan suave ideal para hamburguesas caseras.",
+    shortDescription: "Soy ese pan que la jugosidad sin perder la forma. resiste Me gusta ser parte de tus mejores burguers, porque nací para eso.",
     features: [
-      "Textura esponjosa",
-      "Tamaño perfecto",
-      "Con o sin ajonjolí",
-      "Ideal para asados"
+      "Con o sin ajonjolí, sigo siendo irresistible.",
+      "Hecho para hamburguesas caseras o gourmet.",
+      "Ideal para tardes de parrilla y risas."
     ]
   },
   {
@@ -312,12 +290,11 @@ export const products: Product[] = [
     image: "/panaderia/panchiquito_resultado.webp",
     category: "panaderia",
     color: "#1b6eb6",
-    shortDescription: "Pan pequeño con sabor casero.",
+    shortDescription: "Soy el pan que nunca falta en casa. Tierno, fresco y listo para lo que se te ocurra: desayunos, onces o el mejor sándwich del día.",
     features: [
-      "Porciones individuales",
-      "Textura suave",
-      "Ideal para niños",
-      "Sabor tradicional"
+      "Un clásico que nunca pasa de moda.",
+      "Suave y ligero en cada tajada.",
+      "Adaptable a cualquier antojo."
     ]
   },
   {
@@ -326,12 +303,11 @@ export const products: Product[] = [
     image: "/panaderia/Panecitos_resultado.webp",
     category: "panaderia",
     color: "#e80029",
-    shortDescription: "Panecillos ideales para acompañar cualquier comida.",
+    shortDescription: "Soy el pancito que alegra cualquier momento. Pequeño, suave y tan rico que siempre provoca repetir.",
     features: [
-      "Porciones pequeñas",
-      "Fáciles de compartir",
-      "Sabor suave",
-      "Perfectos para desayunos"
+      "Tamaño ideal para saciar ese antojo.",
+      "Textura suave que se disfruta fácil.",
+      "Perfectos para cualquier momento del día."
     ]
   },
   {
@@ -354,12 +330,11 @@ export const products: Product[] = [
     image: "/panaderia/Pantajadoint_resultado.webp",
     category: "panaderia",
     color: "#a45d28",
-    shortDescription: "Pan tajado elaborado con harina integral.",
+    shortDescription: "Soy ese pan integral que te hace sentir bien sin dejar de ser delicioso.",
     features: [
-      "Fuente de fibra",
-      "Sabor natural",
-      "Rebanadas perfectas",
-      "Opción más saludable"
+      "Textura suave, nada seca.",
+      "Sabor natural que conquista sin esfuerzo.",
+      "Una opción más saludable."
     ]
   },
   {
@@ -368,12 +343,11 @@ export const products: Product[] = [
     image: "/panaderia/Pantajadomant_resultado.webp",
     category: "panaderia",
     color: "#e18c15",
-    shortDescription: "Pan tajado con un toque de mantequilla para más sabor.",
+    shortDescription: "Soy ese pan tajado con un toque de mantequilla que hace que cada rebanada sepa a hogar.",
     features: [
-      "Sabor mantecoso",
-      "Rebanadas suaves",
-      "Ideal para tostadas",
-      "Versátil en recetas"
+      "Aroma y sabor que despiertan el apetito.",
+      "Textura tierna que se disfruta solo/a o con tu acompañante favorito.",
+      "Versatil para realizar recetas."
     ]
   },
   {
@@ -396,12 +370,11 @@ export const products: Product[] = [
     image: "/panaderia/Tostadas_resultado.webp",
     category: "panaderia",
     color: "#f34b0a",
-    shortDescription: "Crujientes tostadas listas para disfrutar con acompañantes.",
+    shortDescription: "Soy ese toque dorado y crujiente que le da vida a tus comidas. Conmigo, el desayuno suena mejor, la merienda se disfruta más y hasta lo simple sabe increíble.",
     features: [
-      "Textura crocante",
-      "Ligeras y prácticas",
-      "Empaque seguro",
-      "Versátiles para cualquier comida"
+      "Tengo una textura crocante.",
+      "Lista para acompañarte donde sea.",
+      "Combino con todo lo que te gusta."
     ]
   },
   {
@@ -410,12 +383,11 @@ export const products: Product[] = [
     image: "/industrial/p1.webp",
     category: "industrial",
     color: "#e80029",
-    shortDescription: "Aceite vegetal multipropósito, ideal para freír y cocinar.",
+    shortDescription: "Soy el mejor asistente en cada receta, ese aceite desmoldante diseñado para obtener horneados perfectos sin que las preparaciones seadhieran a moldes o bandejas.",
     features: [
-      "Libre de grasas trans",
-      "Versátil en la cocina",
-      "Presentación de 1 litro",
-      "Aporta sabor neutro"
+      "Facilita el desmolde sin romper tus preparaciones.",
+      "No altera el sabor ni textura del producto.",
+      "Soy el aliado que nunca falla."
     ]
   },
   {
@@ -424,68 +396,63 @@ export const products: Product[] = [
     image: "/industrial/p1.webp",
     category: "industrial",
     color: "#b3ce7d",
-    shortDescription: "Aceite vegetal multipropósito, ideal para freír y cocinar.",
+    shortDescription: "Soy ese antojito clásico que endulza tus momentos sin prisa. Dulce, suave y con ese sabor casero que te hace decir “¡qué delicia!”.",
     features: [
-      "Libre de grasas trans",
-      "Versátil en la cocina",
-      "Presentación de 1 litro",
-      "Aporta sabor neutro"
+      "Dulzura artesanal en cada bocado.",
+      "Presentaciones prácticas que conservan sabor y textura.",
+      "Sabor difícil de olvidar."
     ]
   },
   {
     name: "Breva en Almíbar Doypack",
     weight: "500g",
-    image: "/industrial/p1.webp",
+    image: "/industrial/I1.webp",
     category: "industrial",
     color: "#b3ce7d",
-    shortDescription: "Aceite vegetal multipropósito, ideal para freír y cocinar.",
+    shortDescription: "Soy esa breva que le pone el toque dulce a tus antojos. Lista para disfrutar sola o darle vida a tus postres y recetas favoritas.",
     features: [
-      "Libre de grasas trans",
-      "Versátil en la cocina",
-      "Presentación de 1 litro",
-      "Aporta sabor neutro"
+      "Presentación práctica y fácil de conservar.",
+      "Ideal para endulzar momentos.",
+      "Tradición y sabor boyacense en cada cucharada."  
     ]
   },
   {
     name: "Piña en Almíbar Doypack",
     weight: "500g",
-    image: "/industrial/p1.webp",
+    image: "/industrial/I2.webp",
     category: "industrial",
     color: "#e7aa33",
-    shortDescription: "Aceite vegetal multipropósito, ideal para freír y cocinar.",
+    shortDescription: "Soy esos trocitos que endulzan tu día. Suavecita, jugosa y con el toque justo de almíbar, lista para acompañarte donde quieras.",
     features: [
-      "Libre de grasas trans",
-      "Versátil en la cocina",
-      "Presentación de 1 litro",
-      "Aporta sabor neutro"
+      "Sabor tropical en cada bocado.",
+      "Lista para disfrutar.",
+      "Empaque práctico, fácil de abrir y conservar."
     ]
   },
   {
-    name: "Breva en Almíbar Cojín",
+    name: "Breva en Almíbar - Cojín",
     weight: "1000g",
-    image: "/industrial/p1.webp",
+    image: "/industrial/I1.webp",
     category: "industrial",
     color: "#0f3b34",
-    shortDescription: "Aceite vegetal multipropósito, ideal para freír y cocinar.",
+    shortDescription: "Soy esa breva dulce y jugosa que alegra cualquier momento. Perfecta para disfrutar sola o darle un toque especial a tus recetas favoritas.",
     features: [
-      "Libre de grasas trans",
-      "Versátil en la cocina",
-      "Presentación de 1 litro",
-      "Aporta sabor neutro"
+      "Dulzura tradicional con sabor auténtico.",
+      "Textura suave y jugosa, lista para servir.",
+      "Elaborada para procesos productivos y uso industrial."
     ]
   },
   {
-    name: "Piña en Almíbar Cojín",
+    name: "Piña en Almíbar - Cojín",
     weight: "500g",
-    image: "/industrial/p1.webp",
+    image: "/industrial/I2.webp",
     category: "industrial",
     color: "#0f3b34",
-    shortDescription: "Aceite vegetal multipropósito, ideal para freír y cocinar.",
+    shortDescription: "Soy esa piña en dulce que le pone chispa a tus recetas y un toque tropical a cada momento.",
     features: [
-      "Libre de grasas trans",
-      "Versátil en la cocina",
-      "Presentación de 1 litro",
-      "Aporta sabor neutro"
+      "Trocitos jugosos con sabor auténtico.",
+      "Perfecta para acompañar tus recetas favoritas.",
+      "Elaborada para procesos productivos y uso industrial."
     ]
   }
 ];

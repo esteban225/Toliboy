@@ -185,22 +185,28 @@ export default function Contacto() {
               </p>
             </div>
 
-            <div className="flex items-center gap-4 pt-3">
+            <h3 className="text-xl font-bold text-red-400">
+              Encuéntranos en redes sociales cómo:
+            </h3>
+
+            <div className="flex items-center gap-3 pt-2">
               <a
                 href="https://www.facebook.com/toliboy.co"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-blue-600 rounded-full text-white hover:bg-blue-700 transition"
+                className="flex items-center justify-center gap-1 p-2 bg-blue-600 rounded-full text-white hover:bg-blue-700 transition"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-4 h-4" />
+                Toliboy
               </a>
               <a
                 href="https://www.instagram.com/toliboy.co"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-pink-600 rounded-full text-white hover:bg-pink-700 transition"
+                className="flex items-center justify-center gap-1 p-2 bg-pink-600 rounded-full text-white hover:bg-pink-700 transition"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-4 h-4" />
+                productos_toliboy
               </a>
               <a
                 href="mailto:comercial@toliboy.com"

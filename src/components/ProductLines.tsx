@@ -12,7 +12,7 @@ const productLines = [
       "/Banner-Panaderia.webp",
     icon: "https://img.icons8.com/?size=100&id=118867&format=png&color=000000",
     title: "Panadería",
-    description: "Ingredientes de alta calidad para panes artesanales y especialidades.",
+    description: "Nuestros panes no solo se hornean, se crean con las manos, como antes, como en casa.",
     link: "/catalogo/panaderia",
   },
   {
@@ -21,7 +21,7 @@ const productLines = [
       "/Banner-Pasteleria.webp",
     icon: "https://img.icons8.com/?size=100&id=kL10iTg3RGya&format=png&color=000000",
     title: "Pastelería",
-    description: "Soluciones innovadoras para crear postres y repostería de ensueño.",
+    description: "Deliciosos ponques y otras delicias preparadas para compartir y endulzar tu día a día.",
     link: "/catalogo/pasteleria",
   },
   {
@@ -30,7 +30,7 @@ const productLines = [
       "/Banner-Richard.webp",
     icon: "https://img.icons8.com/?size=100&id=htNEv6WH8tvr&format=png&color=000000",
     title: "Richard Maestro ©",
-    description: "Productos a gran escala para la optimización de procesos de producción.",
+    description: "Soluciones para industrias que buscan Innovación, sabor y confiabilidad en cada ingrediente.",
     link: "/catalogo/industrial",
   },
 ];
@@ -69,7 +69,7 @@ export default function ProductLines() {
             <Link
               key={product.id}
               to={product.link}
-              ref={(el) => (cardsRef.current[i] = el)}
+              ref={(el) => { cardsRef.current[i] = el; }}
               className="group block bg-white rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:ring-2 hover:ring-red-400"
               aria-label={`Explorar línea de productos de ${product.title}`}
             >

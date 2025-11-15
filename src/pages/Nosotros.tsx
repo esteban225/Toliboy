@@ -49,15 +49,19 @@ export default function Nosotros() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-2xl md:text-3xl font-bold text-red-800 mb-4">
-            Productos Comestibles TOLIBOY
+            Productos Comestibles Toliboy
           </h2>
+          <h3 className="text-1xl md:text-2xl font-bold mb-4">
+            Hechos con el corazón de Boyacá
+          </h3>
           <p className="text-gray-700 leading-relaxed">
-            Somos una empresa Colombiana ubicada en la ciudad de Duitama Boyacá,
-            productora y comercializadora de materias primas para panadería y
-            productos de panadería y pastelería, creada con el objetivo de dar
-            soluciones prácticas a nuestros clientes y a la industria
-            panificadora, alimentos y confitería. Con veinticinco años de
-            experiencia, y participación a nivel nacional.
+            Desde Duitama Boyacá, llevamos 30 años creando productos de
+            panaderia y pasteleria que llenan de sabor y tradición los
+            hogaresdel departamento.
+            <br />
+            En Toliboy elaboramos materias primas para panadería y pastelería
+            pensadas para hacerte la vida más fácil, con la calidad y el sabor
+            que solo la experiencia y el trabajo boyacense pueden ofrecer.
           </p>
         </motion.div>
       </section>
@@ -72,18 +76,28 @@ export default function Nosotros() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-2xl md:text-3xl font-bold text-red-800 mb-4">
-            Historia
+            Nuestra historia
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            Productos Comestibles TOLIBOY inicio actividades el 1 de noviembre
-            de 1995, con un horno estático de cuatro gavetas, una artesa para
-            amasar, un escaviladero, un mesón y veinticuatro latas para
-            panadería. La razón social se deriva de la sociedad entre un
-            tolimense y un boyacense. El mayor obstáculo era la carencia total
-            de maquinaria, pero Ricardo Diaz seguro de sus conocimientos se
-            comprometió a realizar todos los procesos manualmente de forma muy
-            artesanal pues contaba con una vasta experiencia de treinta años en
-            el oficio de panadería y pastelería
+            Entre montañas que huelen a esfuerzo y tradición, nació Productos
+            Comestibles Toliboy. El 5 de diciembre de 1995, todo comienza con la
+            sociedad entre un Tolimense y un Boyacense. Sin maquinaria, pero con
+            un gran corazón comenzó un sueño que cambiaría el rumbo de muchas
+            familias boyacenses.
+            <br />
+            <br />
+            Detrás de este sueño estaba Ricardo Díaz, un hombre con el alma
+            llena de fe, sin mas recueros que conocimiento, pasión y ganas de
+            salir adelante.
+            <br />
+            <br />
+            Con más de 30 años de experiencia en panadería y pastelería, Ricardo
+            Díaz decidió hacerlo todo de manera manual, con la precisión y el
+            amor de quien cree en lo que hace. Día tras día, su dedicación
+            transformó la escasez en oportunidad, el trabajo duro en aprendizaje
+            y su pequeño proyecto artesanal en una empresa que hoy endulza la
+            vida de Boyacá.
+            <br />
           </p>
         </motion.div>
         <motion.img

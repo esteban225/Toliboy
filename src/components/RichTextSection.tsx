@@ -7,9 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 const titleParts = [
   ["N", "u", "e", "s", "t", "r", "o", ""],
   ["p", "r", "o", "d", "u", "c", "t", "o", ""],
-  ["e", "s",  ],
-  [" ", "d", "e", ""],
-  [ "c", "a", "l", "i", "d", "a", "d", ""],
+  ["e", "s"],
   ["1", "0", "0", "%"],
   ["B", "o", "y", "a", "c", "e", "n", "s", "e"],
 ];
@@ -89,9 +87,10 @@ export default function RichTextSection() {
           ref={paragraphRef}
           className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto"
         >
-          Tanto si eres un experto en la tierrita  
-          sabremos que nunca has probado nada igual. ¿No
-          nos crees? ¡Anímate a probarlo!
+          Generación tras generación, hemos compartido el sabor que nos une.
+          Muchos ya lo conocen... Y quien lo prueba siempre quiere más
+          <br />
+          <span className="text-gray font-semibold"> ¿Tú, ya lo probaste? </span>
         </p>
 
         {/* Decoración abajo */}
