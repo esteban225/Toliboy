@@ -55,9 +55,9 @@ export default function Nosotros() {
             Hechos con el corazón de Boyacá
           </h3>
           <p className="text-gray-700 leading-relaxed">
-            Desde Duitama Boyacá, llevamos 30 años creando productos de
-            panaderia y pasteleria que llenan de sabor y tradición los
-            hogaresdel departamento.
+            Desde Duitama, Boyacá, llevamos 30 años creando productos de
+            panadería y pastelería que llenan de sabor y tradición los
+            hogares del departamento.
             <br />
             En Toliboy elaboramos materias primas para panadería y pastelería
             pensadas para hacerte la vida más fácil, con la calidad y el sabor
@@ -81,13 +81,13 @@ export default function Nosotros() {
           <p className="text-gray-700 leading-relaxed">
             Entre montañas que huelen a esfuerzo y tradición, nació Productos
             Comestibles Toliboy. El 5 de diciembre de 1995, todo comienza con la
-            sociedad entre un Tolimense y un Boyacense. Sin maquinaria, pero con
-            un gran corazón comenzó un sueño que cambiaría el rumbo de muchas
+            sociedad entre un tolimense y un boyacense. Sin maquinaria, pero con
+            un gran corazón, comenzó un sueño que cambiaría el rumbo de muchas
             familias boyacenses.
             <br />
             <br />
             Detrás de este sueño estaba Ricardo Díaz, un hombre con el alma
-            llena de fe, sin mas recueros que conocimiento, pasión y ganas de
+            llena de fe, sin más recursos que conocimiento, pasión y ganas de
             salir adelante.
             <br />
             <br />
@@ -125,17 +125,17 @@ export default function Nosotros() {
             {
               titulo: "Misión",
               texto:
-                "Nutrimos la vida con sabor, tradición y confianza, con productos fabricados por un talento humano componente y comprometido, dejando huella para brindar bienestar a nuestro grupos de interés y lograr un crecimiento empresarial sostenible.",
+                "Nutrimos la vida con sabor, tradición y confianza, con productos fabricados por un talento humano competente y comprometido, dejando huella para brindar bienestar a nuestros grupos de interés y lograr un crecimiento empresarial sostenible.",
             },
             {
               titulo: "Visión",
               texto:
-                "En el 2030 seremos modelo empresarial en la fabricación de alimentos y materias primas nutritivas, que transmitan felicidad a nuestros clientes, desarrollando estrategias rentables y sostenibles, evolucionando con incoación, tradición y sentido humano.",
+                "En el 2030 seremos modelo empresarial en la fabricación de alimentos y materias primas nutritivas, que transmitan felicidad a nuestros clientes, desarrollando estrategias rentables y sostenibles, evolucionando con innovación, tradición y sentido humano.",
             },
             {
               titulo: "Política de calidad",
               texto:
-                "Productos comestibles TOLIBOY S.A.S., es una empresa dedicada a Procesar y comercializar productos alimenticios saludables de la mejor calidad, afianzando la credibilidad de nuestras marcas de productos, comprometidos en el cumplimiento de los requisitos aplicables al sector y el mejoramiento continuo de nuestro sistema de gestión de la calidad a través de los procesos, con innovación, oportunidad para mejorar la competitividad, productividad, apoyando la dirección estratégica, cumpliendo las normas y los estándares de calidad del producto, apoyados con personas competentes, capacitadas, motivadas e interesadas en responder a las necesidades, expectativas de los clientes, partes interesadas y en el logro de los objetivos estratégicos y de la calidad de la organización; incursionando en nuevos mercados y manteniendo el posicionamiento de nuestras marcas, favoreciendo el desarrollo del entorno social y la conservación del medio ambiente, generando rentabilidad para los socios.",
+                "Productos comestibles TOLIBOY S.A.S. es una empresa dedicada a procesar y comercializar productos alimenticios saludables de la mejor calidad, afianzando la credibilidad de nuestras marcas de productos, comprometidos en el cumplimiento de los requisitos aplicables al sector y el mejoramiento continuo de nuestro sistema de gestión de la calidad a través de los procesos, con innovación, oportunidad para mejorar la competitividad, productividad, apoyando la dirección estratégica, cumpliendo las normas y los estándares de calidad del producto, apoyados con personas competentes, capacitadas, motivadas e interesadas en responder a las necesidades, expectativas de los clientes, partes interesadas y en el logro de los objetivos estratégicos y de la calidad de la organización; incursionando en nuevos mercados y manteniendo el posicionamiento de nuestras marcas, favoreciendo el desarrollo del entorno social y la conservación del medio ambiente, generando rentabilidad para los socios.",
             },
           ].map((item, i) => (
             <motion.div

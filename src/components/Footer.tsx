@@ -20,7 +20,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm sm:text-base text-red-200 text-center md:text-left max-w-xs">
-              Más de 25 años ofreciendo calidad y tradición en cada producto
+              Más de 30 años ofreciendo calidad y tradición en cada producto
             </p>
           </div>
 
@@ -93,7 +93,7 @@ export default function Footer() {
               <Facebook className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-red-100" />
             </a>
             <a
-              href="https://www.instagram.com/toliboy.co/"
+              href="https://www.instagram.com/productos_toliboy?igsh=OHR3MHJ6Njg3cTZ5"
               target="_blank"
               rel="noreferrer"
               className="group bg-red-700 p-3 rounded-full hover:bg-red-600 transition-all duration-300 hover:scale-110 hover:rotate-12"

@@ -200,7 +200,7 @@ export default function Contacto() {
                 Toliboy
               </a>
               <a
-                href="https://www.instagram.com/toliboy.co"
+                href="https://www.instagram.com/productos_toliboy?igsh=OHR3MHJ6Njg3cTZ5"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-1 p-2 bg-pink-600 rounded-full text-white hover:bg-pink-700 transition"
