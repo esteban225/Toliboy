@@ -47,6 +47,7 @@ function MainApp() {
   return (
     <>
       <Navbar />
+
       <ScrollToTop />
 
       <Routes>
@@ -55,7 +56,8 @@ function MainApp() {
 
         {/* 📌 Rutas anidadas del catálogo */}
         <Route path="/catalogo" element={<Catalogo />}>
-          <Route index element={<ProductTodo />} />   {/* 👈 Ahora el index muestra "Todo" */}
+          <Route index element={<ProductTodo />} />{" "}
+          {/* 👈 Ahora el index muestra "Todo" */}
           <Route path="todo" element={<ProductTodo />} />
           <Route path="pasteleria" element={<ProductPasteleria />} />
           <Route path="panaderia" element={<ProductPanaderia />} />

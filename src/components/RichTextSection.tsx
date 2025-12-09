@@ -57,49 +57,64 @@ export default function RichTextSection() {
   }, []);
 
   return (
-    <section className="w-full py-20 bg-[#FEC601] rounded-b-full border-amber-50 relative overflow-hidden">
-      <div className="max-w-4xl mx-auto px-6 text-center relative">
-        {/* Decoración arriba */}
-        <img
-          src="/toli.svg"
-          alt="Decorative flower"
-          className="w-26 h-26 mx-auto mb-6 opacity-70"
-        />
+    <section className="w-full bg-[#FEC601] relative overflow-hidden">
+      <div className="pt-20 pb-0">
+        <div className="max-w-4xl mx-auto px-6 text-center relative">
+          {/* Decoración arriba */}
+          <img
+            src="/toli.svg"
+            alt="Decorative flower"
+            className="w-26 h-26 mx-auto mb-6 opacity-70"
+          />
 
-        {/* Título animado */}
-        <h2
-          ref={titleRef}
-          className="text-3xl md:text-5xl font-bold leading-snug mb-6 flex flex-wrap justify-center"
-        >
-          {titleParts.map((part, partIndex) => (
-            <span key={partIndex} className="mr-2">
-              {part.map((letter, i) => (
-                <span key={i} className="inline-block">
-                  {letter}
-                </span>
-              ))}
-            </span>
-          ))}
-        </h2>
+          {/* Título animado */}
+          <h2
+            ref={titleRef}
+            className="text-3xl md:text-5xl font-bold leading-snug mb-6 flex flex-wrap justify-center"
+          >
+            {titleParts.map((part, partIndex) => (
+              <span key={partIndex} className="mr-2">
+                {part.map((letter, i) => (
+                  <span key={i} className="inline-block">
+                    {letter}
+                  </span>
+                ))}
+              </span>
+            ))}
+          </h2>
 
-        {/* Párrafo animado */}
-        <p
-          ref={paragraphRef}
-          className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto"
-        >
-          Generación tras generación, hemos compartido el sabor que nos une.
-          Muchos ya lo conocen... Y quien lo prueba siempre quiere más
-          <br />
-          <span className="text-gray font-semibold"> ¿Tú, ya lo probaste? </span>
-        </p>
+          {/* Párrafo animado */}
+          <p
+            ref={paragraphRef}
+            className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto"
+          >
+            Generación tras generación, hemos compartido el sabor que nos une.
+            Muchos ya lo conocen... Y quien lo prueba siempre quiere más
+            <br />
+            <span className="text-gray font-semibold"> ¿Tú, ya lo probaste? </span>
+          </p>
 
-        {/* Decoración abajo */}
-        <img
-          src="/toli-calidad.svg"
-          alt="Plants taste better"
-          className="w-50 mx-auto mt-10 opacity-80"
-        />
+          {/* Decoración abajo */}
+          <img
+            src="/toli-calidad.svg"
+            alt="Plants taste better"
+            className="w-50 mx-auto mt-10 opacity-80"
+          />
+        </div>
       </div>
+
+      {/* Onda SVG */}
+      <svg
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        className="w-full h-auto block"
+        style={{ marginTop: "-2px" }}
+      >
+        <path
+          d="M0,64L120,74.7C240,85,480,107,720,106.7C960,107,1200,85,1320,74.7L1440,64L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z"
+          fill="#e80029"
+        />
+      </svg>
     </section>
   );
 }

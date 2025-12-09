@@ -5,6 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import ProductsBar from "../components/ProductsBar";
 import RichTextSection from "../components/RichTextSection";
+import WaveSection from "../components/WaveSection";
+import WaveSectionReverse from "../components/WaveSectionReverse";
 import { ArrowRight } from "lucide-react";
 import BannerScroll from "../components/BannerScroll";
 import ProductLines from "../components/ProductLines";
@@ -36,11 +38,13 @@ export default function Home() {
 
   return (
     <div className="w-full bg-[#FEF9F2]">
+      {/* BANNER */}
       <BannerScroll />
+      
       {/* PRODUCTOS */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center">
+      <WaveSection topColor="#FEF9F2" bottomColor="#FEF9F2" waveIntensity="medium">
         <div className="max-w-7xl mx-auto">
-          <RichTextSection />
+          {/*<RichTextSection />*/}
           <div className="mt-8 md:mt-12">
             <ProductsBar />
           </div>
@@ -58,23 +62,23 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </WaveSection>
 
       {/* CONOCE NUESTRAS LÍNEAS */}
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center bg-[#FEF9F2]">
+      <WaveSectionReverse topColor="#FEF9F2" bottomColor="#002E6D" waveIntensity="medium">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-[#002E6D] text-white text-xl sm:text-2xl md:text-3xl font-bold py-6 sm:py-8 md:py-15 rounded-full mx-4 sm:mx-8">
-            <h2 className="px-4 sm:px-6">Nuestras Líneas de Productos</h2>
+          <div className="text-white text-xl sm:text-2xl md:text-3xl font-bold py-6 sm:py-8 md:py-15 px-4 sm:px-8">
+            <h2>Nuestras Líneas de Productos</h2>
           </div>
           <div className="mt-8 md:mt-12">
             <ProductLines/>
           </div>
         </div>
-      </section>
+      </WaveSectionReverse>
 
       {/* 25 AÑOS */}
-      <section className="anim-card w-full bg-[#E30613] px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center text-white relative overflow-hidden">
-        <div className="max-w-4xl mx-auto relative z-10">
+      <WaveSection topColor="#002E6D" bottomColor="#FEC601" waveIntensity="medium">
+        <div className="anim-card max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center text-white relative z-10">
           <div className="mb-6 md:mb-8">
             <img
               src="/mascota-toliboy.svg"
@@ -88,23 +92,18 @@ export default function Home() {
           </h2>
           <Link
             to="/nosotros"
-            className="inline-block bg-[#002E6D] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold 
+            className="inline-block bg-white text-[#002E6D] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold 
                    text-sm sm:text-base transition-all duration-300 
-                   hover:bg-blue-900 hover:shadow-lg hover:-translate-y-1 active:translate-y-0"
+                   hover:bg-gray-100 hover:shadow-lg hover:-translate-y-1 active:translate-y-0"
           >
             Conoce Nuestra Historia
           </Link>
         </div>
-        
-        {/* Elementos decorativos */}
-        <div className="absolute top-10 left-5 w-8 h-8 sm:w-12 sm:h-12 bg-white/10 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-10 right-5 w-6 h-6 sm:w-10 sm:h-10 bg-white/10 rounded-full animate-bounce"></div>
-        <div className="absolute top-1/2 right-10 w-4 h-4 sm:w-8 sm:h-8 bg-white/10 rounded-full animate-pulse"></div>
-      </section>
+      </WaveSection>
 
       {/* CONTACTO */}
-      <section className="anim-card w-full bg-[#FEC601] px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center relative overflow-hidden">
-        <div className="max-w-4xl mx-auto relative z-10">
+      <WaveSectionReverse topColor="#FEC601" bottomColor="#FEF9F2" waveIntensity="medium">
+        <div className="anim-card max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center relative z-10">
           <div className="mb-6 md:mb-8">
             <img
               src="/contacto-toliboy.svg"
@@ -127,12 +126,7 @@ export default function Home() {
             Contáctanos Ahora
           </Link>
         </div>
-
-        {/* Elementos decorativos */}
-        <div className="absolute top-8 left-4 w-6 h-6 sm:w-10 sm:h-10 bg-[#002E6D]/10 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-8 right-4 w-8 h-8 sm:w-12 sm:h-12 bg-[#002E6D]/10 rounded-full animate-pulse"></div>
-        <div className="absolute top-1/3 right-8 w-4 h-4 sm:w-8 sm:h-8 bg-[#002E6D]/10 rounded-full animate-bounce"></div>
-      </section>
+      </WaveSectionReverse>
     </div>
   );
 }

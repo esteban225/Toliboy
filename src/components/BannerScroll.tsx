@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BannerSvg from "../assets/banner.svg?react";
-import { Link } from "react-router-dom";
+import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,91 +68,6 @@ export default function BannerScroll() {
               );
             });
 
-            // ✨ Flotante infinito mejorado
-            entryTl.to(svgEl, {
-              y: -8,
-              x: 2,
-              rotation: 1,
-              duration: 1.5,
-              repeat: -1,
-              yoyo: true,
-              ease: "sine.inOut",
-            });
-
-            // ✨ Efecto de respiración en elementos
-            entryTl.to(shapesOnly, {
-              scale: 1.02,
-              opacity: 0.9,
-              duration: 2.2,
-              repeat: -1,
-              yoyo: true,
-              ease: "sine.inOut",
-              stagger: { each: 0.07, from: "random" },
-            }, "-=1.2");
-
-            // 📌 Scroll shapes → movimiento + fade out mejorado
-            const scrollTl = gsap.timeline({
-              scrollTrigger: {
-                trigger: scope.current,
-                start: "top top",
-                end: "bottom top",
-                scrub: 1.5, // 👈 más suave el scrub
-                pin: true,
-                pinSpacing: false,
-                invalidateOnRefresh: true,
-              },
-            });
-
-            // 🚀 Primera fase: dispersión con opacidad gradual
-            scrollTl.to(shapesOnly, {
-              x: (i) => {
-                const direction = i % 2 === 0 ? 1 : -1;
-                const distance = 100 + i * 30;
-                return direction * distance;
-              },
-              y: (i) => -150 - i * 30,
-              scale: (i) => 0.8 - (i * 0.05),
-              opacity: (i) => Math.max(0.3, 1 - (i * 0.15)),
-              rotation: (i) => (i % 2 === 0 ? 15 : -15),
-              ease: "power2.out",
-              stagger: { each: 0.01, from: "edges" },
-              duration: 0.22,
-            });
-
-            // 🚀 Segunda fase: dispersión mayor + fade out
-            scrollTl.to(shapesOnly, {
-              x: (i) => {
-                const direction = i % 2 === 0 ? 1 : -1;
-                const distance = 200 + i * 60;
-                return direction * distance;
-              },
-              y: (i) => -300 - i * 80,
-              scale: (i) => Math.max(0.1, 0.4 - (i * 0.08)),
-              opacity: (i) => Math.max(0, 0.6 - (i * 0.2)),
-              rotation: (i) => (i % 2 === 0 ? 45 : -45),
-              ease: "power2.inOut",
-              stagger: { each: 0.005, from: "random" },
-              duration: 0.16,
-            }, "-=0.07");
-
-            // � Fase final: desaparición completa
-            scrollTl.to(shapesOnly, {
-              opacity: 0,
-              scale: 0,
-              rotation: (i) => (i % 2 === 0 ? 180 : -180),
-              ease: "power3.in",
-              stagger: { each: 0.002, from: "center" },
-              duration: 0.16,
-            }, "-=0.03");
-
-            // ✨ Efecto adicional: blur progresivo
-            scrollTl.to(svgEl, {
-              filter: "blur(8px)",
-              opacity: 0.2,
-              scale: 1.1,
-              ease: "power2.inOut",
-              duration: 0.4,
-            }, 0);
           }
         },
 
@@ -187,7 +102,7 @@ export default function BannerScroll() {
 
   return (
     <>
-      <section className="h-screen flex items-center justify-center bg-[#FEF9F2] overflow-hidden">
+      <section className="h-screen flex items-center justify-center bg-[#fdf2e1ff] overflow-hidden">
         {/* 👇 Solo escritorio */}
         <div
           ref={scope}
@@ -199,7 +114,7 @@ export default function BannerScroll() {
         {/* 👇 Solo móvil */}
         <div
           ref={mobileContainerRef}
-          className="md:hidden flex flex-col items-center justify-center w-full h-full text-center bg-gradient-to-b from-[#FEF9F2] to-orange-50 px-4 py-8 relative overflow-hidden"
+          className="md:hidden flex flex-col items-center justify-center w-full h-full text-center bg-[#fdf2e1ff] px-4 py-8 relative overflow-hidden"
         >
           {/* Fondo decorativo */}
           <div className="absolute inset-0 opacity-10">
@@ -234,35 +149,22 @@ export default function BannerScroll() {
 
           {/* Botón mejorado */}
           <div className="flex flex-col sm:flex-row gap-3 w-full max-w-xs">
-            <Link
+            <Button
               to="/catalogo"
-              className="bg-gradient-to-r from-red-600 to-red-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95 shadow-md"
+              className="bg-gradient-to-r from-red-600 to-red-700 hover:shadow-lg active:scale-95"
             >
               Ver Productos
-            </Link>
-            <Link
+            </Button>
+            <Button
               to="/nosotros"
-              className="bg-white border-2 border-red-600 text-red-600 font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:bg-red-50 hover:scale-105 active:scale-95"
+              variant="secondary"
+              className="border-2 border-red-600 hover:bg-red-50"
             >
               Conocenos
-            </Link>
+            </Button>
           </div>
         </div>
       </section>
-
-      <div
-        ref={imgContainerRef}
-        className="hidden md:flex h-full bg-[#FEF9F2] text-white items-center justify-center"
-      >
-        <div className="flex items-center gap-4">
-          <img
-            src="/carita.svg"
-            alt="toliboy logo"
-            className="h-96 w-auto custom:h-41"
-            loading="lazy"
-          />
-        </div>
-      </div>
     </>
   );
 }

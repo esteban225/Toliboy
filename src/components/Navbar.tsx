@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Menu, X } from "lucide-react";
+import Button from "./Button";
 import "../css/Navbar.css";
 
 export default function Navbar() {
@@ -8,7 +9,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Inicio", path: "/" },
-    { name: "Nuestros Productos", path: "/catalogo" },
+    { name: "Productos", path: "/catalogo" },
     { name: "Nosotros", path: "/nosotros" },
   ];
 
@@ -22,12 +23,12 @@ export default function Navbar() {
   return (
     <nav
       className="w-full sticky top-0 z-50"
-      style={{ backgroundColor: "#FEF9F2" }}
+      style={{ backgroundColor: "#fdf2e1ff" }}
     >
-      <div className="max-w-7xl mx-auto  py-3 flex items-center-safe justify-between">
+      <div className="max-w-7xl mx-auto py-3 px-4 md:px-8 flex items-center justify-between">
         {/* Botón menú hamburguesa (solo <768px) */}
         <button
-          className="md:hidden text-gray-800"
+          className="md:hidden pl-20 text-gray-800  mr-auto"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={38} />}
@@ -38,7 +39,7 @@ export default function Navbar() {
             <li key={link.path}>
               <Link
                 to={link.path}
-                className="text-red-700 hover:text-[#134289] transition  font-comic"
+                className="text-red-700 hover:text-[#134289] transition  font-light"
               >
                 {link.name}
               </Link>
@@ -47,26 +48,28 @@ export default function Navbar() {
         </ul>
         {/* Logo - Queda en el centro en md y primero en sm */}
         <div className="flex items-center gap-3 order-first md:order-2">
-          <img
-            src="/Logo-secundario.svg"
-            alt="toliboy logo"
-            className="h-20 w-auto"
-          />
+          <Link to="/">
+            <img
+              src="/Logo-secundario.svg"
+              alt="toliboy logo"
+              className="h-20 w-auto"
+            />
+          </Link>
         </div>
         {/* Botón de Contacto - Queda a la derecha en md y último en sm */}{" "}
-        <Link
+        <Button
           to={contactLink.path}
-          className="relative hidden md:block md:order-3 bg-red-600 text-white font-semibold py-3 px-6 rounded-4xl transition-transform hover:translate-x-1 hover:translate-y-1 shadow-[4px_4px_0_0_#1e40af] active:shadow-none active:translate-x-0 active:translate-y-0"
+          className="hidden md:block md:order-3"
         >
-          {contactLink.name}{" "}
-        </Link>
+          {contactLink.name}
+        </Button>
       </div>
 
       {/* Menú móvil (solo <768px) */}
       {isOpen && (
         <div
-          className="md:hidden px-6 py-6 space-y-4 rounded-b-2xl shadow-lg"
-          style={{ backgroundColor: "#fcf7e8" }}
+          className="md:hidden px-4 sm:px-6 py-6 space-y-4 rounded-b-2xl shadow-lg"
+          style={{ backgroundColor: "#fdf2e1ff" }}
         >
           {[...navLinks, contactLink].map((link) => (
             <Link
