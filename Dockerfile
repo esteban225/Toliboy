@@ -4,10 +4,10 @@ FROM node:18-alpine AS builder
 WORKDIR /app
 
 # Copiar package.json y package-lock.json
-COPY package*.json ./
+COPY package.json package-lock.json ./
 
 # Instalar dependencias
-RUN npm ci
+RUN npm install
 
 # Copiar el código fuente
 COPY . .
@@ -25,12 +25,6 @@ RUN npm install -g serve
 
 # Copiar los archivos compilados del stage anterior
 COPY --from=builder /app/dist ./dist
-
-# Copiar package.json para las dependencias runtime
-COPY package*.json ./
-
-# Instalar solo dependencias de producción
-RUN npm ci --only=production
 
 # Exponer el puerto
 EXPOSE 5173
