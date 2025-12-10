@@ -1,0 +1,36 @@
+# Docker
+.dockerignore
+node_modules/
+npm-debug.log
+dist/
+.env.local
+.env.*.local
+.git
+.gitignore
+README.md
+.DS_Store
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Production
+/dist
+/build
+
+# Development
+.vite/
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

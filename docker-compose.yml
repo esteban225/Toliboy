@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  toliboy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: toliboy-app
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - toliboy-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5173"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  toliboy-network:
+    driver: bridge
