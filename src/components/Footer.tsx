@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-red-800 text-white py-8 md:py-12">
+    <footer className="w-full bg-[#fdf2e1ff] text-white py-8 md:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {/* Logos */}
@@ -19,15 +19,15 @@ export default function Footer() {
                 />
               </div>
             </div>
-            <p className="text-sm sm:text-base text-red-200 text-center md:text-left max-w-xs">
+            <p className="text-sm sm:text-base text-blue-900 text-center md:text-left max-w-xs">
               Más de 30 años ofreciendo calidad y tradición en cada producto
             </p>
           </div>
 
         {/* Links de navegación */}
         <div className="text-center md:text-left">
-          <h3 className="font-bold text-lg sm:text-xl mb-4 text-white">Enlaces Rápidos</h3>
-          <ul className="space-y-3 text-red-100">
+          <h3 className="font-bold text-lg sm:text-xl mb-4 text-blue-900">Enlaces Rápidos</h3>
+          <ul className="space-y-1 text-blue-900">
             <li>
               <Link 
                 to="/" 
@@ -81,7 +81,7 @@ export default function Footer() {
 
         {/* Redes sociales */}
         <div className="text-center md:text-left">
-          <h3 className="font-bold text-lg sm:text-xl mb-4 text-white">Síguenos</h3>
+          <h3 className="font-bold text-lg sm:text-xl mb-4 text-blue-900">Síguenos</h3>
           <div className="flex justify-center md:justify-start gap-4 mb-6">
             <a
               href="https://www.facebook.com/toliboy.co"
@@ -102,7 +102,7 @@ export default function Footer() {
               <Instagram className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-red-100" />
             </a>
           </div>
-          <div className="space-y-2 text-sm text-red-200">
+          <div className="space-y-2 text-sm text-blue-900">
             <p>📍 Duitama - Boyacá, Colombia</p>
             <p>📞 Contáctanos para pedidos</p>
             <p>⏰ Lun - Sáb: 6:00 AM - 8:00 PM</p>
@@ -115,7 +115,7 @@ export default function Footer() {
       <div className="mt-8 md:mt-12 border-t border-red-700 pt-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-red-200 text-center sm:text-left">
+            <p className="text-sm text-blue-900 text-center sm:text-left">
               © {new Date().getFullYear()} Toliboy. Todos los derechos reservados.
             </p>
             <div className="flex flex-wrap justify-center sm:justify-end gap-4 text-xs text-red-300">

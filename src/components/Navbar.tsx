@@ -2,14 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Menu, X } from "lucide-react";
 import Button from "./Button";
-import "../css/Navbar.css";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { name: "Inicio", path: "/" },
-    { name: "Productos", path: "/catalogo" },
+    { name: "Nuestros Productos", path: "/catalogo" },
     { name: "Nosotros", path: "/nosotros" },
   ];
 
@@ -25,58 +24,66 @@ export default function Navbar() {
       className="w-full sticky top-0 z-50"
       style={{ backgroundColor: "#fdf2e1ff" }}
     >
-      <div className="max-w-7xl mx-auto py-3 px-4 md:px-8 flex items-center justify-between">
-        {/* Botón menú hamburguesa (solo <768px) */}
-        <button
-          className="md:hidden pl-20 text-gray-800  mr-auto"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={28} /> : <Menu size={38} />}
-        </button>
-        {/* Menú principal (desde 768px) - Queda a la izquierda en md */}
-        <ul className="hidden md:flex items-center gap-6 font-medium md:order-1">
-          {navLinks.map((link) => (
-            <li key={link.path}>
-              <Link
-                to={link.path}
-                className="text-red-700 hover:text-[#134289] transition  font-light"
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        {/* Logo - Queda en el centro en md y primero en sm */}
-        <div className="flex items-center gap-3 order-first md:order-2">
-          <Link to="/">
-            <img
-              src="/Logo-secundario.svg"
-              alt="toliboy logo"
-              className="h-20 w-auto"
-            />
-          </Link>
+      {/* CONTENEDOR PRINCIPAL */}
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 relative">
+        
+        {/* GRID RESPONSIVO */}
+        <div className="flex items-center justify-between md:grid md:grid-cols-3 gap-4 md:gap-8">
+          
+          {/* BOTÓN MENÚ MOBILE */}
+          <button
+            className="md:hidden text-gray-800"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={32} />}
+          </button>
+
+          {/* MENÚ IZQUIERDA (DESKTOP) */}
+          <ul className="hidden md:flex items-center gap-4 lg:gap-6 font-medium justify-start">
+            {navLinks.map((link) => (
+              <li key={link.path}>
+                <Link
+                  to={link.path}
+                  className="text-red-600 hover:text-[#134289] transition font-semibold text-sm lg:text-lg hover:underline px-2 py-2"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* LOGO CENTRADO */}
+          <div className="flex justify-center flex-1 md:flex-none">
+            <Link to="/" className="hover:opacity-80 transition">
+              <img
+                src="/Logo-secundario.svg"
+                alt="Toliboy logo"
+                className="h-16 sm:h-20 md:h-24 w-auto"
+              />
+            </Link>
+          </div>
+
+          {/* BOTÓN DERECHA (DESKTOP) */}
+          <div className="hidden md:flex justify-end">
+            <Button to={contactLink.path} className="font-bold text-sm lg:text-base">
+              {contactLink.name}
+            </Button>
+          </div>
         </div>
-        {/* Botón de Contacto - Queda a la derecha en md y último en sm */}{" "}
-        <Button
-          to={contactLink.path}
-          className="hidden md:block md:order-3"
-        >
-          {contactLink.name}
-        </Button>
       </div>
 
-      {/* Menú móvil (solo <768px) */}
+      {/* MENÚ MOBILE */}
       {isOpen && (
         <div
-          className="md:hidden px-4 sm:px-6 py-6 space-y-4 rounded-b-2xl shadow-lg"
-          style={{ backgroundColor: "#fdf2e1ff" }}
+          className="md:hidden px-4 sm:px-6 py-6 space-y-3 border-t"
+          style={{ backgroundColor: "#fdf2e1ff", borderColor: "#e80029" }}
         >
           {[...navLinks, contactLink].map((link) => (
             <Link
               key={link.path}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-3 rounded-xl text-center font-medium shadow-md transition"
+              className="block px-4 py-3 rounded-lg text-center font-medium shadow-md transition hover:shadow-lg"
               style={{
                 backgroundColor: "#e80029",
                 color: "#fcf7e8",
@@ -86,8 +93,9 @@ export default function Navbar() {
             </Link>
           ))}
 
+          {/* REDES SOCIALES */}
           <div
-            className="flex justify-center gap-6 pt-5 border-t"
+            className="flex justify-center gap-4 pt-4 border-t"
             style={{ borderColor: "#4e2c1d" }}
           >
             {socialLinks.map((social, idx) => (
@@ -96,7 +104,7 @@ export default function Navbar() {
                 href={social.url}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded-full transition"
+                className="p-2 rounded-full transition hover:scale-110"
                 style={{ backgroundColor: "#e80029", color: "#fcf7e8" }}
               >
                 {social.icon}

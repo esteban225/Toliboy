@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 import ProductoCard from "./ProductoCard";
 import type { Product } from "../data/products";
 
@@ -10,10 +11,26 @@ interface Props {
 }
 
 export default function ProductGrid({ products, title, background, p }: Props) {
+  const location = useLocation();
+
   const cardVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
   };
+
+  // Colores dinámicos por ruta (mismo que NavbarProductos)
+  const routeColors: Record<string, string> = {
+    "/catalogo/todo": "#4E2C1D",
+    "/catalogo/pasteleria": "#E80029",
+    "/catalogo/panaderia": "#134289",
+    "/catalogo/industrial": "#0a4635",
+  };
+
+  // Determinar color activo según la ruta
+  const activeColor =
+    Object.entries(routeColors).find(([path]) =>
+      location.pathname.startsWith(path)
+    )?.[1] || routeColors["/catalogo/todo"];
 
   // Imagen de fondo por categoría
   const categoryImages: Record<string, string> = {
@@ -29,18 +46,36 @@ export default function ProductGrid({ products, title, background, p }: Props) {
       className={`relative ${background} text-red-900 py-8 px-4 sm:px-8 md:px-16 lg:px-24`}
     >
       {/* Encabezado */}
-      <div className="relative w-full h-94 mb-12">
-        <img
-          src={headerImg}
-          alt={title}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
+      <div className="relative w-full mb-12 flex items-stretch gap-0">
+        {/* Cuadrado con título - Izquierda */}
+        <div 
+          className="hidden md:flex flex-col items-center justify-center w-130 rounded-l-2xl p-8 shadow-lg text-center flex-shrink-0"
+          style={{ backgroundColor: activeColor }}
+        >
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-white drop-shadow-lg">
             {title}
           </h2>
-          <h3 className="text-lg md:text-xl text-red-200 mt-3">
+          <h3 className="text-base lg:text-lg text-white mt-4 font-semibold">
+            Catálogo de Productos
+          </h3>
+        </div>
+
+        {/* Imagen de fondo */}
+        <div className="relative flex-1 h-80 md:h-96 rounded-r-2xl overflow-hidden shadow-lg">
+          <img
+            src={headerImg}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/20"></div>
+        </div>
+
+        {/* Título móvil */}
+        <div className="md:hidden absolute inset-0 flex flex-col items-center justify-center text-center z-10 rounded-2xl">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg">
+            {title}
+          </h2>
+          <h3 className="text-base md:text-lg text-white mt-3 font-semibold">
             Catálogo de Productos
           </h3>
         </div>

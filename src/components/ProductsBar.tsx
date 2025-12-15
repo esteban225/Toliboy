@@ -44,7 +44,7 @@ export default function ProductsBar() {
         {[...productos, ...productos, ...productos].map((prod, i) => (
           <Atropos
             key={i}
-            className="flex-shrink-0 w-[220px] sm:w-[260px] md:w-[300px] lg:w-[320px] aspect-[4/3]  bg-[#FEF9F2]  overflow-hidden"
+            className="flex-shrink-0 w-[220px] sm:w-[260px] md:w-[300px] lg:w-[320px] aspect-[4/3]  bg-[#fdf2e1ff]  overflow-hidden"
             activeOffset={40}
             shadow={false}
             highlight={false}

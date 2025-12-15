@@ -24,9 +24,9 @@ export default function NavbarProductos() {
       hover: "hover:text-[#134289]",
     },
     "/catalogo/industrial": {
-      bg: "bg-[#FFC62D]", // amarillo industrial
-      text: "text-[#FFC62D]",
-      hover: "hover:text-[#FFC62D]",
+      bg: "bg-[#0a4635]", // verde industrial
+      text: "text-[#0a4635]",
+      hover: "hover:text-[#0a4635]",
     },
   };
 

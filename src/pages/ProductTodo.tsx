@@ -2,5 +2,5 @@ import { products } from "../data/products";
 import ProductGrid from "../components/ProductGrid";
 
 export default function ProductTodo() {
-  return <ProductGrid products={products} title="Todos los productos" background="bg-[#FEF9F2]" p="/Banner-Todos.webp" />;
+  return <ProductGrid products={products} title="Todos los productos" background="bg-[#fdf2e1ff]" p="/Banner-Todos.webp" />;
 }
