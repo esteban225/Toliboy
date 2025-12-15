@@ -83,7 +83,7 @@ export default function Navbar() {
               key={link.path}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-3 rounded-lg text-center font-medium shadow-md transition hover:shadow-lg"
+              className="block px-4 py-3 rounded-lg text-center font-extrabold shadow-md transition hover:shadow-lg"
               style={{
                 backgroundColor: "#e80029",
                 color: "#fcf7e8",

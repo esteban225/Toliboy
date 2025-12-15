@@ -27,7 +27,7 @@ const ProductoCard: React.FC<ProductoCardProps> = ({
         {/* Frente de la tarjeta */}
         <div className="card-front">
           <img src={imagen} alt={`Imagen de ${nombreProducto}`} />
-          <h3 className="titulo text-white text-3xl">{nombreProducto}</h3>
+          <h3 className="titulo text-white text-3xl font-extrabold py-3">{nombreProducto}</h3>
           <button
             className="relative block md:order-3 bg-white text-[#4e2c1d] font-semibold py-1 px-3 rounded-4xl transition-transform hover:translate-x-1 hover:translate-y-1 shadow-[4px_4px_0_0_#4e2c1d] active:shadow-none active:translate-x-0 active:translate-y-0"
             onClick={() => setIsFlipped(true)}
@@ -38,16 +38,17 @@ const ProductoCard: React.FC<ProductoCardProps> = ({
         </div>
 
         {/* Parte trasera de la tarjeta */}
-        <div className="card-back">
+        <div className="card-back ">
 
-          <h3 className="titulo text-white text-4xl">{nombreProducto}</h3>
+          <h3 className="titulo text-white text-4xl font-extrabold">{nombreProducto}</h3>
+          <hr className="linea-punteada" />
 
-      
-          <p className="descripcion">{descripcion}</p>
+          <p className="descripcion text-left">{descripcion}</p>
 
+          <h4 className="mt-4 text-white text-xl font-extrabold">Características:</h4>
           {/* 👇 Listado de características */}
           {caracteristicas.length > 0 && (
-            <ul className="caracteristicas mt-3 text-left list-disc list-inside">
+            <ul className="caracteristicas mt-3 list-disc list-inside text-left">
               {caracteristicas.map((caracteristica, index) => (
                 <li key={index}>{caracteristica}</li>
               ))}

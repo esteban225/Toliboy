@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
+import Button from "../components/Button";
 
 function ContactForm() {
   const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" });
@@ -55,9 +56,9 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
       <div>
-        <label className="block text-sm font-medium text-amber-800 mb-1">
+        <label className="block text-xs sm:text-sm font-medium text-amber-800 mb-1">
           Nombre
         </label>
         <input
@@ -67,11 +68,11 @@ function ContactForm() {
           onChange={handleChange}
           placeholder="Tu nombre"
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800"
+          className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800 text-sm"
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-amber-800 mb-1">
+        <label className="block text-xs sm:text-sm font-medium text-amber-800 mb-1">
           Correo electrónico
         </label>
         <input
@@ -81,11 +82,11 @@ function ContactForm() {
           onChange={handleChange}
           placeholder="tu@email.com"
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800"
+          className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800 text-sm"
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-amber-800 mb-1">
+        <label className="block text-xs sm:text-sm font-medium text-amber-800 mb-1">
           Mensaje
         </label>
         <textarea
@@ -95,31 +96,35 @@ function ContactForm() {
           rows={4}
           placeholder="Escribe tu mensaje aquí..."
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800"
+          className="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-800 text-sm"
         ></textarea>
       </div>
 
       {/* reCAPTCHA v2 */}
-      <ReCAPTCHA
-        sitekey="6Lf84MYrAAAAAP5MyL29Kx0tsZHAMDNxrTTqDF_u" // 👈 reemplaza con tu clave pública de reCAPTCHA v2
-        onChange={handleCaptcha}
-      />
+      <div className="flex justify-center sm:justify-start">
+        <ReCAPTCHA
+          sitekey="6Lf84MYrAAAAAP5MyL29Kx0tsZHAMDNxrTTqDF_u"
+          onChange={handleCaptcha}
+        />
+      </div>
 
-      <button
-        type="submit"
-        disabled={estado === "enviando"}
-        className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition disabled:opacity-50"
-      >
-        {estado === "enviando" ? "Enviando..." : "Enviar mensaje"}
-      </button>
+      <div className="w-full sm:w-auto">
+        <button
+          type="submit"
+          disabled={estado === "enviando"}
+          className="w-full sm:w-auto relative font-bold rounded-4xl transition-transform active:shadow-none active:translate-x-0 active:translate-y-0 bg-red-600 text-white py-2 px-5 hover:translate-x-1 hover:translate-y-1 shadow-[4px_4px_0_0_#1e40af] disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {estado === "enviando" ? "Enviando..." : "Enviar mensaje"}
+        </button>
+      </div>
 
       {estado === "enviado" && (
-        <p className="text-green-600 font-medium mt-2">
+        <p className="text-green-600 font-medium mt-2 text-sm">
           ✅ ¡Mensaje enviado con éxito!
         </p>
       )}
       {estado === "error" && (
-        <p className="text-red-600 font-medium mt-2">
+        <p className="text-red-600 font-medium mt-2 text-sm">
           ❌ Ocurrió un error. Inténtalo de nuevo.
         </p>
       )}
@@ -129,14 +134,14 @@ function ContactForm() {
 
 export default function Contacto() {
   return (
-    <section className="w-full bg-amber-50 py-16">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+    <section className="w-full bg-[#fdf2e1ff] py-8 sm:py-12 md:py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         {/* Formulario */}
         <div>
-          <h2 className="text-3xl font-bold text-amber-800 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-amber-800 mb-4 sm:mb-6">
             Contáctanos
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-sm sm:text-base text-gray-600 mb-6">
             Si tienes alguna duda o quieres más información, completa el
             siguiente formulario y nos pondremos en contacto contigo.
           </p>
@@ -144,10 +149,9 @@ export default function Contacto() {
         </div>
 
         {/* Mapa + info de contacto */}
-        {/* Mapa + info de contacto (igual que tu código actual) */}
         <div className="rounded-2xl overflow-hidden shadow-xl bg-white">
           {/* Mapa */}
-          <div className="h-[300px] md:h-[400px] w-full">
+          <div className="h-[250px] sm:h-[300px] md:h-[400px] w-full">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.132541142667!2d-73.02535472418501!3d5.8369346307590755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a3f19f58225d5%3A0xb4e9072e742e4c5d!2sToliboy!5e0!3m2!1ses-419!2sco!4v1756912812178!5m2!1ses-419!2sco"
               width="100%"
@@ -161,13 +165,13 @@ export default function Contacto() {
           </div>
 
           {/* Info de contacto */}
-          <div className="p-6 space-y-4">
-            <h3 className="text-xl font-bold text-amber-800">
+          <div className="p-4 sm:p-6 space-y-4">
+            <h3 className="text-lg sm:text-xl font-bold text-amber-800">
               Información de contacto
             </h3>
 
-            <div className="flex items-center gap-3 text-gray-700">
-              <Phone className="w-5 h-5 text-red-600" />
+            <div className="flex items-start gap-3 text-sm sm:text-base text-gray-700">
+              <Phone className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
               <p>
                 Celular:{" "}
                 <span className="font-medium">313 321 5268 – 310 550 5133</span>{" "}
@@ -177,42 +181,42 @@ export default function Contacto() {
               </p>
             </div>
 
-            <div className="flex items-center gap-3 text-gray-700">
-              <Mail className="w-5 h-5 text-red-600" />
+            <div className="flex items-start gap-3 text-sm sm:text-base text-gray-700">
+              <Mail className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
               <p>
                 ventas@toliboy.com <br />
                 contacto@toliboy.com
               </p>
             </div>
 
-            <h3 className="text-xl font-bold text-red-400">
+            <h3 className="text-base sm:text-lg font-bold text-red-400 pt-2">
               Encuéntranos en redes sociales cómo:
             </h3>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2">
               <a
                 href="https://www.facebook.com/toliboy.co"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-1 p-2 bg-blue-600 rounded-full text-white hover:bg-blue-700 transition"
+                className="flex items-center justify-center gap-1 px-2 sm:px-3 py-2 bg-blue-600 rounded-full text-white hover:bg-blue-700 transition text-xs sm:text-sm"
               >
                 <Facebook className="w-4 h-4" />
-                Toliboy
+                <span className="hidden sm:inline">Toliboy</span>
               </a>
               <a
                 href="https://www.instagram.com/productos_toliboy?igsh=OHR3MHJ6Njg3cTZ5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-1 p-2 bg-pink-600 rounded-full text-white hover:bg-pink-700 transition"
+                className="flex items-center justify-center gap-1 px-2 sm:px-3 py-2 bg-pink-600 rounded-full text-white hover:bg-pink-700 transition text-xs sm:text-sm"
               >
                 <Instagram className="w-4 h-4" />
-                productos_toliboy
+                <span className="hidden sm:inline">productos_toliboy</span>
               </a>
               <a
                 href="mailto:comercial@toliboy.com"
-                className="p-3 bg-red-600 rounded-full text-white hover:bg-red-700 transition"
+                className="p-2 sm:p-3 bg-red-600 rounded-full text-white hover:bg-red-700 transition"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
             </div>
           </div>

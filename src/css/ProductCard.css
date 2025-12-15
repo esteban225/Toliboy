@@ -41,12 +41,13 @@
 
 /* Lado frontal */
 .card-front img {
-  width: 100%;       /* se adapta al ancho */
-  height: auto;      /* mantiene proporción */
-  max-height: 90%;   /* no sobrepasa la tarjeta */
-  object-fit: contain;
-  margin-bottom: 10px;
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+  object-position: center;
   transition: transform 0.3s;
+  margin: 0;
+  padding: 0;
 }
 
 /* zoom + rotación al pasar el mouse SOLO en la imagen */
@@ -111,4 +112,13 @@
   padding-left: 20px;
   text-align: left; /* mejor legibilidad */
 }
+
+.linea-punteada {
+  border: none;
+  border-top: 2px dotted #ffffff;
+  margin: 10px auto;
+  width: 85%;
+  opacity: 0.8;
+}
+
 

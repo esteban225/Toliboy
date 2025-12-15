@@ -7,10 +7,10 @@ const fadeUp = {
 
 export default function Nosotros() {
   return (
-    <div className="w-full">
+    <div className="w-full bg-[#fdf2e1ff]">
       {/* Banner Principal */}
       <section
-        className="relative h-[220px] md:h-[300px] bg-cover bg-center flex items-center justify-center px-6 bg-[#FEF9F2]"
+        className="relative h-[220px] md:h-[300px] bg-cover bg-center flex items-center justify-center px-6 bg-[#fdf2e1ff]"
         style={{
           backgroundImage: "url('/nosotros1.webp')",
           backgroundPosition: "59% 47%",
@@ -26,14 +26,14 @@ export default function Nosotros() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-3xl md:text-4xl font-bold text-white text-center drop-shadow-md">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-white text-center drop-shadow-md">
             Nuestra empresa
           </h1>
         </motion.div>
       </section>
 
       {/* Descripción */}
-      <section className="bg-red-50 py-16 px-6 md:px-12 container mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <section className="bg-[#fdf2e1ff] py-16 px-6 md:px-12 container mx-auto grid md:grid-cols-2 gap-12 items-center mt-5">
         <motion.img
           src="/nosotros1.webp"
           alt="Productos Toliboy"
@@ -48,7 +48,7 @@ export default function Nosotros() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-red-800 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-red-600 mb-4">
             Productos Comestibles Toliboy
           </h2>
           <h3 className="text-1xl md:text-2xl font-bold mb-4">
@@ -75,7 +75,7 @@ export default function Nosotros() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-red-800 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-red-600 mb-4">
             Nuestra historia
           </h2>
           <p className="text-gray-700 leading-relaxed">
@@ -109,9 +109,9 @@ export default function Nosotros() {
       </section>
 
       {/* Información corporativa */}
-      <section className="bg-red-50 py-16 px-6 md:px-12">
+      <section className="bg-[#fdf2e1ff] py-16 px-6 md:px-12">
         <motion.h2
-          className="text-2xl md:text-3xl font-bold text-center text-red-800 mb-12"
+          className="text-2xl md:text-3xl font-bold text-center text-red-600 mb-12"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -147,7 +147,7 @@ export default function Nosotros() {
               className="bg-white rounded-xl p-6 shadow hover:shadow-lg transition"
               whileHover={{ scale: 1.02 }}
             >
-              <h3 className="text-xl font-semibold text-red-800">
+              <h3 className="text-xl font-semibold text-red-600">
                 {item.titulo}
               </h3>
               <p className="text-gray-700 mt-2 leading-relaxed">{item.texto}</p>
