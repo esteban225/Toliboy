@@ -1,11 +1,23 @@
 @import "tailwindcss";
 
+/* Asegurar que Montserrat se cargue sin bloqueo */
+:root {
+  --font-primary: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-secondary: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-primary);
   font-optical-sizing: auto;
   font-style: normal;
-  font-variation-settings:
-    "wdth"87.9;
+  font-variation-settings: "wdth" 87.9;
+}
+
+/* Fallback si Montserrat no carga */
+@supports (font-family: var(--font-primary)) {
+  html {
+    font-family: var(--font-primary);
+  }
 }
 
 @keyframes fadeInUp {
