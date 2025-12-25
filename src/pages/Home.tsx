@@ -32,13 +32,19 @@ export default function Home() {
     return () => ctx.revert();
   }, []);
 
+  const wavePathTop =
+    "M0,40 Q180,-20 360,40 T720,40 T1080,40 T1440,40 L1440,0 L0,0 Z";
+
+  const wavePathBottom =
+    "M0,80 Q180,120 360,80 T720,80 T1080,80 T1440,80 L1440,120 L0,120 Z";
+
   return (
     <div className="w-full bg-[#fdf2e1ff]">
       {/* BANNER */}
       <BannerScroll />
 
       {/* PRODUCTOS */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-full mx-auto  text-center">
         {/*<RichTextSection />*/}
         <div className="mt-8 md:mt-12">
           <h1 className=" text-red-700  text-xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold max-w-3xl mx-auto leading-tight mb-6 md:mb-8 px-2">
@@ -55,11 +61,30 @@ export default function Home() {
 
       {/* CONOCE NUESTRAS LÍNEAS */}
 
+      {/* Onda superior */}
+      <svg
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        className="w-full h-[120px] block"
+        style={{ marginTop: "-2px" }}
+      >
+        <path d={wavePathBottom} fill="oklch(50.5% 0.213 27.518)" />
+      </svg>
       <div className=" mx-auto bg-red-600 ">
-        <div className="mt-8 md:mt-12">
+        <div className="">
           <ProductLines />
         </div>
       </div>
+
+      {/* Onda inferior */}
+      <svg
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        className="w-full h-[120px] block"
+        style={{ marginBottom: "-2px" }}
+      >
+        <path d={wavePathTop} fill="oklch(50.5% 0.213 27.518)" />
+      </svg>
       {/* 25 AÑOS */}
       <div className="anim-card max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center text-white relative z-10">
         <div className="mb-6 md:mb-8">
@@ -81,6 +106,15 @@ export default function Home() {
       </div>
 
       {/* CONTACTO */}
+      {/* Onda superior */}
+      <svg
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        className="w-full h-[120px] block"
+        style={{ marginTop: "-2px" }}
+      >
+        <path d={wavePathBottom} fill="oklch(85.2% 0.199 91.936)" />
+      </svg>
       <div className="anim-card  mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center relative z-10 bg-yellow-400">
         <div className="mb-6 md:mb-8">
           <img
@@ -93,14 +127,20 @@ export default function Home() {
           ¿Tienes alguna pregunta?
         </h2>
         <div className="mt-8 md:mt-12 hidden md:flex justify-center">
-          <Button
-            to="/contacto"
-            className="font-bold text-sm lg:text-base"
-          >
+          <Button to="/contacto" className="font-bold text-sm lg:text-base">
             Contactanos
           </Button>
         </div>
       </div>
+      {/* Onda inferior */}
+      <svg
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        className="w-full h-[120px] block"
+        style={{ marginBottom: "-2px" }}
+      >
+        <path d={wavePathTop} fill="oklch(85.2% 0.199 91.936)" />
+      </svg>
     </div>
   );
 }

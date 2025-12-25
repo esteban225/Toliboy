@@ -48,7 +48,7 @@ export default function ProductGrid({ products, title, background, p }: Props) {
       {/* Encabezado */}
       <div className="relative w-full mb-12 flex items-stretch gap-0">
         {/* Cuadrado con título - Izquierda */}
-        <div 
+        <div
           className="hidden md:flex flex-col items-center justify-center w-130 rounded-l-2xl p-8 shadow-lg text-center flex-shrink-0"
           style={{ backgroundColor: activeColor }}
         >
@@ -94,8 +94,10 @@ export default function ProductGrid({ products, title, background, p }: Props) {
             style={{ backgroundColor: product.color }}
           >
             {product.weight && (
-              <div className="absolute top-1 right-[-170px] bg-[#6F4E37] text-white text-3xl px-43 py-10 rotate-45 shadow-md shadow-red-500">
-                {product.weight}
+              <div className="absolute top-4 -right-14 rotate-45 md:top-6 md:-right-20 z-10">
+                <div className="bg-[#6F4E37]/75 text-white text-xl md:text-lg px-16 md:px-24 py-2 md:py-3 shadow-lg">
+                  {product.weight}
+                </div>
               </div>
             )}
 
