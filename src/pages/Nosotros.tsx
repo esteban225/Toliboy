@@ -157,7 +157,7 @@ export default function Nosotros() {
       </section>
 
       {/* Valores corporativos */}
-      <section className="bg-gradient-to-r from-red-800 to-red-700 text-white py-16 px-6">
+      <section className="bg-[#e80029] text-white py-16 px-6">
         <motion.h2
           className="text-2xl md:text-3xl font-bold text-center mb-12"
           variants={fadeUp}

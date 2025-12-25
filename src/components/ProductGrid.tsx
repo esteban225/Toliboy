@@ -87,9 +87,9 @@ export default function ProductGrid({ products, title, background, p }: Props) {
           <motion.div
             key={idx}
             variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
+            initial={idx < 3 ? "visible" : "hidden"}
+            whileInView={idx < 3 ? undefined : "visible"}
+            viewport={idx < 3 ? undefined : { once: true, amount: 0.5 }}
             className="relative rounded-2xl overflow-hidden shadow-lg min-h-[620px] sm:min-h-[380px] md:min-h-[550px] flex"
             style={{ backgroundColor: product.color }}
           >
