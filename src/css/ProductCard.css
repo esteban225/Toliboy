@@ -12,7 +12,7 @@
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.8s ease;
+  transition: transform 0.9s ease;
 }
 
 /* ahora el giro es con clase is-flipped, no con hover */
@@ -27,6 +27,7 @@
   height: 100%;
   border-radius: 12px;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,6 +38,26 @@
   background: transparent;
   border: none;
   box-shadow: none;
+  top: 0;
+  left: 0;
+}
+
+.card-front {
+  background: transparent;
+  visibility: visible;
+}
+
+.card-inner.is-flipped .card-front {
+  visibility: hidden;
+}
+
+.card-back {
+  background: transparent;
+  visibility: hidden;
+}
+
+.card-inner.is-flipped .card-back {
+  visibility: visible;
 }
 
 /* Lado frontal */
@@ -45,9 +66,15 @@
   height: 65%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.3s;
+  transition: opacity 0.3s;
   margin: 0;
   padding: 0;
+  opacity: 1;
+}
+
+/* Ocultar imagen cuando la tarjeta está girada */
+.card-inner.is-flipped .card-front img {
+  opacity: 0;
 }
 
 /* zoom + rotación al pasar el mouse SOLO en la imagen */
@@ -76,32 +103,19 @@
   transform: rotateY(180deg);
   text-align: center;
   padding: 20px;
+  color: #fff;
 }
 
 .descripcion {
   font-size: clamp(14px, 1.8vw, 16px);
   margin-bottom: 15px;
-  color: #134289;
+  color: #fff;
 }
 
 .precio {
   font-size: clamp(16px, 2vw, 20px);
   font-weight: bold;
-  color: #e80029;
-}
-
-/* Lado trasero */
-.card-back {
-  transform: rotateY(180deg);
-  text-align: center;
-  padding: 20px;
-  color: #fff; /* color de texto blanco por defecto */
-}
-
-.descripcion {
-  font-size: clamp(14px, 1.8vw, 16px);
-  margin-bottom: 15px;
-  color: #fff; /* texto blanco */
+  color: #fff;
 }
 
 .caracteristicas {
