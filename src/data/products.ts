@@ -28,7 +28,7 @@ export const products: Product[] = [
   {
     name: "ChocoRico",
     weight: "70g",
-    image: "/pasteleria/ChocoRicoN_resultado.webp",
+    image: "/pasteleria/02-ChocoRico.webp",
     category: "pasteleria",
     color: "#fd3e34",
     shortDescription: "Soy un ponqué suave cubierto con una capa de chocolate que conquista a grandes y chicos. Estoy hecho para esos momentos en los que un dulce detalle lo cambia todo.",
@@ -41,7 +41,7 @@ export const products: Product[] = [
   {
     name: "Galletas",
     weight: "600g",
-    image: "/pasteleria/Domo_Galletas_resultado.webp",
+    image: "/pasteleria/13-DomoGalletas.webp",
     category: "pasteleria",
     color: "#3577b1",
     shortDescription: "Soy una galleta crujiente y doradita, con ese sabor casero que te hace querer otra (y otra más). Acompaño tus antojos y ese cafecito de la tarde con el toque perfecto de dulzura.",
@@ -54,7 +54,7 @@ export const products: Product[] = [
   {
     name: "Hojaldre",
     weight: "60g",
-    image: "/pasteleria/hojaldre_resultado.webp",
+    image: "/pasteleria/09-Hojaldre.webp",
     category: "pasteleria",
     color: "#bf4f00",
     shortDescription: "Soy un hojaldre de capas doradas, con un toque de arequipe cremoso que conquista sin empalagar. Perfecto para acompañar un café, una charla o simplemente darte un gusto en cualquier momento del día.",
@@ -66,7 +66,7 @@ export const products: Product[] = [
   {
     name: "Ponqué Junior",
     weight: "215g",
-    image: "/pasteleria/junior_resultado.webp",
+    image: "/pasteleria/06-Junior.webp",
     category: "pasteleria",
     color: "#79ace4",
     shortDescription: "Soy un ponqué suave y esponjoso, con ese sabor casero que nunca pasa de moda. Estoy aquí para alegrar tus momentos favoritos y acompañarte donde vayas.",
@@ -79,7 +79,7 @@ export const products: Product[] = [
   {
     name: "Lonchero de Queso",
     weight: "70g",
-    image: "/pasteleria/Lonchero_de_Queso_resultado.webp",
+    image: "/pasteleria/08-LoncheroQueso.webp",
     category: "pasteleria",
     color: "#ffb243",
     shortDescription: "Soy un ponqué suave , con el verdadero sabor a queso que conquista cualquier paladar. Listopara acompañarte a cualquier hora del día.",
@@ -92,7 +92,7 @@ export const products: Product[] = [
   {
     name: "Ponqué Lonchero",
     weight: "60g",
-    image: "/pasteleria/lonchero_resultado.webp",
+    image: "/pasteleria/05-Lonchero.webp",
     category: "pasteleria",
     color: "#fd4338",
     shortDescription: "Soy un ponqué de vainilla, suave y delicioso, listo para acompañarte en cualquier aventura del día. Mi tamaño práctico me hace perfecto para disfrutar con tu bebida favorita o llevarme a donde quieras.",
@@ -105,7 +105,7 @@ export const products: Product[] = [
   {
     name: "Mantecada Artesanal",
     weight: "250g",
-    image: "/pasteleria/Mantecada_tradicional_resultado.webp",
+    image: "/pasteleria/15-MantecadaTradicional.webp",
     category: "pasteleria",
     color: "#742c1c",
     shortDescription: "Soy una mantecada con sabor casero y suave, hecha para alegrar tus momentos y compartir con quienes más quieres.",
@@ -118,7 +118,7 @@ export const products: Product[] = [
   {
     name: "Mantecada",
     weight: "560g",
-    image: "/pasteleria/mantecadanueva_resultado.webp",
+    image: "/pasteleria/14-Mantecada.webp",
     category: "pasteleria",
     color: "#f4323f",
     shortDescription: "Soy una mantecada dulce y suave, hecha con cariño para endulzar tus momentos y compartir sonrisas. Ideal para disfrutar con amigos, familia o simplemente para darte un gustito en cualquier momento del día.",
@@ -131,7 +131,7 @@ export const products: Product[] = [
   {
     name: "Mini ChocoRico",
     weight: "40g",
-    image: "/pasteleria/Mini_ChocoRico_resultado.webp",
+    image: "/pasteleria/07-MiniChocoRico.webp",
     category: "pasteleria",
     color: "#7fc1d3",
     shortDescription: "Soy un mini ponqué suave y cubierto de chocolate, listo para darle un toque dulce a la merienda. Pequeño en tamaño, grande en sabor.",
@@ -144,7 +144,7 @@ export const products: Product[] = [
   {
     name: "Repolla",
     weight: "65g",
-    image: "/pasteleria/Repolla_resultado.webp",
+    image: "/pasteleria/03-Repolla.webp",
     category: "pasteleria",
     color: "#f99d39",
     shortDescription: "Soy una mezcla entre sal y dulce, por fuera blandita y por dentro tengo arequipe. Hecha para alegrar tus meriendas y esos momentos que merecen un gustito especial.",
@@ -157,7 +157,7 @@ export const products: Product[] = [
   {
     name: "Tajadas de Sabores",
     weight: "60g",
-    image: "/pasteleria/Tajadas_de_sabores_resultado.webp",
+    image: "/pasteleria/04-Tajada.webp",
     category: "pasteleria",
     color: "#fe6b0b",
     shortDescription: "Soy una tajada de ponqué suave y esponjosa que se roba un pedacito de tu día. Con mis diferentes sabores, siempre tengo algo para antojarte… sin importar la hora.",
@@ -170,7 +170,7 @@ export const products: Product[] = [
   {
     name: "Torta de Queso",
     weight: "1000g",
-    image: "/pasteleria/Torta_de_queso_resultado.webp",
+    image: "/pasteleria/12-TortaDeQueso.webp",
     category: "pasteleria",
     color: "#323330",
     shortDescription: "Soy la torta que no puede faltar en casa. Suavecita, con ese sabor a queso que todos aman y el toque justo para acompañar cualquier momento solo/a o con tu familia.",
@@ -183,7 +183,7 @@ export const products: Product[] = [
   {
     name: "Torta Decorada",
     weight: "1040g",
-    image: "/pasteleria/torta_decorada_resultado.webp",
+    image: "/pasteleria/16-TortaDecorada.webp",
     category: "pasteleria",
     color: "#d18bca",
     shortDescription: "Soy la torta que llega para celebrar contigo. Esponjosa, colorida y con ese toque dulce que convierte cualquier día en un momento especial.",
@@ -196,7 +196,7 @@ export const products: Product[] = [
   {
     name: "Torta Familiar",
     weight: "1000g",
-    image: "/pasteleria/tortafamiliar123_resultado.webp",
+    image: "/pasteleria/11-TortaFamiliar.webp",
     category: "pasteleria",
     color: "#2297d3",
     shortDescription: "Soy esa torta que reúne a todos en la mesa. Suave, húmeda y con sabor casero, nací para acompañar risas, historias y momentos que se disfrutan en familia.",
@@ -209,7 +209,7 @@ export const products: Product[] = [
   {
     name: "Yoyos",
     weight: "300g",
-    image: "/pasteleria/Yoyos_resultado.webp",
+    image: "/pasteleria/10-Yoyo.webp",
     category: "pasteleria",
     color: "#543c82",
     shortDescription: "Somos dos esponjosos discos cubiertos de azúcar que guardan un relleno cremoso irresistible. Cada mordisco te devuelve al sabor de tu infancia.",
@@ -222,7 +222,7 @@ export const products: Product[] = [
   {
     name: "Mogolla Miel",
     weight: "200g",
-    image: "/panaderia/mogolla_resultado.webp",
+    image: "/panaderia/23-Mogolla.webp",
     category: "panaderia",
     color: "#ffb500",
     shortDescription: "Soy esa mogolla que te da energía sin perder sabor. Mi toque de miel y mi textura ligera me hacen perfecta para arrancar el día con buena cara.",
@@ -235,7 +235,7 @@ export const products: Product[] = [
   {
     name: "Pan aliñado",
     weight: "190g",
-    image: "/panaderia/Pan_alinado_100_resultado.webp",
+    image: "/panaderia/20-PanAlinado.webp",
     category: "panaderia",
     color: "#ffb500",
     shortDescription: "No soy un pan cualquiera. Soy el pan aliñado de siempre, ese que se parte y reparte con gusto.",
@@ -248,7 +248,7 @@ export const products: Product[] = [
   {
     name: "Pan aliñado 2",
     weight: "200g",
-    image: "/panaderia/Pan_Alinado_resultado.webp",
+    image: "/panaderia/22-PanAlinadox6.webp",
     category: "panaderia",
     color: "#0055b8",
     shortDescription: "Soy ese pan que nunca falla, el de toda la vida, el que huele a casa apenas lo partes. Sigo teniendo el mismo sabor de siempre… ese que no se olvida.",
@@ -261,7 +261,7 @@ export const products: Product[] = [
   {
     name: "Pan de Anís",
     weight: "170g",
-    image: "/panaderia/Pan_Anis_resultado.webp",
+    image: "/panaderia/25-PanAnis.webp",
     category: "panaderia",
     color: "#ec7700",
     shortDescription: "Soy ese panecito que perfuma la cocina con su toque de anís. Suave, dorado y con ese sabor que te transporta a los más bonitos momentos.",
@@ -274,7 +274,7 @@ export const products: Product[] = [
   {
     name: "Pan de Hamburguesa",
     weight: "360g",
-    image: "/panaderia/Pan_Burger_resultado.webp",
+    image: "/panaderia/27-PanHamburgesa.webp",
     category: "panaderia",
     color: "#213d2d",
     shortDescription: "Soy ese pan que la jugosidad sin perder la forma. resiste Me gusta ser parte de tus mejores burguers, porque nací para eso.",
@@ -287,7 +287,7 @@ export const products: Product[] = [
   {
     name: "Pan Tajado Blanco",
     weight: "280g",
-    image: "/panaderia/panchiquito_resultado.webp",
+    image: "/panaderia/17-PanTajadoBlanco.webp",
     category: "panaderia",
     color: "#1b6eb6",
     shortDescription: "Soy el pan que nunca falta en casa. Tierno, fresco y listo para lo que se te ocurra: desayunos, onces o el mejor sándwich del día.",
@@ -300,7 +300,7 @@ export const products: Product[] = [
   {
     name: "Panecitos",
     weight: "170g",
-    image: "/panaderia/Panecitos_resultado.webp",
+    image: "/panaderia/24-Panecitos.webp",
     category: "panaderia",
     color: "#e80029",
     shortDescription: "Soy el pancito que alegra cualquier momento. Pequeño, suave y tan rico que siempre provoca repetir.",
@@ -313,7 +313,7 @@ export const products: Product[] = [
   {
     name: "Pan Sandwich",
     weight: "280g",
-    image: "/panaderia/pansandwi_resultado.webp",
+    image: "/panaderia/29-PanSandwich.webp",
     category: "panaderia",
     color: "#3C8DFF",
     shortDescription: "Pan tajado suave, ideal para sándwiches.",
@@ -327,7 +327,7 @@ export const products: Product[] = [
   {
     name: "Pan Tajado Integral",
     weight: "450g",
-    image: "/panaderia/Pantajadoint_resultado.webp",
+    image: "/panaderia/19-PanTajadoIntegral.webp",
     category: "panaderia",
     color: "#a45d28",
     shortDescription: "Soy ese pan integral que te hace sentir bien sin dejar de ser delicioso.",
@@ -340,7 +340,7 @@ export const products: Product[] = [
   {
     name: "Pan Tajado Mantequilla",
     weight: "450g",
-    image: "/panaderia/Pantajadomant_resultado.webp",
+    image: "/panaderia/18-PanTajadoMantequilla.webp",
     category: "panaderia",
     color: "#e18c15",
     shortDescription: "Soy ese pan tajado con un toque de mantequilla que hace que cada rebanada sepa a hogar.",
@@ -353,7 +353,7 @@ export const products: Product[] = [
   {
     name: "Pan Tajado Blanco",
     weight: "450g",
-    image: "/panaderia/Pantajadov3_resultado.webp",
+    image: "/panaderia/17-PanTajadoBlanco.webp",
     category: "panaderia",
     color: "#1b6eb6",
     shortDescription: "Clásico pan tajado blanco de textura esponjosa.",
@@ -367,7 +367,21 @@ export const products: Product[] = [
   {
     name: "Tostadas",
     weight: "110g",
-    image: "/panaderia/Tostadas_resultado.webp",
+    image: "/panaderia/21-Tostadas.webp",
+    category: "panaderia",
+    color: "#f34b0a",
+    shortDescription: "Soy ese toque dorado y crujiente que le da vida a tus comidas. Conmigo, el desayuno suena mejor, la merienda se disfruta más y hasta lo simple sabe increíble.",
+    features: [
+      "Tengo una textura crocante.",
+      "Lista para acompañarte donde sea.",
+      "Combino con todo lo que te gusta."
+    ]
+  },
+
+    {
+    name: "Pan de Variedad",
+    weight: "110g",
+    image: "/panaderia/26-PanVariedad.webp",
     category: "panaderia",
     color: "#f34b0a",
     shortDescription: "Soy ese toque dorado y crujiente que le da vida a tus comidas. Conmigo, el desayuno suena mejor, la merienda se disfruta más y hasta lo simple sabe increíble.",
@@ -380,7 +394,7 @@ export const products: Product[] = [
   {
     name: "Aceite Desmoldante",
     weight: "1-20Ltr",
-    image: "/industrial/p1.webp",
+    image: "/industrial/35-Desmoldande.webp",
     category: "industrial",
     color: "#e80029",
     shortDescription: "Soy el mejor asistente en cada receta, ese aceite desmoldante diseñado para obtener horneados perfectos sin que las preparaciones seadhieran a moldes o bandejas.",
@@ -393,7 +407,7 @@ export const products: Product[] = [
   {
     name: "Breva en Almíbar",
     weight: "580g",
-    image: "/industrial/p1.webp",
+    image: "/industrial/34-BrevaFrasco.webp",
     category: "industrial",
     color: "#b3ce7d",
     shortDescription: "Soy ese antojito clásico que endulza tus momentos sin prisa. Dulce, suave y con ese sabor casero que te hace decir “¡qué delicia!”.",
@@ -406,7 +420,7 @@ export const products: Product[] = [
   {
     name: "Breva en Almíbar Doypack",
     weight: "500g",
-    image: "/industrial/I1.webp",
+    image: "/industrial/31-BrevaDoypack.webp",
     category: "industrial",
     color: "#b3ce7d",
     shortDescription: "Soy esa breva que le pone el toque dulce a tus antojos. Lista para disfrutar sola o darle vida a tus postres y recetas favoritas.",
@@ -419,7 +433,7 @@ export const products: Product[] = [
   {
     name: "Piña en Almíbar Doypack",
     weight: "500g",
-    image: "/industrial/I2.webp",
+    image: "/industrial/30-PinaDoypack.webp",
     category: "industrial",
     color: "#e7aa33",
     shortDescription: "Soy esos trocitos que endulzan tu día. Suavecita, jugosa y con el toque justo de almíbar, lista para acompañarte donde quieras.",
@@ -432,7 +446,7 @@ export const products: Product[] = [
   {
     name: "Breva en Almíbar - Cojín",
     weight: "1000g",
-    image: "/industrial/I1.webp",
+    image: "/industrial/32-BrevaCojin.webp",
     category: "industrial",
     color: "#0f3b34",
     shortDescription: "Soy esa breva dulce y jugosa que alegra cualquier momento. Perfecta para disfrutar sola o darle un toque especial a tus recetas favoritas.",
@@ -445,7 +459,7 @@ export const products: Product[] = [
   {
     name: "Piña en Almíbar - Cojín",
     weight: "500g",
-    image: "/industrial/I2.webp",
+    image: "/industrial/33-PinaCojin.webp",
     category: "industrial",
     color: "#0f3b34",
     shortDescription: "Soy esa piña en dulce que le pone chispa a tus recetas y un toque tropical a cada momento.",

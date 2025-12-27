@@ -62,7 +62,7 @@ const ProductoCard: React.FC<ProductoCardProps> = ({
           )}
 
           <button
-            className="relative block md:order-3 bg-white text-[#4e2c1d] font-semibold py-1 px-3 rounded-4xl transition-transform hover:translate-x-1 hover:translate-y-1 shadow-[4px_4px_0_0_#4e2c1d] active:shadow-none active:translate-x-0 active:translate-y-0"
+            className="relative block md:order-3 bg-white text-[#4e2c1d] font-bold py-1 px-3 rounded-4xl transition-transform hover:translate-x-1 hover:translate-y-1 shadow-[4px_4px_0_0_#4e2c1d] active:shadow-none active:translate-x-0 active:translate-y-0"
             onClick={() => setIsFlipped(false)}
             style={{ marginTop: "10px" }}
           >

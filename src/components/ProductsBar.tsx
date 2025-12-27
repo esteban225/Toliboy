@@ -6,11 +6,11 @@ import "atropos/atropos.css";
 export default function ProductsBar() {
   const productos = [
     { img: "pasteleria/Brazo_de_Reina_resultado.webp", alt: "Brazo de reina" },
-    { img: "pasteleria/ChocoRicoN_resultado.webp", alt: "Choco Rico" },
-    { img: "panaderia/mogolla_resultado.webp", alt: "Mogolla" },
-    { img: "panaderia/Pantajadov3_resultado.webp", alt: "Pan tajado blanco" },
-    { img: "industrial/p1.webp", alt: "Ponqué junior" },
-    { img: "industrial/p1.webp", alt: "Mantecada" },
+    { img: "pasteleria/02-ChocoRico.webp", alt: "Choco Rico" },
+    { img: "panaderia/23-Mogolla.webp", alt: "Mogolla" },
+    { img: "panaderia/17-PanTajadoBlanco.webp", alt: "Pan tajado blanco" },
+    { img: "industrial/34-BrevaFrasco.webp", alt: "Breva Frasco" },
+    { img: "industrial/30-PinaDoypack.webp", alt: "Piña Doypack" },
   ];
 
   // Scroll infinito lateral
@@ -44,7 +44,7 @@ export default function ProductsBar() {
         {[...productos, ...productos, ...productos].map((prod, i) => (
           <Atropos
             key={i}
-            className="flex-shrink-0 w-[220px] sm:w-[260px] md:w-[300px] lg:w-[320px] aspect-[4/3]  bg-[#fdf2e1ff]  overflow-hidden"
+            className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[340px] lg:w-[360px] aspect-[4/3]  bg-[#fdf2e1ff]  overflow-hidden"
             activeOffset={40}
             shadow={false}
             highlight={false}
@@ -62,7 +62,7 @@ export default function ProductsBar() {
                 src={`/${prod.img}`}
                 alt={prod.alt}
                 loading="lazy"
-                className="w-full h-full object-cover pointer-events-none"
+                className="w-[90%] h-[90%] object-contain pointer-events-none"
                 data-atropos-offset="5"
               />
             </div>

@@ -95,7 +95,7 @@ export default function ProductGrid({ products, title, background, p }: Props) {
           >
             {product.weight && (
               <div className="absolute top-4 -right-14 rotate-45 md:top-6 md:-right-20 z-10">
-                <div className="bg-[#6F4E37]/75 text-white text-xl md:text-lg px-16 md:px-24 py-2 md:py-3 shadow-lg">
+                <div className="bg-[#6F4E37]/75 text-white text-xl md:text-lg px-16 md:px-24 py-2 md:py-3 shadow-lg font-bold">
                   {product.weight}
                 </div>
               </div>

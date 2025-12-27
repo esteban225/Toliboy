@@ -62,7 +62,7 @@
 
 /* Lado frontal */
 .card-front img {
-  width: 100%;
+  width: 65%;
   height: 65%;
   object-fit: cover;
   object-position: center;
