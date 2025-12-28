@@ -38,17 +38,17 @@ export default function NavbarProductos() {
 
   return (
     <nav
-      className={`w-full transition-colors duration-500 ${activeRoute.bg} p-5 rounded-4xl`}
+      className={`w-full transition-colors duration-500 ${activeRoute.bg} p-3 sm:p-4 md:p-5 rounded-4xl`}
     >
-      <ul className="flex flex-wrap gap-6 sm:gap-20 md:gap-32 lg:gap-40 justify-center font-semibold">
+      <ul className="flex flex-wrap gap-2 sm:gap-4 md:gap-6 lg:gap-8 justify-center font-semibold">
         {/* TODO */}
         <li>
           <NavLink
             to="/catalogo/todo"
             className={({ isActive }) =>
               isActive
-                ? `bg-white ${routeColors["/catalogo/todo"].text} px-4 py-2 rounded-4xl font-bold transition-all duration-300`
-                : `text-white ${routeColors["/catalogo/todo"].hover} hover:bg-white px-4 py-2 rounded-4xl transition-all duration-300`
+                ? `bg-white ${routeColors["/catalogo/todo"].text} px-3 py-1 sm:px-4 sm:py-2 rounded-4xl font-bold transition-all duration-300 text-xs sm:text-sm md:text-base`
+                : `text-white ${routeColors["/catalogo/todo"].hover} hover:bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-4xl transition-all duration-300 text-xs sm:text-sm md:text-base`
             }
           >
             Todo
@@ -61,8 +61,8 @@ export default function NavbarProductos() {
             to="/catalogo/pasteleria"
             className={({ isActive }) =>
               isActive
-                ? `bg-white ${routeColors["/catalogo/pasteleria"].text} px-4 py-2 rounded-4xl font-bold transition-all duration-300`
-                : `text-white ${routeColors["/catalogo/pasteleria"].hover} hover:bg-white px-4 py-2 rounded-4xl transition-all duration-300`
+                ? `bg-white ${routeColors["/catalogo/pasteleria"].text} px-3 py-1 sm:px-4 sm:py-2 rounded-4xl font-bold transition-all duration-300 text-xs sm:text-sm md:text-base`
+                : `text-white ${routeColors["/catalogo/pasteleria"].hover} hover:bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-4xl transition-all duration-300 text-xs sm:text-sm md:text-base`
             }
           >
             Pastelería
@@ -75,8 +75,8 @@ export default function NavbarProductos() {
             to="/catalogo/panaderia"
             className={({ isActive }) =>
               isActive
-                ? `bg-white ${routeColors["/catalogo/panaderia"].text} px-4 py-2 rounded-4xl font-bold transition-all duration-300`
-                : `text-white ${routeColors["/catalogo/panaderia"].hover} hover:bg-white px-4 py-2 rounded-4xl transition-all duration-300`
+                ? `bg-white ${routeColors["/catalogo/panaderia"].text} px-3 py-1 sm:px-4 sm:py-2 rounded-4xl font-bold transition-all duration-300 text-xs sm:text-sm md:text-base`
+                : `text-white ${routeColors["/catalogo/panaderia"].hover} hover:bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-4xl transition-all duration-300 text-xs sm:text-sm md:text-base`
             }
           >
             Panadería
@@ -89,8 +89,8 @@ export default function NavbarProductos() {
             to="/catalogo/industrial"
             className={({ isActive }) =>
               isActive
-                ? `bg-white ${routeColors["/catalogo/industrial"].text} px-4 py-2 rounded-4xl font-bold transition-all duration-300`
-                : `text-white ${routeColors["/catalogo/industrial"].hover} hover:bg-white px-4 py-2 rounded-4xl transition-all duration-300`
+                ? `bg-white ${routeColors["/catalogo/industrial"].text} px-3 py-1 sm:px-4 sm:py-2 rounded-4xl font-bold transition-all duration-300 text-xs sm:text-sm md:text-base`
+                : `text-white ${routeColors["/catalogo/industrial"].hover} hover:bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-4xl transition-all duration-300 text-xs sm:text-sm md:text-base`
             }
           >
             Richard Maestro &copy;

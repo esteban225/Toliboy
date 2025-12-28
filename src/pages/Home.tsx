@@ -52,7 +52,7 @@ export default function Home() {
           </h1>
           <ProductsBar />
         </div>
-        <div className="anim-card mt-8 md:mt-12 hidden md:flex justify-center">
+        <div className="anim-card mt-8 md:mt-12 flex justify-center">
           <Button to="/catalogo" className="font-bold text-sm lg:text-base">
             Ver más productos
           </Button>
@@ -98,7 +98,7 @@ export default function Home() {
           Más de 30 años ofreciendo calidad y tradición en panadería y
           pastelería.
         </h2>
-        <div className="anim-card mt-8 md:mt-12 hidden md:flex justify-center">
+        <div className="anim-card mt-8 md:mt-12 flex justify-center">
           <Button to="/catalogo" className="font-bold text-sm lg:text-base">
             Ver más productos
           </Button>
@@ -126,7 +126,7 @@ export default function Home() {
         <h2 className="anim-card text-3xl sm:text-4xl md:text-6xl lg:text-5xl py-4 font-extrabold max-w-3xl mx-auto text-blue-900 mb-4">
           ¿Tienes alguna pregunta?
         </h2>
-        <div className=" anim-card mt-8 md:mt-12 hidden md:flex justify-center">
+        <div className=" anim-card mt-8 md:mt-12 flex justify-center">
           <Button to="/contacto" className="font-bold text-sm lg:text-base">
             Contactanos
           </Button>

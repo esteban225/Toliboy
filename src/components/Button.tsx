@@ -21,13 +21,13 @@ export default function Button({
   href,
 }: ButtonProps) {
   const baseStyles =
-    "relative font-bold rounded-4xl transition-transform active:shadow-none active:translate-x-0 active:translate-y-0";
+    "relative font-bold rounded-4xl transition-transform active:shadow-none active:translate-x-0 active:translate-y-0 py-1 sm:py-2 px-3 sm:px-5 text-xs sm:text-sm md:text-base";
 
   const variantStyles = {
     primary:
-      "bg-red-600 text-white py-2 px-5 hover:translate-x-1 hover:translate-y-1 shadow-[4px_4px_0_0_#1e40af]",
+      "bg-red-600 text-white hover:translate-x-1 hover:translate-y-1 shadow-[2px_2px_0_0_#1e40af] sm:shadow-[4px_4px_0_0_#1e40af]",
     secondary:
-      "bg-white text-red-600 py-2 px-5 hover:translate-x-1 hover:translate-y-1 shadow-[4px_4px_0_0_#e80029]",
+      "bg-white text-red-600 hover:translate-x-1 hover:translate-y-1 shadow-[2px_2px_0_0_#e80029] sm:shadow-[4px_4px_0_0_#e80029]",
   };
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
