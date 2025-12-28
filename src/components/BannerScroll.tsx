@@ -102,7 +102,7 @@ export default function BannerScroll() {
 
   return (
     <>
-      <section className="h-screen flex items-center justify-center bg-[#fdf2e1ff] overflow-hidden">
+      <section className="h-full flex items-center justify-center bg-[#fdf2e1ff] overflow-auto">
         {/* 👇 Solo escritorio */}
         <div
           ref={scope}
